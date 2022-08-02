@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라이나생명</title>
+    <script src="../assets/js/lib/jquery-3.6.0.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <link rel="stylesheet" href="../assets/css/ui-common.css">
+</head>
+<body>
+<div id="wrap">
+    <!-- Header -->
+    <header>
+        <h1 class="logo"><a href="#"><em>라이나생명</em></a></h1>
+    </header>
+    <!-- // Header -->
+
+    <!-- Contents -->
+    <div class="contents">
+        <div class="txt_group">
+            <h2>가입설계 동의를<br/> 진행해주세요</h2>
+        </div>
+        <div class="form_agrchk accordion agree_form">
+            <div class="title">
+                <div>
+                    <p class="form_agrchk_title">보험료 산출 및 가입설계를 위한 동의 (필수) <span class="btn_down"></span></p>
+                </div>
+            </div>
+            <div class="panel" tabindex="0">
+                <input type="checkbox" id="check_allt" name="chkAgreeGroup1_allt" onchange="allCheck.toggleAll('chkAgreeGroup0');">
+                <label for="check_allt">전체 동의</label>
+                <div class="form_agrchk_box">귀하는 개인(신용)정보 수집·이용 및 조회, 제공에 관한 동의를 거부하실 수 있으며, 개인의 신용도 등을 평가하기위한 목적 이외의 개인(신용)정보 제공 동의를 철회할 수 있습니다. 다만, 본 동의는 '고객정보 관리 및 가입설계'를 위해 필수적인 사항 이므로 동의를 거부하시는 경우 관련 업무 수행이 불가능합니다 </div>
+            </div>
+        
+            <div class="title">
+                <div>
+                    <input type="checkbox" id="check_all" name="chkAgreeGroup1_all" onchange="allCheck.toggleAll('chkAgreeGroup1');">
+                    <label for="check_all">1. 수집·이용에 관한 사항 <span class="btn_down"></span></label>
+                </div>
+            </div>
+            <div class="panel mb_80" tabindex="0">
+                <div class="in_box02">
+                    <p>고유식별정보 수집·이용에 동의하십니까?</p>
+                    <div class="form_agrchk_input">
+                        <div>
+                            <input type="radio" id="check_1" class="chk" name="chkAgreeGroup1_1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                            <label for="check_1">동의함</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="check_2" class="chk" name="chkAgreeGroup1_1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                            <label for="check_2">동의하지 않음</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="in_box02">
+                    <p>민감정보의 수집·이용에 동의하십니까?</p>
+                    <div class="form_agrchk_input">
+                        <div>
+                            <input type="radio" id="check_3" class="chk" name="chkAgreeGroup1_2" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                            <label for="check_3">동의함</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="check_4" class="chk" name="chkAgreeGroup1_2" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                            <label for="check_4">동의하지 않음</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="in_box02">
+                    <p>개인(신용)정보의 수집·이용에 동의하십니까?</p>
+                    <div class="form_agrchk_input">
+                        <div>
+                            <input type="radio" id="check_5" class="chk" name="chkAgreeGroup1_3" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                            <label for="check_5">동의함</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="check_6" class="chk" name="chkAgreeGroup1_3" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                            <label for="check_6">동의하지 않음</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="title">
+                <div>
+                    <input type="checkbox" id="check_all" name="chkAgreeGroup1_all" onchange="allCheck.toggleAll('chkAgreeGroup1');">
+                    <label for="check_all">2. 제공에 관한 사항 <span class="btn_down"></span></label>
+                </div>
+            </div>
+            <div class="panel mb_80" tabindex="0">
+                <div class="in_box02">
+                    <p>주민등록번호, 외국인등록번호, 여권번호, 운전면허번호고유식별정보제공에동의하십니까</p>
+                    <div class="form_agrchk_input">
+                        <div>
+                            <input type="radio" id="check_7" class="chk" name="chkAgreeGroup2_1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                            <label for="check_7">동의함</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="check_8" class="chk" name="chkAgreeGroup2_1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                            <label for="check_8">동의하지 않음</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="in_box02">
+                    <p>피보험자의질병·상해에관한정보(상병명, 진료기록, 기왕증등) 민감정보제공에동의하십니까?</p>
+                    <div class="form_agrchk_input">
+                        <div>
+                            <input type="radio" id="check_9" class="chk" name="chkAgreeGroup2_2" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                            <label for="check_9">동의함</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="check_10" class="chk" name="chkAgreeGroup2_2" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                            <label for="check_10">동의하지 않음</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="in_box02">
+                    <p>개인(신용)정보의 수집·이용에 동의하십니까?</p>
+                    <div class="form_agrchk_input">
+                        <div>
+                            <input type="radio" id="check_11" class="chk" name="chkAgreeGroup2_3" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                            <label for="check_11">동의함</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="check_12" class="chk" name="chkAgreeGroup2_3" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                            <label for="check_12">동의하지 않음</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="title">
+                <div>
+                    <input type="checkbox" id="check_all" name="chkAgreeGroup1_all" onchange="allCheck.toggleAll('chkAgreeGroup1');">
+                    <label for="check_all">3. 조회에 관한 사항 <span class="btn_down"></span></label>
+                </div>
+            </div>
+            <div class="panel panel_last" tabindex="0">
+                <div class="in_box02">
+                    <p>주민등록번호, 외국인등록번호, 여권번호, 운전면허번호고유식별정보제공에동의하십니까</p>
+                    <div class="form_agrchk_input">
+                        <div>
+                            <input type="radio" id="check_13" class="chk" name="chkAgreeGroup3_1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                            <label for="check_13">동의함</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="check_14" class="chk" name="chkAgreeGroup3_1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                            <label for="check_14">동의하지 않음</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="in_box02">
+                    <p>피보험자의질병·상해에관한정보(상병명, 진료기록, 기왕증등) 민감정보제공에동의하십니까?</p>
+                    <div class="form_agrchk_input">
+                        <div>
+                            <input type="radio" id="check_15" class="chk" name="chkAgreeGroup3_2" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                            <label for="check_15">동의함</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="check_16" class="chk" name="chkAgreeGroup3_2" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                            <label for="check_16">동의하지 않음</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="in_box02">
+                    <p>개인(신용)정보의 수집·이용에 동의하십니까?</p>
+                    <div class="form_agrchk_input">
+                        <div>
+                            <input type="radio" id="check_17" class="chk" name="chkAgreeGroup3_3" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                            <label for="check_17">동의함</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="check_18" class="chk" name="chkAgreeGroup3_3" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                            <label for="check_18">동의하지 않음</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form_agrchk_btnBox">
+                <a href="" class="btnBox_next">다음</a>
+            </div>
+        </div>
+    </div>
+    <!-- // Contents -->
+
+    <!-- Footer -->
+    <footer>
+    </footer>
+    <!-- // Footer -->
+</div>
+</body>
+</html>

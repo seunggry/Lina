@@ -4,10 +4,10 @@
 
 .agree_form {margin-top:30px;}
 .agree_form input {position: absolute; left: 0; top: 0; width: 26px; height: 26px; opacity: 0; margin: 0; z-index: 2; clip: auto;}
-.agree_form label {display:block; position:relative; width:80%; margin-bottom:0; padding-left:37px; font-size:13px; color:#111315; font-weight:400; cursor:pointer; vertical-align:middle;}
+.agree_form label {display:block; position:relative;cursor:pointer; vertical-align:middle;@include font('SB', 15px, 25/15);color:#000;padding-left: vw(60);position: relative;}
 .agree_form label span {font-weight:700;}
-.agree_form label:before {content:'';  position:absolute; top:0; left:0; width: 26px; height: 26px; background:url(../images/ico_agree_chk_off.png) no-repeat 0 0; background-size:26px auto;}
-.agree_form input:checked+label:before {content:''; background:url(../images/ico_agree_chk_on.png) no-repeat 0 0; background-size:26px auto;}
+.agree_form label:before {content:'';  position:absolute; top:0; left:0; width: vw(42); height: vw(42); background:url(../images/ico_agree_chk_off2.png) no-repeat 0 0; background-size:vw(42) auto;}
+.agree_form input:checked+label:before {content:''; background:url(../images/ico_agree_chk_on.png) no-repeat 0 0; background-size:vw(42) auto;}
 
 .agree_form .check_all .check_top {padding:15px 20px; border:1px solid #ccc;}
 .agree_form .check_all .check_top label {font-size:15px;}
@@ -25,6 +25,23 @@
 
 //accordion
 .accordion{position: relative;}
-.accordion .btn_down{position: absolute; top: 50%; right: 0; transform: translateY(-50%); display: inline-block; width: 14px; height: 8px; @include bg('ico_arrow_on.png', 0 0, cover);}
-.accordion .btn_down.on{background-image: url('../images/ico_arrow_off.png');}
+.accordion .btn_down{position: absolute; top: 50%; right: 0; transform: translateY(-50%); display: inline-block; width: 14px; height: 8px; @include bg('ico_arrow_off.png', 0 0, cover);}
+.accordion .btn_down.on{@include bg('ico_arrow_on.png', 0 0, cover);}
 .accordion .detail{display: none;}
+
+//설계 동의폼
+.form_agrchk .title{margin-bottom:vw(20);padding:0 vw(38);position: relative;}
+.form_agrchk .panel{padding:0 vw(38);}
+.form_agrchk .panel.mb_80{border-bottom:vw(16) solid #f3f3f3;padding-bottom:vw(80);margin-bottom:vw(80);}
+.form_agrchk .form_agrchk_title{@include font('SB', 16px, 24/16);color:#000;margin-bottom:vw(25);position: relative;}
+.form_agrchk .form_agrchk_box{padding: vw(32) vw(44) vw(28) vw(40); border-radius: vw(30); background-color: #f4f4f4;margin: vw(30) 0 vw(60);@include font('R', 13px, 22/15);color:#717171;}
+.form_agrchk .in_box02{border-radius: vw(30);border:vw(0.5) solid #dcdcdc;overflow: hidden}
+.form_agrchk .in_box02+.in_box02{margin-top: vw(24);}
+.form_agrchk .in_box02 p{@include font('R', 13px, 22/15);color:#717171;background: #f4f4f4;padding:vw(30) vw(37);}
+.form_agrchk .form_agrchk_input{display: flex;padding: vw(38);}
+.form_agrchk .form_agrchk_input div{position: relative;}
+.form_agrchk .form_agrchk_input div+div{margin-left: vw(58);}
+.form_agrchk .form_agrchk_input label{@include font('SE', 14px, 25/15);color:#191919;}
+
+.form_agrchk_btnBox{text-align: right;padding:0 vw(38);}
+.form_agrchk_btnBox .btnBox_next{background-color: #0035c3;border-radius:vw(86);padding: vw(32) vw(95);@include font('B', 14px, 22/15);color:#fff;display: inline-block;margin-top:vw(80);}

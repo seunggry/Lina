@@ -9,12 +9,13 @@ header .logo{width: 157px; height: 17px;}
 header .logo a{display: block; height: 100%; @include bg('ico_logo.png', 0 0, cover);}
 header .logo a em{@include hiddenText;}
 
-.contents{padding: 0 20px;}
+.contents{padding: 0 0 vw(60);}
 
 
 //common txt
 .point{color: #018bed !important;}
 
+.txt_group{padding:0 20px;}
 .txt_group h2{margin-bottom: 20px; @include font('EB', 24px, 32/24);}
 .txt_group .desc{@include font('SB', 16px, 24/16);}
 .txt_group .info_box{margin-top: 13px; padding: 16px 20px; color: #717171; background: #f4f4f4; border-radius: 15px;}
