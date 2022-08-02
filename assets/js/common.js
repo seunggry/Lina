@@ -7,6 +7,15 @@ $(window).on('load', function(){
 });
 
 let commonJS = {
+    clickDefaultFn:function(){
+        $('a[href="#"]').click(function(e){
+           e.preventDefault();
+        });
+
+        $('button').click(function(e){
+           e.preventDefault();
+        });
+    },
     accordionFn:function(){
         $('.accordion .btn_down').on('click', function(){
             let detail = $(this).closest('.accordion').siblings('.detail');
@@ -24,6 +33,7 @@ let commonJS = {
 
     init:function(){
         commonJS.accordionFn();
+        commonJS.clickDefaultFn();
     }
 }
 

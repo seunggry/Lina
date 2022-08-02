@@ -1,7 +1,10 @@
 @charset "UTF-8";
 
 /* btn */
-.btn_group{display: flex; align-items: center; justify-content: space-between; margin: 38px 0 25px; }
-.btn{display: inline-block; @include font('B', 14px);}
-.btn.btn_type{padding: 0 46px; height: 50px; color: #fff; line-height: 50px; background: #0035c3; border-radius: 44px;}
+a[class*=btn]{display: inline-block; @include font('B', 14px);}
+
+.btn_group{padding: 0 30px; display: flex; align-items: center; justify-content: space-between; margin: 38px 0 25px; }
+.btn.btn_type{margin-left: auto; padding: 0 46px; height: 50px; color: #fff; line-height: 50px; background: #0035c3; border-radius: 44px;}
 .btn.txt_link{color: #535353;}
+
+.btn_highlight{width: 48px; height: 48px; background: #eee; border-radius: 50%; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.17);}

@@ -25,7 +25,7 @@ $color-text-base: #000 !global;
 //default font 속성
 $web-font-path: '../font/' !default; //웹 폰트 경로
 $fonts-default: (
-        font-name: unquote("'Malgun Gothic', '맑은 고딕', AppleGothicNeoSD, 'Apple SD 산돌고딕 Neo', 'Microsoft NeoGothic', Dotum, 돋움, arial, sans-serif"),
+        font-name: unquote("AppleGothicNeoSD, 'Apple SD 산돌고딕 Neo', 'Microsoft NeoGothic', Dotum, 돋움, arial, sans-serif"),
         font-size: $default-font-size,
         line-height: $default-line-height
 ) !global !default;
