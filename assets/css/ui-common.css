@@ -1,0 +1,357 @@
+@font-face {
+  font-family: "AppleSDGothicNeoUL";
+  src: url("../font/AppleSDGothicNeoUL.woff") format("woff");
+  font-style: normal;
+  font-weight: normal; }
+
+@font-face {
+  font-family: "AppleSDGothicNeoL";
+  src: url("../font/AppleSDGothicNeoL.woff") format("woff");
+  font-style: normal;
+  font-weight: normal; }
+
+@font-face {
+  font-family: "AppleSDGothicNeoT";
+  src: url("../font/AppleSDGothicNeoT.woff") format("woff");
+  font-style: normal;
+  font-weight: normal; }
+
+@font-face {
+  font-family: "AppleSDGothicNeoR";
+  src: url("../font/AppleSDGothicNeoR.woff") format("woff");
+  font-style: normal;
+  font-weight: normal; }
+
+@font-face {
+  font-family: "AppleSDGothicNeoM";
+  src: url("../font/AppleSDGothicNeoM.woff") format("woff");
+  font-style: normal;
+  font-weight: normal; }
+
+@font-face {
+  font-family: "AppleSDGothicNeoB";
+  src: url("../font/AppleSDGothicNeoB.woff") format("woff");
+  font-style: normal;
+  font-weight: normal; }
+
+@font-face {
+  font-family: "AppleSDGothicNeoSB";
+  src: url("../font/AppleSDGothicNeoSB.woff") format("woff");
+  font-style: normal;
+  font-weight: normal; }
+
+@font-face {
+  font-family: "AppleSDGothicNeoEB";
+  src: url("../font/AppleSDGothicNeoEB.woff") format("woff");
+  font-style: normal;
+  font-weight: normal; }
+
+@font-face {
+  font-family: "AppleSDGothicNeoH";
+  src: url("../font/AppleSDGothicNeoH.woff") format("woff");
+  font-style: normal;
+  font-weight: normal; }
+
+/* Reset Asll Element */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i, hr,
+dl, dt, dd, ol, ul, li,
+form, fieldset, legend, label, button, input,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+main, menu, nav, footer, header, hgroup, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: inherit;
+  font-family: inherit;
+  background: transparent; }
+
+main, header, footer, section, article, aside, nav, hgroup, details, menu, figure, figcaption {
+  display: block; }
+
+ul, ol {
+  list-style: none; }
+
+em, address, i {
+  font-style: normal; }
+
+a {
+  text-decoration: none;
+  color: #000; }
+
+a.u {
+  text-decoration: underline; }
+
+img {
+  vertical-align: top; }
+
+/* Form */
+legend {
+  position: absolute;
+  width: .1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0); }
+
+select, textarea, input, label {
+  vertical-align: middle; }
+
+select, textarea, input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none; }
+
+input[type=search] {
+  -webkit-appearance: textfield; }
+
+input[type=checkbox], input[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000; }
+
+select::-ms-expand {
+  display: none; }
+
+:focus {
+  outline: none; }
+
+/* Table */
+table {
+  border-collapse: collapse; }
+
+/* List */
+li {
+  list-style: none; }
+
+:root {
+  color: #000;
+  word-break: keep-all;
+  word-wrap: break-word; }
+
+.offscreen {
+  position: absolute;
+  width: .1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0); }
+
+.agree_form {
+  margin-top: 30px; }
+
+.agree_form input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 26px;
+  height: 26px;
+  opacity: 0;
+  margin: 0;
+  z-index: 2;
+  clip: auto; }
+
+.agree_form label {
+  display: block;
+  position: relative;
+  width: 80%;
+  margin-bottom: 0;
+  padding-left: 37px;
+  font-size: 13px;
+  color: #111315;
+  font-weight: 400;
+  cursor: pointer;
+  vertical-align: middle; }
+
+.agree_form label span {
+  font-weight: 700; }
+
+.agree_form label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 26px;
+  height: 26px;
+  background: url(../images/ico_agree_chk_off.png) no-repeat 0 0;
+  background-size: 26px auto; }
+
+.agree_form input:checked + label:before {
+  content: '';
+  background: url(../images/ico_agree_chk_on.png) no-repeat 0 0;
+  background-size: 26px auto; }
+
+.agree_form .check_all .check_top {
+  padding: 15px 20px;
+  border: 1px solid #ccc; }
+
+.agree_form .check_all .check_top label {
+  font-size: 15px; }
+
+.agree_form .check_all .check_top div {
+  position: relative; }
+
+.agree_form .check_all .check_bottom input {
+  width: 11px;
+  height: 8px; }
+
+.agree_form .check_all .check_bottom label {
+  padding-left: 27px; }
+
+.agree_form .check_all .check_bottom label:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  width: 11px;
+  height: 8px;
+  margin-top: -3px;
+  background: url(../images/ico_small_check_off.png) no-repeat 0 0;
+  background-size: 11px auto; }
+
+.agree_form .check_all .check_bottom input:checked + label:before {
+  content: '';
+  background: url(../images/ico_small_check_on.png) no-repeat 0 0;
+  background-size: 11px auto; }
+
+.agree_form .check_all .check_bottom {
+  padding: 16px 20px;
+  border: 1px solid #ccc;
+  border-top: none; }
+
+.agree_form .check_all .check_bottom label {
+  font-size: 13px; }
+
+.agree_form .check_all .check_bottom div {
+  position: relative;
+  margin-bottom: 9px; }
+
+.agree_form .check_all .check_bottom div:last-child {
+  margin-bottom: 0; }
+
+.agree_form .check_all .check_bottom div button {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 12px;
+  height: 22px;
+  background: url(../images/ico_agree_link.png) no-repeat 0 0;
+  background-size: 6px 11px; }
+
+.accordion {
+  position: relative; }
+
+.accordion .btn_down {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: inline-block;
+  width: 14px;
+  height: 8px;
+  background: url("../images/ico_arrow_on.png") 0 0/cover no-repeat; }
+
+.accordion .btn_down.on {
+  background-image: url("../images/ico_arrow_off.png"); }
+
+.accordion .detail {
+  display: none; }
+
+/* btn */
+.btn_group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 38px 0 25px; }
+
+.btn {
+  display: inline-block;
+  font-family: "AppleSDGothicNeoB";
+  font-size: 14px; }
+
+.btn.btn_type {
+  padding: 0 46px;
+  height: 50px;
+  color: #fff;
+  line-height: 50px;
+  background: #0035c3;
+  border-radius: 44px; }
+
+.btn.txt_link {
+  color: #535353; }
+
+html, body {
+  min-height: 100vh; }
+
+body {
+  min-height: 100vh;
+  min-width: 52.084vw;
+  font-family: "AppleSDGothicNeoR";
+  font-size: 13px; }
+
+#wrap {
+  box-sizing: border-box; }
+
+header {
+  padding: 60px 20px 34px;
+  width: 100%;
+  box-sizing: border-box; }
+
+header .logo {
+  width: 157px;
+  height: 17px; }
+
+header .logo a {
+  display: block;
+  height: 100%;
+  background: url("../images/ico_logo.png") 0 0/cover no-repeat; }
+
+header .logo a em {
+  position: absolute;
+  width: .1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0); }
+
+.contents {
+  padding: 0 20px; }
+
+.point {
+  color: #018bed !important; }
+
+.txt_group h2 {
+  margin-bottom: 20px;
+  font-family: "AppleSDGothicNeoEB";
+  font-size: 24px;
+  line-height: 1.33333; }
+
+.txt_group .desc {
+  font-family: "AppleSDGothicNeoSB";
+  font-size: 16px;
+  line-height: 1.5; }
+
+.txt_group .info_box {
+  margin-top: 13px;
+  padding: 16px 20px;
+  color: #717171;
+  background: #f4f4f4;
+  border-radius: 15px; }
+
+/* Intro */

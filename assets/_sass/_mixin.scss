@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+@function spacing($ps-value) {
+    @return ( $ps-value / 1000) * 1vw;
+}
+
+@function unit($px-vw) {
+    @return ( $px-vw * 100vw) / 720;
+}
+
+//vw 계산
+// @function px-to-vw($unit-parm) {
+//     $changed-unit: ( $unit-parm * 100) / 720;
+//     @return $changed-unit;
+// }
+
+@function toFixed-second($num) {
+    $calc-num: if($num > 0, ceil($num * 1000), floor($num * 1000));
+    $result: $calc-num /1000;
+    @return $result;
+}
+
+@function vw($unit-px){
+    $changed-unit: ( $unit-px * 100) / 720;
+    $changed-vw: toFixed-second($changed-unit) + vw;
+    @return $changed-vw;
+}
+
+
+// Clear fix
+@mixin clearfix{
+  &:after{
+    content:'';
+    display:block;
+    clear:both;
+  }
+}
+
+// Hidden Text
+@mixin hiddenText{
+    position:absolute;
+    width:.1px;
+    height:1px;
+    margin:-1px;
+    overflow:hidden;
+    clip-path:polygon(0 0, 0 0, 0 0);
+    // opacity: 0;
+}
+
+@mixin rounded($radius){
+    border-radius: $radius;
+}
+
+@mixin shadow($x, $y, $blur, $spread, $color){
+    box-shadow: $x $y $blur $spread $color;
+}
+
+@mixin transition($property, $duration, $effect, $delay){
+    transition: $property $duration $effect $delay;
+}
+
+@mixin transform($property){
+    transform: $property;
+}
+
+@mixin appearance{
+    -webkit-appearance: none;
+       -moz-appearance: none;
+         -o-appearance: none;
+            appearance: none;
+}
+
+@mixin bg($bg-name, $position, $size){
+    background:url('../images/' + $bg-name) $position / $size no-repeat;
+}
+
+@mixin wrapper{
+    min-height: 100vh;
+}
+
+@mixin scrollbar{
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+        width: unit(8);
+        height: unit(8);
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #c8c8ce;
+        border-radius: unit(6);
+        background-clip: padding-box;
+        border: unit(2) solid transparent;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: #eff3f7;
+        border-radius: unit(6);
+        border: unit(2)solid transparent;
+    }
+}

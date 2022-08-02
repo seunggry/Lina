@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+.offscreen{@include hiddenText;}
+
+.agree_form {margin-top:30px;}
+.agree_form input {position: absolute; left: 0; top: 0; width: 26px; height: 26px; opacity: 0; margin: 0; z-index: 2; clip: auto;}
+.agree_form label {display:block; position:relative; width:80%; margin-bottom:0; padding-left:37px; font-size:13px; color:#111315; font-weight:400; cursor:pointer; vertical-align:middle;}
+.agree_form label span {font-weight:700;}
+.agree_form label:before {content:'';  position:absolute; top:0; left:0; width: 26px; height: 26px; background:url(../images/ico_agree_chk_off.png) no-repeat 0 0; background-size:26px auto;}
+.agree_form input:checked+label:before {content:''; background:url(../images/ico_agree_chk_on.png) no-repeat 0 0; background-size:26px auto;}
+
+.agree_form .check_all .check_top {padding:15px 20px; border:1px solid #ccc;}
+.agree_form .check_all .check_top label {font-size:15px;}
+.agree_form .check_all .check_top div {position:relative;}
+.agree_form .check_all .check_bottom input {width:11px; height:8px;}
+.agree_form .check_all .check_bottom label {padding-left:27px;}
+.agree_form .check_all .check_bottom label:before {content:''; position:absolute; top:50%; left:8px; width: 11px; height: 8px; margin-top:-3px; background:url(../images/ico_small_check_off.png) no-repeat 0 0; background-size:11px auto;}
+.agree_form .check_all .check_bottom input:checked+label:before {content:'';  background:url(../images/ico_small_check_on.png) no-repeat 0 0; background-size:11px auto;}
+.agree_form .check_all .check_bottom {padding:16px 20px; border:1px solid #ccc; border-top:none;}
+.agree_form .check_all .check_bottom label {font-size:13px;}
+.agree_form .check_all .check_bottom div {position:relative; margin-bottom:9px;}
+.agree_form .check_all .check_bottom div:last-child {margin-bottom:0;}
+.agree_form .check_all .check_bottom div button {position:absolute; top:5px; right:0; width:12px; height:22px; background:url(../images/ico_agree_link.png) no-repeat 0 0; background-size:6px 11px;}
+
+
+//accordion
+.accordion{position: relative;}
+.accordion .btn_down{position: absolute; top: 50%; right: 0; transform: translateY(-50%); display: inline-block; width: 14px; height: 8px; @include bg('ico_arrow_on.png', 0 0, cover);}
+.accordion .btn_down.on{background-image: url('../images/ico_arrow_off.png');}
+.accordion .detail{display: none;}

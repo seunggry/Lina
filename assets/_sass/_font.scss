@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+//웹 폰트 페이스명, 파일명 정의
+$font: "AppleSDGothicNeo";
+
+$font-face-custom: (
+        $font+'UL',
+        $font+'L',
+        $font+'T',
+        $font+'R',
+        $font+'M',
+        $font+'B',
+        $font+'SB',
+        $font+'EB',
+        $font+'H'
+) !global !default;
+
+//기본 폰트 설정
+$default-font-size: unit(28) !default;
+$default-line-height: 1.5 !default;
+
+// 폰트 컬러 정의
+$color-text-base: #000 !global;
+
+//default font 속성
+$web-font-path: '../font/' !default; //웹 폰트 경로
+$fonts-default: (
+        font-name: unquote("'Malgun Gothic', '맑은 고딕', AppleGothicNeoSD, 'Apple SD 산돌고딕 Neo', 'Microsoft NeoGothic', Dotum, 돋움, arial, sans-serif"),
+        font-size: $default-font-size,
+        line-height: $default-line-height
+) !global !default;
+$fonts-default-size: map-get($fonts-default, font-size);
+
+@mixin font-family($type: null) {
+    $font-name: null;
+
+    @if($type == 'common') {
+        $font-name: nth($font-face-custom, 4), map-get($fonts-default, font-name);
+    } @else if($type == 'UL') {
+        $font-name: nth($font-face-custom, 1);
+    } @else if($type == 'L') {
+        $font-name: nth($font-face-custom, 2);
+    } @else if($type == 'T') {
+        $font-name: nth($font-face-custom, 3);
+    } @else if($type == 'R') {
+        $font-name: nth($font-face-custom, 4);
+    } @else if($type == 'M') {
+        $font-name: nth($font-face-custom, 5);
+    } @else if($type == 'B') {
+        $font-name: nth($font-face-custom, 6);
+    } @else if($type == 'SB') {
+        $font-name: nth($font-face-custom, 7);
+    } @else if($type == 'EB') {
+        $font-name: nth($font-face-custom, 8);
+    } @else if($type == 'H') {
+        $font-name: nth($font-face-custom, 9);
+    }
+    font-family: $font-name;
+}
+
+@mixin font($type: null, $font-size: null, $line-height: null) {
+    @if($type != null and $type !='') {
+        @include font-family($type);
+    }
+    @if($font-size != null and $font-size != '') {
+        font-size: $font-size;
+    }
+    @if($line-height != null and $line-height != '') {
+        line-height: $line-height;
+    }
+}
+
+@each $font-name in $font-face-custom {
+    $font-path : $web-font-path + $font-name;
+
+    @font-face {
+        font-family: $font-name;
+        src: url($font-path + '.woff') format('woff');
+        font-style: normal;
+        font-weight: normal;
+    }
+}
