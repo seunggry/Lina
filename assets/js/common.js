@@ -22,10 +22,10 @@ let commonJS = {
 
             if(detail.css('display') === 'none'){
                 detail.slideDown();
-                $(this).addClass('on');
+                $(this).removeClass('on');
             } else{
                 detail.slideUp();
-                $(this).removeClass('on');
+                $(this).addClass('on');
             }
         });
     },

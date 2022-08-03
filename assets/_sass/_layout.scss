@@ -18,6 +18,7 @@ header .logo a em{@include hiddenText;}
 .point{color: #018bed !important;}
 
 .txt_group{padding:0 20px;}
+.txt_group.under_line{border-bottom:vw(16) solid #f3f3f3;margin-bottom:vw(80);} //220803 추가
 h2{margin-bottom: 20px; @include font('EB', 24px, 32/24);}
 .desc{@include font('SB', 16px, 24/16);}
 .desc_box{margin-top: 13px; padding: 16px 20px; color: #717171; line-height: 1.7; background: #f4f4f4; border-radius: 15px;}
@@ -41,7 +42,7 @@ h2{margin-bottom: 20px; @include font('EB', 24px, 32/24);}
 [class*=info_box] dd .price small{@include font('M', 18px);}
 .info_box2{background: #eff5ff; color: #191919;}
 .info_box2 dt:after{background: #c6d0e0; opacity: 0.67;}
-.info_box2 dt span{display: inline-block; width: 100%; @include font('SB', 13px, 13/13); color: #747474;}\
+.info_box2 dt span{display: inline-block; width: 100%; @include font('SB', 13px, 13/13); color: #747474;}
 .info_box2 dd{font-size: 14px;}
 
 .tabmenu2{margin-bottom: 30px;}
