@@ -51,7 +51,7 @@
 //설계 동의폼
 .form_agrchk .form_agrchk_title{@include font('SB', 16px, 24/16);color:#000;margin-bottom:vw(25);position: relative;width: calc(100% - 20px);}
 .form_agrchk .form_agrchk_box{padding: vw(20) vw(22) vw(20) vw(22); border-radius: vw(19); background-color: #f4f4f4;border:1px solid #dcdcdc;margin: vw(21) 0 vw(36);@include font('R', 13px, 22/15);color:#717171;}
-.form_agrchk .img_b{margin-bottom: vw(20);margin-top: vw(-20);}
+.form_agrchk .img_b{margin-bottom: vw(20);margin-top: vw(-20);vertical-align: top;}
 .form_agrchk .title{margin-bottom:vw(20);padding:0 vw(22);}
 .form_agrchk .title > div{position: relative;}
 .form_agrchk .detail{position: relative;}

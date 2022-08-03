@@ -25,6 +25,8 @@ img{width: 100%;}
 
 .txt_group{padding:0 20px;}
 .txt_group.under_line{border-bottom:vw(12) solid #f3f3f3;margin-bottom:vw(44);} //220803 추가
+.txt_group.line_flex{display: flex;align-items: center;justify-content:space-between;} //220803 추가
+.txt_group.line_flex img{width:vw(54);margin-top: vw(-24);}
 .txt_group h2{margin-bottom: 20px; @include font('EB', 24px, 32/24);}
 .txt_group .desc{@include font('SB', 16px, 24/16);}
 .txt_group .desc_box{margin-top: vw(20); padding: 16px 20px; color: #717171; line-height: 1.7; background: #f4f4f4; border-radius: 15px;}
