@@ -1,10 +1,21 @@
 @charset "UTF-8";
 
 /* btn */
-a[class*=btn]{display: inline-block; @include font('B', 14px);}
+a[class*=btn]{display: inline-block; @include font('B', vw(14));}
 
-.btn_group{padding: 0 30px; display: flex; align-items: center; justify-content: space-between; margin: 38px 0 25px; }
-.btn.btn_type{margin-left: auto; padding: 0 46px; height: 50px; color: #fff; line-height: 50px; background: #0035c3; border-radius: 44px;}
-.btn.txt_link{color: #535353;}
+.btn_group{margin-top: vw(38); padding: 0 vw(30); display: flex; align-items: center; justify-content: space-between; }
+.btn_group.spacing{padding: 0;}
+.btn_type{margin-left: auto; padding: 0 46px; height: vw(50); color: #fff; line-height: vw(50); background: #0035c3; border-radius: vw(44);}
+[class*=btn_type].disable{background: #cbcbcb;}
+.btn_type2{width: 100%; height: vw(50); color: #fff; line-height: vw(50); text-align: center; background: #0035c3; border-radius: vw(44);}
+.btn_type3{width: 100%; height: vw(40); @include font('B', vw(15)); line-height: vw(40); border: 1px solid #979797; border-radius: vw(10); text-align: center;}
+.txt_link{color: #535353;}
 
-.btn_highlight{width: 48px; height: 48px; background: #eee; border-radius: 50%; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.17);}
+.btn_highlight{width: vw(48); height: vw(48); background: url(../images/ico_pen.png) no-repeat center/ 100% auto; border-radius: 50%; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.17);}
+.btn_recruiter{width: vw(48); height: vw(48); background: url(../images/ico_recruiter.png) no-repeat center/ 100% auto; border-radius: 50%; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.17);}
+
+.btn_agree_chk{position: relative; width: 100%; height: vw(50);}
+.btn_agree_chk label{position: absolute; top: 0; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; @include font('SB', 15px); color: #fff; line-height: vw(50); background: #cbcbcb; border-radius: vw(44);}
+.btn_agree_chk label::before{content: ''; display: inline-block; margin-right: vw(5); width: vw(22); height: vw(22); background:url(../images/ico_all_chk_off.png) no-repeat center/ 100% auto;}
+.btn_agree_chk input[type="checkbox"]:checked ~ label{background: #0035c3;}
+.btn_agree_chk input[type="checkbox"]:checked ~ label::before{background-image: url(../images/ico_all_chk_on.png);}

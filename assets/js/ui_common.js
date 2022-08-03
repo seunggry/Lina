@@ -1479,6 +1479,7 @@ var toastBox = function(txt){
 var buttonUI ={
     winLoad: function(){
         //링크없는 a태그 role=button 추가
+        /*
         $('a').each(function(e){
             var $href = $(this).attr('href');
             if(!$(this).hasClass('no-button')){
@@ -1490,6 +1491,7 @@ var buttonUI ={
                 }
             }
         });
+         */
 
         //type없는 button들 type 추가
         $('button').each(function(e){

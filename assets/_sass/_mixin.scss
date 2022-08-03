@@ -21,7 +21,7 @@
 }
 
 @function vw($unit-px){
-    $changed-unit: ( $unit-px * 100) / 720;
+    $changed-unit: ( $unit-px * 100) / 375;
     $changed-vw: toFixed-second($changed-unit) + vw;
     @return $changed-vw;
 }

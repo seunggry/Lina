@@ -2,6 +2,7 @@
 
 //웹 폰트 페이스명, 파일명 정의
 $font: "AppleSDGothicNeo";
+$font2: "sf-ui-display";
 
 $font-face-custom: (
         $font+'UL',
@@ -12,7 +13,12 @@ $font-face-custom: (
         $font+'B',
         $font+'SB',
         $font+'EB',
-        $font+'H'
+        $font+'H',
+        $font2+ '-light',
+        $font2+ '-regular',
+        $font2+ '-medium',
+        $font2+ '-bold',
+        $font2+ '-heavy'
 ) !global !default;
 
 //기본 폰트 설정
@@ -25,7 +31,7 @@ $color-text-base: #000 !global;
 //default font 속성
 $web-font-path: '../font/' !default; //웹 폰트 경로
 $fonts-default: (
-        font-name: unquote("AppleGothicNeoSD, 'Apple SD 산돌고딕 Neo', 'Microsoft NeoGothic', Dotum, 돋움, arial, sans-serif"),
+        font-name: unquote("AppleGothicNeoSD, 'Apple SD 산돌고딕 Neo', 'sf-ui-display', 'Microsoft NeoGothic', Dotum, 돋움, arial, sans-serif"),
         font-size: $default-font-size,
         line-height: $default-line-height
 ) !global !default;
@@ -39,21 +45,31 @@ $fonts-default-size: map-get($fonts-default, font-size);
     } @else if($type == 'UL') {
         $font-name: nth($font-face-custom, 1);
     } @else if($type == 'L') {
-        $font-name: nth($font-face-custom, 2);
+        $font-name: nth($font-face-custom, 2), nth($font-face-custom, 10);
     } @else if($type == 'T') {
         $font-name: nth($font-face-custom, 3);
     } @else if($type == 'R') {
-        $font-name: nth($font-face-custom, 4);
+        $font-name: nth($font-face-custom, 4), nth($font-face-custom, 11);
     } @else if($type == 'M') {
-        $font-name: nth($font-face-custom, 5);
+        $font-name: nth($font-face-custom, 5), nth($font-face-custom, 12);
     } @else if($type == 'B') {
-        $font-name: nth($font-face-custom, 6);
+        $font-name: nth($font-face-custom, 6), nth($font-face-custom, 13);
     } @else if($type == 'SB') {
         $font-name: nth($font-face-custom, 7);
     } @else if($type == 'EB') {
         $font-name: nth($font-face-custom, 8);
     } @else if($type == 'H') {
-        $font-name: nth($font-face-custom, 9);
+        $font-name: nth($font-face-custom, 9), nth($font-face-custom, 14);
+    } @else if($type == 'SF-L') {
+        $font-name: nth($font-face-custom, 10);
+    }  @else if($type == 'SF-R') {
+        $font-name: nth($font-face-custom, 11);
+    } @else if($type == 'SF-M') {
+        $font-name: nth($font-face-custom, 12);
+    } @else if($type == 'SF-B') {
+        $font-name: nth($font-face-custom, 13);
+    } @else if($type == 'SF-H') {
+        $font-name: nth($font-face-custom, 14);
     }
     font-family: $font-name;
 }
