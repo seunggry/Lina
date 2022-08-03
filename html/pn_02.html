@@ -104,13 +104,18 @@
                     </div>
                     <div class="btn_wrap bottom">
                         <a href="">이전으로</a>
-                        <a class="btn btnBox_next" href="index.html">인증</a>
+                        <a class="btn btnBox_next" onclick="popOpenBtn();">인증</a>
                     </div>
                 </div>
             </div>
-            
         </div>
-        
+        <div class="pop_indivi">
+            <div class="pop_indivi_box">
+                <img src="../assets/images/invalid_icon.png" class="invalid_icon" alt=""/>
+                <p class="txt01">가입설계 동의 및 <br/> 본인인증이 완료되었습니다.</p>
+                <button class="ppo_close" onclick="popCloseBtn();">닫기</button>
+            </div>
+        </div>
     </div>
     <!-- // Contents -->
 
@@ -118,6 +123,16 @@
     <footer>
     </footer>
     <!-- // Footer -->
+    <script>
+        const popBtn = document.querySelector('.btnBox_next');
+        const popWrap = document.querySelector('.pop_indivi');
+        function popOpenBtn() {
+            popWrap.classList.add('on');
+        }
+        function popCloseBtn() {
+            popWrap.classList.remove('on');
+        }
+    </script>
 </div>
 </body>
 </html>
