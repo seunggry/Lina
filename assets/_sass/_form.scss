@@ -27,7 +27,7 @@
 .agree_form.style2 .check_all .check_top{border:0;padding:vw(24) 0;}
 .agree_form.style2 .check_all .check_bottom{border:vw(0.5) solid #dcdcdc;border-radius: vw(17);margin-bottom:vw(22);}
 .agree_form.style2 .check_all .check_bottom label:before{top: vw(4); left: 0;width: vw(25); height: vw(25);background: url(../images/ico_agree_chk_off2.png) no-repeat 0 0;background-size: vw(25) auto;}
-.agree_form.style2 .check_all .check_bottom input:checked + label:before{background: url(../images/ico_agree_chk_on.png) no-repeat 0 0; background-size: vw(35) auto;}
+.agree_form.style2 .check_all .check_bottom input:checked + label:before{background: url(../images/ico_agree_chk_on.png) no-repeat 0 0; background-size: vw(25) auto;}
 
 .form_item .input{display:table;width:100%;table-layout:fixed;position:relative;}
 .form_item .input .dv{display:table-cell;position:relative;vertical-align:middle}
@@ -74,12 +74,12 @@
 .detail_line{margin:vw(20) 0;}
 
 //주민등록번호 수집 및 휴대폰 인증
-.indivi_num{@include font('B', 14px, 27/15);color:#191919;padding: vw(40) 0;border-bottom:vw(0.5) solid #f4f4f4;} 
+.indivi_num{@include font('B', 14px, 27/15);color:#191919;padding: vw(24) 0;border-bottom:vw(0.5) solid #f4f4f4;} 
 .indivi_num span{padding-right: vw(10);display: inline-block;}
 .indivi_num input{@include font('B', 20px, 30/15);color:#191919;padding: 0 vw(10);letter-spacing: 2px;width:50%;}
 
 .form_indivi{padding:0 vw(22);}
-.form_indivi h3{@include font('SB', vw(20), 27/15);color:#000;padding-bottom:vw(34);}
+.form_indivi h3{@include font('SB', vw(20), 27/15);color:#000;padding-bottom:vw(21);}
 .form_indivi h4{@include font('SB', vw(17), 27/15);color:#191919;padding-bottom:vw(21);}
 .form_indivi h5{padding-bottom:vw(21);}
 
