@@ -14,10 +14,13 @@ $font-face-custom: (
         $font+'SB',
         $font+'EB',
         $font+'H',
+        $font2+ '-ultralight',
         $font2+ '-light',
+        $font2+ '-thin',
         $font2+ '-regular',
         $font2+ '-medium',
         $font2+ '-bold',
+        $font2+ '-semibold',
         $font2+ '-heavy'
 ) !global !default;
 
@@ -43,33 +46,39 @@ $fonts-default-size: map-get($fonts-default, font-size);
     @if($type == 'common') {
         $font-name: nth($font-face-custom, 4), map-get($fonts-default, font-name);
     } @else if($type == 'UL') {
-        $font-name: nth($font-face-custom, 1);
+        $font-name: nth($font-face-custom, 1), nth($font-face-custom, 10);
     } @else if($type == 'L') {
-        $font-name: nth($font-face-custom, 2), nth($font-face-custom, 10);
+        $font-name: nth($font-face-custom, 2), nth($font-face-custom, 11);
     } @else if($type == 'T') {
-        $font-name: nth($font-face-custom, 3);
+        $font-name: nth($font-face-custom, 3), nth($font-face-custom, 12);
     } @else if($type == 'R') {
-        $font-name: nth($font-face-custom, 4), nth($font-face-custom, 11);
+        $font-name: nth($font-face-custom, 4), nth($font-face-custom, 13);
     } @else if($type == 'M') {
-        $font-name: nth($font-face-custom, 5), nth($font-face-custom, 12);
+        $font-name: nth($font-face-custom, 5), nth($font-face-custom, 14);
     } @else if($type == 'B') {
-        $font-name: nth($font-face-custom, 6), nth($font-face-custom, 13);
+        $font-name: nth($font-face-custom, 6), nth($font-face-custom, 15);
     } @else if($type == 'SB') {
-        $font-name: nth($font-face-custom, 7);
+        $font-name: nth($font-face-custom, 7), nth($font-face-custom, 16);
     } @else if($type == 'EB') {
         $font-name: nth($font-face-custom, 8);
     } @else if($type == 'H') {
-        $font-name: nth($font-face-custom, 9), nth($font-face-custom, 14);
+        $font-name: nth($font-face-custom, 9), nth($font-face-custom, 17);
+    } @else if($type == 'SF-UL') {
+      $font-name: nth($font-face-custom, 10);
     } @else if($type == 'SF-L') {
-        $font-name: nth($font-face-custom, 10);
-    }  @else if($type == 'SF-R') {
         $font-name: nth($font-face-custom, 11);
-    } @else if($type == 'SF-M') {
-        $font-name: nth($font-face-custom, 12);
-    } @else if($type == 'SF-B') {
+    } @else if($type == 'SF-T') {
+      $font-name: nth($font-face-custom, 12);
+    } @else if($type == 'SF-R') {
         $font-name: nth($font-face-custom, 13);
-    } @else if($type == 'SF-H') {
+    } @else if($type == 'SF-M') {
         $font-name: nth($font-face-custom, 14);
+    } @else if($type == 'SF-B') {
+        $font-name: nth($font-face-custom, 15);
+    } @else if($type == 'SF-SB') {
+      $font-name: nth($font-face-custom, 16);
+    } @else if($type == 'SF-H') {
+        $font-name: nth($font-face-custom, 17);
     }
     font-family: $font-name;
 }

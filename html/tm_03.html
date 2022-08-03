@@ -42,152 +42,70 @@
                     </li>
                 </ul>
             </div>
-            <div class="desc_box">
-                <p class="tit">중요한 사항이란?</p>
-                <p>회사가 그 사실을 알았더라면 보험계약의 청약을 거절하거나,보험가입 금액 한도제한, 일부 보장제외, 보험금 삭감, 보험료할증과 같이 조건부로 인수하는 등 계약인수에 영향을 미치는사항을 말합니다.</p>
-            </div>
-            <div class="btn_agree_chk">
-                <input type="checkbox" id="agree_chk">
-                <label for="agree_chk">중요한 사항에 대해 확인하였습니다.</label>
-            </div>
         </div>
 
         <hr class="line_bar2">
 
-        <div class="info_table_group">
+        <div class="obligation_group">
             <p class="sub_tit">계약 전 알릴 의무사항</p>
-            <div class="list style2">
-                <dl>
-                    <dt>계약자/피보험자</dt>
-                    <dd>라인하/라인하</dd>
-                </dl>
-                <dl>
-                    <dt>가입금액</dt>
-                    <dd>5,000만원</dd>
-                </dl>
-                <dl>
-                    <dt>보험기간/납입기간</dt>
-                    <dd>10년 만기/10년</dd>
-                </dl>
-                <dl>
-                    <dt>납입주기</dt>
-                    <dd>월납</dd>
-                </dl>
-                <dl>
-                    <dt>합계보험료</dt>
-                    <dd>27,500원</dd>
-                </dl>
-            </div>
-        </div>
-
-        <hr class="line_bar">
-
-        <div class="tabmenu2 js_tab">
-            <ul role="tablist" class="tablist">
-                <li role="presentation" class="active"><a href="#tabCont3_1" id="tab_btn_0_0" role="tab" aria-controls="tabCont3_1" aria-selected="true" title="현재선택">주계약/특약</a></li>
-                <li role="presentation" class=""><a href="#tabCont3_2" id="tab_btn_0_1" role="tab" aria-controls="tabCont3_2" aria-selected="false">보장내역</a></li>
-                <li role="presentation" class=""><a href="#tabCont3_3" id="tab_btn_0_2" role="tab" aria-controls="tabCont3_3" aria-selected="false">계약정보</a></li>
+            <ul class="ask_list">
+                <li class="ask_box">
+                    <p class="tit">1. 현재 틀니를 하고 계십니까?</p>
+                    <ul class="radio_group">
+                        <li>
+                            <input type="radio" id="radio1_yes" name="radio1">
+                            <label for="radio1_yes">예</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="radio1_no" name="radio1">
+                            <label for="radio1_no">아니오</label>
+                        </li>
+                    </ul>
+                </li>
+                <li class="ask_box">
+                    <p class="tit">
+                        2. 최근 1년 이내 충치(치아우식증)로 의사로 부터
+                        진찰 또는 검사(건강검진포함)를 통하여 치료
+                        (충전치료, 보철치료) 투약과 같은 의료 행위를 받은
+                        사실이 있거나 치료가 필요하다는 진단을 받은 적이
+                        있습니까?
+                    </p>
+                    <ul class="radio_group">
+                        <li>
+                            <input type="radio" id="radio2_yes" name="radio2">
+                            <label for="radio2_yes">예</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="radio2_no" name="radio2">
+                            <label for="radio2_no">아니오</label>
+                        </li>
+                    </ul>
+                </li>
+                <li class="ask_box">
+                    <p class="tit">
+                        3. 최근 5년 이내 치주질환(잇몸병, 풍치)으로 자연치를
+                        1개 이상 상실하였거나 치주수술(잇몸수술)을
+                        받았거나 치주 수술이 필요하다는 진단을 받은 적이
+                        있습니까?
+                    </p>
+                    <ul class="radio_group">
+                        <li>
+                            <input type="radio" id="radio3_yes" name="radio3">
+                            <label for="radio3_yes">예</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="radio3_no" name="radio3">
+                            <label for="radio3_no">아니오</label>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
-        <div class="tab_con">
-            <div id="tabCont3_1" class="tab_panel active" role="tabpanel" aria-labelledby="tab_btn_0_0" aria-expanded="true">
-                <dl class="info_box2">
-                    <dt>
-                        (무)THE건강한치아보험V(갱신형)
-                        <span>10년 만기  10년납  5,000만원</span>
-                    </dt>
-                    <dd>
-                        <p>보험료</p>
-                        <p class="price">27,500 <small>원</small></p>
-                    </dd>
-                </dl>
-            </div>
-            <div id="tabCont3_2" class="tab_panel" role="tabpanel" aria-labelledby="tab_btn_0_1" aria-expanded="false">
-                <dl class="info_box2">
-                    <dt>(무)THE건강한치아보험V(갱신형)</dt>
-                    <dd class="flex_top">
-                        <p>충전치료보험금</p>
-                        <ul class="list">
-                            <li>
-                                <span class="tit">금, 도재</span>
-                                <span class="price">15 <small>만원</small></span>
-                            </li>
-                            <li>
-                                <span class="tit">아말감</span>
-                                <span class="price">1 <small>만원</small></span>
-                            </li>
-                            <li>
-                                <span class="tit">기타</span>
-                                <span class="price">5 <small>만원</small></span>
-                            </li>
-                        </ul>
-                    </dd>
-                    <dd>
-                        <p>크라운치료보험금</p>
-                        <p class="price">20 <small>만원</small></p>
-                    </dd>
-                </dl>
 
-                <hr class="line_bar2">
-
-                <img src="../assets/images/img_01.jpg" alt="">
-            </div>
-            <div id="tabCont3_3" class="tab_panel" role="tabpanel" aria-labelledby="tab_btn_0_2" aria-expanded="false">
-                <div class="info_box2">
-                    <ul class="list2">
-                        <li>
-                            <p class="tit">계약자</p>
-                            <span>라*하</span>
-                        </li>
-                        <li>
-                            <p class="tit">피보험자</p>
-                            <span>라*하</span>
-                        </li>
-                        <li>
-                            <p class="tit">장해시수익자</p>
-                            <span>라*하</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="form_group">
-                    <p class="sub_tit">계약자주소/연락처</p>
-                    <ul class="form">
-                        <li>
-                            <span class="tit">연락처</span>
-                            <input type="text" value="01012345678">
-                        </li>
-                        <li>
-                            <span class="tit">주소</span>
-                            <input type="text" value="서울특별시 종로구 삼봉로 48">
-                            <a href="#" class="btn_address btn_type3">주소 찾기</a>
-                        </li>
-                    </ul>
-                    <div class="chk_group">
-                        <p class="tit">증권약관 발행방법</p>
-                        <ul class="list">
-                            <li>
-                                <input type="checkbox" id="chk_mobile">
-                                <label for="chk_mobile">모바일</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="chk_email">
-                                <label for="chk_email">이메일</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="chk_mail">
-                                <label for="chk_mail">우편</label>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="btn_group spacing">
-                    <a href="#" class="btn txt_link">이전으로</a>
-                    <a href="#" class="btn btn_type">다음</a>
-                </div>
-            </div>
+        <div class="btn_group">
+            <a href="#" class="btn txt_link" onClick="history.back()">이전으로</a>
+            <a href="./tm_04.html" class="btn btn_type">다음</a>
         </div>
-
-
     </div>
     <!-- // Contents -->
 
