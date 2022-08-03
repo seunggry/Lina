@@ -49,12 +49,13 @@
 .accordion.title label{width:calc(100% - 20px);box-sizing: border-box;}
 
 //설계 동의폼
-.form_agrchk ul li .title{margin-bottom:vw(20);padding:0 vw(38);}
-.form_agrchk ul li .title > div{position: relative;}
-.form_agrchk ul li .detail{padding:0 vw(38);position: relative;}
+.form_agrchk .form_agrchk_title{@include font('SB', 16px, 24/16);color:#000;margin-bottom:vw(25);position: relative;width: calc(100% - 20px);}
+.form_agrchk .form_agrchk_box{padding: vw(32) vw(44) vw(28) vw(40); border-radius: vw(30); background-color: #f4f4f4;margin: vw(30) 0 vw(60);@include font('R', 13px, 22/15);color:#717171;}
+.form_agrchk .title{margin-bottom:vw(20);padding:0 vw(38);}
+.form_agrchk .title > div{position: relative;}
+.form_agrchk .detail{position: relative;}
+.form_agrchk .detail > div.side_line, .form_agrchk ul li .detail{padding:0 vw(38);}
 .form_agrchk ul li.under_line .detail{border-bottom:vw(16) solid #f3f3f3;padding-bottom:vw(80);margin-bottom:vw(80);}
-.form_agrchk ul li .form_agrchk_title{@include font('SB', 16px, 24/16);color:#000;margin-bottom:vw(25);position: relative;width: calc(100% - 20px);}
-.form_agrchk ul li .form_agrchk_box{padding: vw(32) vw(44) vw(28) vw(40); border-radius: vw(30); background-color: #f4f4f4;margin: vw(30) 0 vw(60);@include font('R', 13px, 22/15);color:#717171;}
 .form_agrchk ul li .in_box02{border-radius: vw(30);border:vw(0.5) solid #dcdcdc;overflow: hidden}
 .form_agrchk ul li .in_box02+.in_box02{margin-top: vw(24);}
 .form_agrchk ul li .in_box02 p{@include font('R', 13px, 22/15);color:#717171;background: #f4f4f4;padding:vw(30) vw(37);}
@@ -84,5 +85,3 @@
 .telecom-item .check-number label{@include font('B', 13px, 27/15);color:#191919;display: block;padding-bottom:vw(14);}
 .telecom-item .check-number input{border-bottom:vw(0.5) solid #f4f4f4;width: 100%;@include font('B', 14px, 36/15);color:#191919;}
 .telecom-item .check-number input::placeholder{color:#d4d4d4;}
-
-.certification_wrap{}
