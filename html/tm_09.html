@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라이나생명</title>
+    <script src="../assets/js/lib/jquery-3.6.0.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <link rel="stylesheet" href="../assets/css/ui-common.css">
+    <script src="../assets/js/ui_common.js"></script>
+</head>
+<body>
+<div id="wrap">
+    <!-- Header -->
+    <header>
+        <h1 class="logo"><a href="#"><em>라이나생명</em></a></h1>
+    </header>
+    <!-- // Header -->
+
+    <!-- Contents -->
+    <div class="contents">
+        <div class="txt_group">
+            <h2>보험료 결제정보를 <br/>확인해 주세요</h2>
+        </div>
+        <div class="form_agrchk agree_form">
+            <div class="title accordion">
+                <div>
+                    <p class="form_agrchk_title">보험료 납부 및 개인(신용)정보 처리 동의 (필수)</p><span class="btn_down"></span>
+                </div>
+            </div>
+            <div class="detail" tabindex="0">
+                <div class="side_line">
+                    <input type="checkbox" id="check_all" name="chkAgreeGroup1_all" onchange="allCheck.toggleAll('chkAgreeGroup1');">
+                    <label for="check_all">전체 동의</label>
+                    <ul class="detail_line">
+                        <li>
+                            <div class="in_box02">
+                                <div class="form_agrchk_input line_one">
+                                    <div>
+                                        <input type="radio" id="check_1" class="chk" name="chkAgreeGroup1_1" value="Y">
+                                        <label for="check_1">초회 보험료 전체동의</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="check_2" class="chk" name="chkAgreeGroup1_1" value="N">
+                                        <label for="check_2">계속 보험료 전체동의</label>
+                                    </div>
+                                </div>
+                                <p>고귀하는 동의를 거부하실 수 있으나, 거부시 보험료 
+                                    출금 및 납부(수납) 처리가 불가능합니다.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <ul>
+                    <li class="under_line nob">
+                        <div class="title accordion">
+                            <div>
+                                <input type="checkbox" id="check_all01" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                                <label for="check_all01">1. 보험료 납부에 관한 사항</label>
+                                <span class="btn_down"></span>
+                            </div>
+                        </div>
+                        <div class="detail" tabindex="0">
+                            <div class="in_box02">
+                                <p>당사는 매월 보험료 납입기일에 정기적으로 출금(결제)를 시도합니다. 만약 납부자님의 계좌 잔액 부족/카드 일시 사용 정지 등의 사유로 인하여 납부되지 못하는 경우에는 납 입기일 이후부터 보험계약 실효 전까지 지속적으로 보험료</p>
+                                <div class="form_agrchk_input">
+                                    <div>
+                                        <input type="radio" id="check_1" class="chk" name="chkAgreeGroup1_1" value="Y">
+                                        <label for="check_1">초회 보험료</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="check_2" class="chk" name="chkAgreeGroup1_1" value="N">
+                                        <label for="check_2">계속 보험료</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="under_line nob">
+                        <div class="title accordion">
+                            <div>
+                                <input type="checkbox" id="check_all02" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                                <label for="check_all02">2. 개인(신용)정보의 수집·이용에 관한 사항</label>
+                                <span class="btn_down"></span>
+                            </div>
+                        </div>
+                        <div class="detail" tabindex="0">
+                            <div class="in_box02">
+                                <p>당사는 매월 보험료 납입기일에 정기적으로 출금(결제)를 시도합니다. 만약 납부자님의 계좌 잔액 부족/카드 일시 사용 정지 등의 사유로 인하여 납부되지 못하는 경우에는 납 입기일 이후부터 보험계약 실효 전까지 지속적으로 보험료</p>
+                                <div class="form_agrchk_input">
+                                    <div>
+                                        <input type="radio" id="check_7" class="chk" name="chkAgreeGroup2_1" value="Y">
+                                        <label for="check_7">초회 보험료</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="check_8" class="chk" name="chkAgreeGroup2_1" value="N">
+                                        <label for="check_8">계속 보험료</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="under_line">
+                        <div class="title accordion">
+                            <div>
+                                <input type="checkbox" id="check_all03" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                                <label for="check_all03">3. 개인(신용)정보의 제공에 관한 사항</label>
+                                <span class="btn_down"></span>
+                            </div>
+                        </div>
+                        <div class="detail" tabindex="0">
+                            <div class="in_box02">
+                                <p>당사는 매월 보험료 납입기일에 정기적으로 출금(결제)를 시도합니다. 만약 납부자님의 계좌 잔액 부족/카드 일시 사용 정지 등의 사유로 인하여 납부되지 못하는 경우에는 납 입기일 이후부터 보험계약 실효 전까지 지속적으로 보험료</p>
+                                <div class="form_agrchk_input">
+                                    <div>
+                                        <input type="radio" id="check_13" class="chk" name="chkAgreeGroup3_1" value="Y">
+                                        <label for="check_13">초회 보험료</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="check_14" class="chk" name="chkAgreeGroup3_1" value="N">
+                                        <label for="check_14">계속 보험료</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="form_agrchk agree_form">
+            <div class="title accordion">
+                <div>
+                    <p class="form_agrchk_title">출금정보입력</p><span class="btn_down"></span>
+                </div>
+            </div>
+            <div class="detail" tabindex="0">
+                <div class="form_indivi">
+                    <div class="form_indivi_box01">
+                        <h5><img src="../assets/images/tm_09_title.png" alt=""></h5>
+                        <div class="tabmenu2 t2 js_tab nob">
+                            <ul role="tablist">
+                                <li role="presentation" class="active"><a href="#tabCont3_1" id="tab_btn_0_0" role="tab" aria-controls="tabCont3_1" aria-selected="true" title="현재선택">즉시이체</a></li>
+                                <li role="presentation"><a href="#tabCont3_2" id="tab_btn_0_1" role="tab" aria-controls="tabCont3_2" aria-selected="false">신용카드</a></li>
+                            </ul>
+                        </div>
+                        <div class="dialog_content t2">
+                            <div class="">
+                                <div id="tabCont3_1" class="tab_panel t3">
+                                    <div class="inner">
+                                        <div class="table_type_list t2">
+                                            <img src="../assets/images/tm_09_img01.png" class="" alt=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tabCont3_2" class="tab_panel t3">
+                                    <div class="inner">
+                                        <div class="table_type_list t2">
+                                            <img src="../assets/images/tm_09_img02.png" class="" alt=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn_wrap bottom form_agrchk_btnBox">
+                <a href="javascript:history.back();">이전으로</a>
+                <a class="btn btnBox_next">서명 완료</a>
+            </div>
+        </div>
+    </div>
+    <!-- // Contents -->
+
+    <!-- Footer -->
+    <footer>
+    </footer>
+    <!-- // Footer -->
+</div>
+</body>
+</html>
