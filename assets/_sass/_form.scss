@@ -22,11 +22,29 @@
 .agree_form .check_all .check_bottom div:last-child {margin-bottom:0;}
 .agree_form .check_all .check_bottom div button {position:absolute; top:5px; right:0; width:12px; height:22px; background:url(../images/ico_agree_link.png) no-repeat 0 0; background-size:6px 11px;}
 
+.agree_form.style2{margin-top:0;}
+.agree_form.style2 label:before{top:vw(4);}
+.agree_form.style2 .check_all .check_top{border:0;padding:vw(39) 0;}
+.agree_form.style2 .check_all .check_bottom{border:vw(0.5) solid #dcdcdc;border-radius: vw(28);margin-bottom:vw(38);}
+.agree_form.style2 .check_all .check_bottom label:before{top: vw(8); left: 0;width: vw(35); height: vw(35);background: url(../images/ico_agree_chk_off2.png) no-repeat 0 0;background-size: vw(35) auto;}
+.agree_form.style2 .check_all .check_bottom input:checked + label:before{background: url(../images/ico_agree_chk_on.png) no-repeat 0 0; background-size: vw(35) auto;}
+
+.form_item .input{display:table;width:100%;table-layout:fixed;position:relative;}
+.form_item .input .dv{display:table-cell;position:relative;vertical-align:middle}
+.form_item .input .dv .btn{display:inline-block;min-width:60px;}
+.form_item .btn.t1 {width:100%; height:40px; padding-left: 0; padding-right: 0; line-height:40px; color:#535353; background: #f3f3f3;; border-radius:vw(10);text-align: center;}
+.form_item .i_txt{width:calc(100% - vw(70));height:40px; padding:0 10px; line-height:40px; border-bottom:1px solid #000;background-color:#fff;font-size:16px;font-weight:700;vertical-align:middle;-webkit-transition:border 0.3s;transition:border 0.3s;outline:none;}
+.form_item .i_txt::placeholder{color:#d4d4d4;}
+.form_item .input .dv { display: table-cell; position: relative; vertical-align: middle; }
+.form_item .input.certification .dv:last-child { width: vw(160);}
+.form_item .certification_btn{background: #383b5a;@include font('B', 15px, 24/16);color:#fff;width:100%;border-radius: vw(18);height:40px;margin: 0 0 vw(58);}
+.form_item label.lb{@include font('B', 13px, 27/16);color:#191919;}
+.btn_wrap.bottom{display: flex;justify-content: space-between;align-items: center;}
 
 //accordion
 .accordion{position: relative;}
-.accordion .btn_down{position: absolute; top: 50%; right: 0; transform: translateY(-50%); display: inline-block; width: 14px; height: 8px; @include bg('ico_arrow_off.png', 0 0, cover);}
-.accordion .btn_down.on{@include bg('ico_arrow_on.png', 0 0, cover);}
+.accordion .btn_down{position: absolute; top: 50%; right: 0; transform: translateY(-50%); display: inline-block; width: 20px; height: 20px; @include bg('ico_arrow_off.png', center right, cover);background-size: 14px 8px;}
+.accordion .btn_down.on{@include bg('ico_arrow_on.png', center right, cover);background-size: 14px 8px;}
 .accordion .detail{display: none;}
 .accordion.title label{width:calc(100% - 20px);box-sizing: border-box;}
 
@@ -45,8 +63,26 @@
 .form_agrchk ul li .form_agrchk_input div+div{margin-left: vw(58);}
 .form_agrchk ul li .form_agrchk_input label{@include font('SE', 14px, 25/15);color:#191919;}
 .form_agrchk_btnBox{text-align: right;padding:0 vw(38);}
-.form_agrchk_btnBox .btnBox_next{background-color: #0035c3;border-radius:vw(86);padding: vw(32) vw(95);@include font('B', 14px, 22/15);color:#fff;display: inline-block;margin-top:vw(80);}
+.btnBox_next{background-color: #0035c3;border-radius:vw(86);padding: vw(32) vw(95);@include font('B', 14px, 22/15);color:#fff;display: inline-block;margin-top:vw(80);}
 
 .indivi_num{@include font('B', 14px, 27/15);color:#191919;padding: vw(40) 0;border-bottom:vw(0.5) solid #f4f4f4;} 
 .indivi_num span{padding-right: vw(10);display: inline-block;}
 .indivi_num input{@include font('B', 20px, 30/15);color:#191919;padding: 0 vw(10);letter-spacing: 2px;width:50%;}
+
+.form_indivi{padding:0 vw(38);}
+.form_indivi h3{@include font('SB', 16px, 27/15);color:#000;padding-bottom:vw(58);}
+.form_indivi h4{@include font('SB', 13px, 27/15);color:#191919;padding-bottom:vw(34);}
+
+.telecom-item .check-wrap{display: flex;align-items: center;margin:0 vw(-16)}
+.telecom-item .radio {width:25%;position: relative;padding: 0 vw(7);}
+.telecom-item .radio input{@include hiddenText;}
+.telecom-item .lbl:before { display:none; }
+.telecom-item .lbl { display:block; width:100%; padding:0 5px; height:40px; line-height:38px; text-align:center; border:1px solid #f4f4f4; font-size:14px; color:#191919; box-sizing:border-box; background:#fff; border-radius: vw(8);}
+
+.telecom-item input:checked + .lbl{ z-index:1; color:#fff; border-color:#383b5a;background:#383b5a; }
+.telecom-item .check-number{margin-top: vw(58);}
+.telecom-item .check-number label{@include font('B', 13px, 27/15);color:#191919;display: block;padding-bottom:vw(14);}
+.telecom-item .check-number input{border-bottom:vw(0.5) solid #f4f4f4;width: 100%;@include font('B', 14px, 36/15);color:#191919;}
+.telecom-item .check-number input::placeholder{color:#d4d4d4;}
+
+.certification_wrap{}
