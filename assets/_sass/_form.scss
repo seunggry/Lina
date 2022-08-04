@@ -6,7 +6,7 @@
 .agree_form label {display:block; position:relative;cursor:pointer; vertical-align:middle;@include font('SB', vw(17), 25/15);color:#000;padding-left: vw(32);}
 .agree_form label span {font-weight:700;}
 .agree_form label:before {content:'';  position:absolute; top:0; left:0; width: vw(25); height: vw(25); background:url(../images/ico_agree_chk_off2.png) no-repeat 0 0; background-size:vw(25) auto;}
-.agree_form input:checked+label:before {content:''; background:url(../images/ico_agree_chk_on.png) no-repeat 0 0; background-size:vw(25) auto;}
+.agree_form input:checked+label:before {content:''; background:url(../images/ico_agree_chk_on2.png) no-repeat 0 0; background-size:vw(25) auto;}
 
 .agree_form.style2 .check_all .check_bottom div {position:relative; margin-bottom:vw(9);}
 .agree_form.style2 .check_all .check_bottom div:last-child {margin-bottom:0;}
@@ -17,7 +17,7 @@
 .agree_form.style2 .check_all .check_bottom label {padding-left:vw(32);@include font('SB', vw(17), 25/15);}
 .agree_form.style2 .check_all .check_bottom{border:vw(1) solid #dcdcdc;border-radius: vw(17);margin-bottom:vw(22);padding:vw(20) vw(24);}
 .agree_form.style2 .check_all .check_bottom label:before{top: vw(4); left: 0;width: vw(25); height: vw(25);background: url(../images/ico_agree_chk_off2.png) no-repeat 0 0;background-size: vw(25) auto;}
-.agree_form.style2 .check_all .check_bottom input:checked + label:before{background: url(../images/ico_agree_chk_on.png) no-repeat 0 0; background-size: vw(25) auto;}
+.agree_form.style2 .check_all .check_bottom input:checked + label:before{background: url(../images/ico_agree_chk_on2.png) no-repeat 0 0; background-size: vw(25) auto;}
 
 .form_item .input{display:table;width:100%;table-layout:fixed;position:relative;}
 .form_item .input .dv{display:table-cell;position:relative;vertical-align:middle}
@@ -40,7 +40,7 @@
 
 //설계 동의폼
 .form_agrchk .form_agrchk_title{@include font('SB', vw(16), 24/16);color:#000;margin-bottom:vw(25);position: relative;width: calc(100% - vw(20));}
-.form_agrchk .form_agrchk_box{padding: vw(20) vw(22) vw(20) vw(22); border-radius: vw(19); background-color: #f4f4f4;border:vw(1) solid #dcdcdc;margin: vw(21) 0 vw(36);@include font('R', vw(13), 22/15);color:#717171;}
+.form_agrchk .form_agrchk_box{padding: vw(20) vw(22) vw(20) vw(22); border-radius: vw(19); background-color: #f4f4f4;border:vw(1) solid #dcdcdc;margin: vw(21) 0 vw(36);@include font('R', vw(13), 22/15);color:#616161;}
 .form_agrchk .img_b{margin-bottom: vw(20);margin-top: vw(-20);vertical-align: top;}
 .form_agrchk .title{margin-bottom:vw(20);padding:0 vw(22);}
 .form_agrchk .title > div{position: relative;}
@@ -51,7 +51,7 @@
 .form_agrchk ul li.under_line.nob .detail{border-bottom: 0;padding-bottom:0;margin-bottom:vw(30);}
 .form_agrchk ul li .in_box02{border-radius: vw(19);border:vw(1) solid #dcdcdc;overflow: hidden;}
 .form_agrchk ul li .in_box02+.in_box02{margin-top: vw(16);}
-.form_agrchk ul li .in_box02 p{@include font('R', vw(13), 22/15);color:#717171;background: #f4f4f4;padding:vw(20) vw(24);}
+.form_agrchk ul li .in_box02 p{@include font('R', vw(13), 22/15);color:#616161;background: #f4f4f4;padding:vw(20) vw(24);}
 .form_agrchk ul li .in_box02 p.line_ele span{height: vw(90); overflow: hidden; display: block; overflow-y: scroll;padding-right: vw(10);}
 .form_agrchk ul li .form_agrchk_input{display: flex;padding: vw(22);}
 .form_agrchk ul li .form_agrchk_input div{position: relative;}
@@ -60,7 +60,7 @@
 .form_agrchk ul li .form_agrchk_input.line_one{display: block;}
 .form_agrchk ul li .form_agrchk_input.line_one div + div{margin-left: 0;margin-top: vw(10);}
 .form_agrchk_btnBox{text-align: right;padding:0 vw(22);margin-top:vw(44);}
-.btnBox_next{background-color: #cbcbcb;border-radius:vw(48);padding: vw(20) vw(44);@include font('B', vw(14), 22/15);color:#fff;display: inline-block;}
+.btnBox_next{background-color: #cbcbcb;border-radius:vw(48);padding: vw(17) vw(44);@include font('B', vw(14), 22/15);color:#fff;display: inline-block;}
 .btnBox_next.on{background-color: #0035c3;}
 
 .detail_line{margin:vw(20) 0;}
@@ -98,7 +98,7 @@
 .form_infoBox::after{top: vw(-29); border-color: transparent transparent transparent #fff; border-width: vw(15);}
 .form_infoBox::before{top: vw(-30); border-color: transparent transparent transparent #3c3c4a; border-width: vw(15);}
 .form_infoBox.on{opacity: 1;visibility: visible;}
-.form_infoBox p{@include font('R', vw(15), 24/15);color:#717171;}
+.form_infoBox p{@include font('R', vw(15), 24/15);color:#616161;}
 .form_infoBox ul{display: flex;align-items: center;flex-wrap: wrap;}
 .form_infoBox ul li{width:50%;margin-top: vw(12);}
 .form_infoBox ul li label{padding-left: vw(35);}
