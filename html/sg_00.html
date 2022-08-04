@@ -7,6 +7,7 @@
     <title>라이나생명</title>
     <script src="../assets/js/lib/jquery-3.6.0.js"></script>
     <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/jquery.rwdImageMaps.min.js"></script>
     <link rel="stylesheet" href="../assets/css/ui-common.css">
 </head>
 <body>
@@ -20,9 +21,10 @@
     <!-- Contents -->
     <div class="contents">
         <div class="img_wrap">
-            <a href="sg_01.html">
-                <img src="../assets/images/sg_00.png" class="img_icon" alt=""/>
-            </a>
+            <img src="../assets/images/sg_00.png" usemap="#imagemap2">
+            <map name="imagemap2">
+                <area target="" alt="" title="" href="sg_01.html" coords="126,869,580,929" shape="rect">
+            </map>
         </div>
     </div>
     <!-- // Contents -->
@@ -31,6 +33,11 @@
     <footer>
     </footer>
     <!-- // Footer -->
+    <script>
+        $(document).ready(function(e) {
+            $('.img_wrap img').rwdImageMaps();
+        });
+    </script>
 </div>
 </body>
 </html>
