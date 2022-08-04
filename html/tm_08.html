@@ -253,7 +253,7 @@
                     <li>
                         <div class="title accordion">
                             <div>
-                                <input type="checkbox" id="check_25" name="chkAgreeGroup2" onchange="allCheck.toggleAll2('Y6');">
+                                <input type="checkbox" id="check_25" name="chkAgreeGroup2" onchange="allCheck.toggleAll2('Y6'); infopop();">
                                 <label for="check_25">3. 수집·이용에 관한 사항</label>
                                 <span class="btn_down"></span>
                             </div>
@@ -263,7 +263,7 @@
                                 <p>개인(신용)정보의 수집·이용에 동의 하십니까? (동의등급, 보통)</p>
                                 <div class="form_agrchk_input">
                                     <div>
-                                        <input type="radio" id="check_26" class="chk" name="chkAgreeGroup2_1_3" value="Y6" onchange="allCheck.isAll2('Y6', 'check_25');">
+                                        <input type="radio" id="check_26" class="chk" name="chkAgreeGroup2_1_3" value="Y6" onchange="allCheck.isAll2('Y6', 'check_25'); infopop();">
                                         <label for="check_26">동의함</label>
                                     </div>
                                     <div>
@@ -310,26 +310,24 @@
     </footer>
     <!-- // Footer -->
     <script>
-        const snscheck0 = document.querySelector('#check_25');
-        const snscheck = document.querySelector('#check_26');
-        const snscheck2 = document.querySelector('#check_27');
-        snscheck.addEventListener('change', function() {
-            if(check_26.checked){
+        function infopop(event){
+            const snscheck0 = document.querySelector('#check_25');
+            const snscheck = document.querySelector('#check_26');
+
+            if(snscheck.checked && snscheck0.checked){
                 document.querySelector('.form_infoBox').classList.add('on');
-            }
-        })
-        snscheck0.addEventListener('change', function() {
-            if(check_25.checked){
-                document.querySelector('.form_infoBox').classList.add('on');
+                form_infoBox_all.focus();
             }else{
                 document.querySelector('.form_infoBox').classList.remove('on');
             }
-        })
-        snscheck2.addEventListener('change', function() {
-            if(check_27.checked){
-                document.querySelector('.form_infoBox').classList.remove('on');
+        };
+        $("body").click(function(e) { 
+            if($(".form_infoBox").hasClass('on')) {
+                if(!$('.form_infoBox').has(e.target).length) { 
+                    $(".form_infoBox").removeClass('on');
+                } 
             }
-        })
+        });
     </script>
 </div>
 </body>
