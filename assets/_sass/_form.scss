@@ -9,23 +9,14 @@
 .agree_form label:before {content:'';  position:absolute; top:0; left:0; width: vw(25); height: vw(25); background:url(../images/ico_agree_chk_off2.png) no-repeat 0 0; background-size:vw(25) auto;}
 .agree_form input:checked+label:before {content:''; background:url(../images/ico_agree_chk_on.png) no-repeat 0 0; background-size:vw(25) auto;}
 
-.agree_form .check_all .check_top {padding:15px 20px; border:1px solid #ccc;}
-.agree_form .check_all .check_top label {@include font('SB', vw(19), 25/15);padding-left: vw(32);}
-.agree_form .check_all .check_top div {position:relative;}
-.agree_form .check_all .check_bottom input {width:11px; height:8px;}
-.agree_form .check_all .check_bottom label {padding-left:vw(32);}
-.agree_form .check_all .check_bottom label:before {content:''; position:absolute; top:50%; left:8px; width: 11px; height: 8px; margin-top:-3px; background:url(../images/ico_small_check_off.png) no-repeat 0 0; background-size:11px auto;}
-.agree_form .check_all .check_bottom input:checked+label:before {content:'';  background:url(../images/ico_small_check_on.png) no-repeat 0 0; background-size:11px auto;}
-.agree_form .check_all .check_bottom {padding:16px 20px; border:1px solid #ccc; border-top:none;}
-.agree_form .check_all .check_bottom label {@include font('SB', vw(17), 25/15);}
-.agree_form .check_all .check_bottom div {position:relative; margin-bottom:9px;}
-.agree_form .check_all .check_bottom div:last-child {margin-bottom:0;}
-.agree_form .check_all .check_bottom div button {position:absolute; top:5px; right:0; width:12px; height:22px; background:url(../images/ico_agree_link.png) no-repeat 0 0; background-size:6px 11px;}
-
+.agree_form.style2 .check_all .check_bottom div {position:relative; margin-bottom:9px;}
+.agree_form.style2 .check_all .check_bottom div:last-child {margin-bottom:0;}
+.agree_form.style2 .check_all .check_bottom div button {position:absolute; top:5px; right:0; width:12px; height:22px; background:url(../images/ico_agree_link.png) no-repeat 0 0; background-size:6px 11px;}
 .agree_form.style2{margin-top:0;}
 .agree_form.style2 label:before{top:vw(4);}
 .agree_form.style2 .check_all .check_top{border:0;padding:vw(24) 0;}
-.agree_form.style2 .check_all .check_bottom{border:vw(0.5) solid #dcdcdc;border-radius: vw(17);margin-bottom:vw(22);}
+.agree_form.style2 .check_all .check_bottom label {padding-left:vw(32);@include font('SB', vw(17), 25/15);}
+.agree_form.style2 .check_all .check_bottom{border:vw(0.5) solid #dcdcdc;border-radius: vw(17);margin-bottom:vw(22);padding:vw(20) vw(24);}
 .agree_form.style2 .check_all .check_bottom label:before{top: vw(4); left: 0;width: vw(25); height: vw(25);background: url(../images/ico_agree_chk_off2.png) no-repeat 0 0;background-size: vw(25) auto;}
 .agree_form.style2 .check_all .check_bottom input:checked + label:before{background: url(../images/ico_agree_chk_on.png) no-repeat 0 0; background-size: vw(25) auto;}
 
@@ -37,7 +28,8 @@
 .form_item .i_txt::placeholder{color:#d4d4d4;}
 .form_item .input .dv { display: table-cell; position: relative; vertical-align: middle; }
 .form_item .input.certification .dv:last-child { width: vw(84);}
-.form_item .certification_btn{background: #383b5a;@include font('B', 15px, 24/16);color:#fff;width:100%;border-radius: vw(12);height:40px;margin: 0 0 vw(34);}
+.form_item .certification_btn{background: #383b5a;@include font('B', 15px, 24/16);color:#fff;width:100%;border-radius: vw(12);height:40px;}
+.form_item .certification_btn:disabled{background: #cbcbcb;}
 .form_item label.lb{@include font('B', 13px, 27/16);color:#191919;}
 .btn_wrap.bottom{display: flex;justify-content: space-between;align-items: center;}
 
@@ -69,9 +61,11 @@
 .form_agrchk ul li .form_agrchk_input.line_one{display: block;}
 .form_agrchk ul li .form_agrchk_input.line_one div + div{margin-left: 0;margin-top: vw(10);}
 .form_agrchk_btnBox{text-align: right;padding:0 vw(22);margin-top:vw(44);}
-.btnBox_next{background-color: #0035c3;border-radius:vw(48);padding: vw(20) vw(44);@include font('B', 14px, 22/15);color:#fff;display: inline-block;}
+.btnBox_next{background-color: #cbcbcb;border-radius:vw(48);padding: vw(20) vw(44);@include font('B', 14px, 22/15);color:#fff;display: inline-block;}
+.btnBox_next.on{background-color: #0035c3;}
 
 .detail_line{margin:vw(20) 0;}
+.line_top{border-top:vw(12) solid #f3f3f3;padding-top:vw(44);margin-top:vw(44);}
 
 //주민등록번호 수집 및 휴대폰 인증
 .indivi_num{@include font('B', 14px, 27/15);color:#191919;padding: vw(24) 0;border-bottom:vw(0.5) solid #f4f4f4;} 
@@ -81,7 +75,7 @@
 .form_indivi{padding:0 vw(22);}
 .form_indivi h3{@include font('SB', vw(20), 27/15);color:#000;padding-bottom:vw(21);}
 .form_indivi h4{@include font('SB', vw(17), 27/15);color:#191919;padding-bottom:vw(21);}
-.form_indivi h5{padding-bottom:vw(21);}
+.form_indivi h5{@include font('SB', vw(13), 27/15);color:#747474;padding-bottom:vw(10);}
 
 .telecom-item .check-wrap{display: flex;align-items: center;margin:0 vw(-4)}
 .telecom-item .radio {width:25%;position: relative;padding: 0 vw(4);}
@@ -111,6 +105,7 @@
 .form_infoBox ul li label{padding-left: vw(35);}
 
 // 탭
+.tabmenu2.nob{margin-top: vw(10);}
 .tabmenu2.nob::after{display: none;}
 .tabmenu2.nob ul{display: flex;align-items: center;}
 .tabmenu2.nob ul li{width: 50%;}
@@ -120,3 +115,17 @@
 .tabmenu2.nob ul li+li{padding-left: vw(10);}
 .tab_panel{display:none;}
 .tab_panel.active{display:block;}
+
+.certification_wrap label.lb{margin: vw(34) 0 0;display: block;}
+.certification_wrap{opacity: 0;overflow: hidden;visibility: hidden;height: 0;transition: all .3s;}
+.certification_wrap.on{opacity: 1;visibility: visible;height: auto;}
+
+.tab_list01 li+li{margin-top: vw(30);}
+.tab_list01 li select{width:100%;border:0;border-bottom:vw(1) solid #f4f4f4;@include font('B', vw(18), 27/15);color:#191919;background: url(../images/btn_select01.png)no-repeat center right;background-size: vw(15) auto;}
+.tab_list01 li input{position: static; opacity: 1; width: 100%; height: auto;@include font('B', vw(18), 27/15);color:#191919;border-bottom:vw(1) solid #f4f4f4;}
+.tab_list01 li input::placeholder{color:#d4d4d4;}
+.tab_list01 li.last{display: flex;align-items: flex-start;justify-content: space-between;}
+.tab_list01 li > div:first-child{width:vw(100);}
+.tab_list01 li > div:last-child{width:calc(100% - vw(120));}
+.tab_list01.st2 li > div:first-child{width:44%;}
+.tab_list01.st2 li > div:last-child{width:50%;}

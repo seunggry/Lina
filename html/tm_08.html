@@ -31,7 +31,7 @@
             </div>
             <div class="detail" tabindex="0">
                 <div class="side_line">
-                    <input type="checkbox" id="check_all" name="chkAgreeGroup1_all" onchange="allCheck.toggleAll('chkAgreeGroup1');">
+                    <input type="checkbox" id="check_all" name="chkAgreeGroup1_all" onchange="allCheck.toggleAll('chkAgreeGroup1'); allCheck.toggleAll3('chk chkY');">
                     <label for="check_all">전체 동의</label>
                     <div class="form_agrchk_box">귀하는 개인(신용)정보의 수집·이용 및 조회, 제공 에 관한 동의를 거부하실 수 있으며, 개인의 신용도 등을 평가하기 위한 목적 이외의 개인(신용)정보 제공 동의는 철회할 수 있습니다. 다만, 본 동의는 ' 보험계약 인수심사·체결·이행·유지·관리'를 위해 필 수적인 사항이므로 동의를 거부하시는 경우 관련 업무수행이 불가능합니다. 개인식별정보, 보험계약, 보험금지급, 금융거래, 건강정보에 대하여 거래종 료후 5년까지 계약 체결 및 유지 합니다.</div>
                 </div>
@@ -39,8 +39,8 @@
                     <li class="under_line nob">
                         <div class="title accordion">
                             <div>
-                                <input type="checkbox" id="check_all01" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
-                                <label for="check_all01">1. 수집·이용에 관한 사항</label>
+                                <input type="checkbox" id="check_all01" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all'); allCheck.toggleAll2('Y');">
+                                <label for="check_all01">1. 수집·이용에 관한 사항 </label>
                                 <span class="btn_down"></span>
                             </div>
                         </div>
@@ -49,11 +49,11 @@
                                 <p>주민등록번호, 외국인등록번호, 여권번호, 운전면허 번호 고유식별정보 수집·이용에 동의하십니까?</p>
                                 <div class="form_agrchk_input">
                                     <div>
-                                        <input type="radio" id="check_1" class="chk" name="chkAgreeGroup1_1" value="Y">
+                                        <input type="radio" id="check_1" class="chk chkY" name="chkAgreeGroup1_1" value="Y" onchange="allCheck.isAll2('Y', 'check_all01');">
                                         <label for="check_1">동의함</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="check_2" class="chk" name="chkAgreeGroup1_1" value="N">
+                                        <input type="radio" id="check_2" class="chk" name="chkAgreeGroup1_1" value="N" onchange="allCheck.isAll2('Y', 'check_all01');">
                                         <label for="check_2">동의하지 않음</label>
                                     </div>
                                 </div>
@@ -62,11 +62,11 @@
                                 <p>피보험자의 질병·상해에 관한 정보(상병명, 진료기록, 기왕증 등) 민감정보 수집·이용에 동의하십니까?</p>
                                 <div class="form_agrchk_input">
                                     <div>
-                                        <input type="radio" id="check_3" class="chk" name="chkAgreeGroup1_2" value="Y">
+                                        <input type="radio" id="check_3" class="chk chkY" name="chkAgreeGroup1_2" value="Y" onchange="allCheck.isAll2('Y', 'check_all01');">
                                         <label for="check_3">동의함</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="check_4" class="chk" name="chkAgreeGroup1_2" value="N">
+                                        <input type="radio" id="check_4" class="chk" name="chkAgreeGroup1_2" value="N" onchange="allCheck.isAll2('Y', 'check_all01');">
                                         <label for="check_4">동의하지 않음</label>
                                     </div>
                                 </div>
@@ -75,11 +75,11 @@
                                 <p>개인(신용)정보의 수집·이용에 동의 하십니까?</p>
                                 <div class="form_agrchk_input">
                                     <div>
-                                        <input type="radio" id="check_5" class="chk" name="chkAgreeGroup1_3" value="Y">
+                                        <input type="radio" id="check_5" class="chk chkY" name="chkAgreeGroup1_3" value="Y" onchange="allCheck.isAll2('Y', 'check_all01');">
                                         <label for="check_5">동의함</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="check_6" class="chk" name="chkAgreeGroup1_3" value="N">
+                                        <input type="radio" id="check_6" class="chk" name="chkAgreeGroup1_3" value="N" onchange="allCheck.isAll2('Y', 'check_all01');">
                                         <label for="check_6">동의하지 않음</label>
                                     </div>
                                 </div>
@@ -89,7 +89,7 @@
                     <li class="under_line nob">
                         <div class="title accordion">
                             <div>
-                                <input type="checkbox" id="check_all02" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                                <input type="checkbox" id="check_all02" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all'); allCheck.toggleAll2('Y2');">
                                 <label for="check_all02">2. 제공에 관한 사항 </label>
                                 <span class="btn_down"></span>
                             </div>
@@ -99,11 +99,11 @@
                                 <p>주민등록번호, 외국인등록번호, 여권번호, 운전면허 번호 고유식별정보 수집·이용에 동의하십니까?</p>
                                 <div class="form_agrchk_input">
                                     <div>
-                                        <input type="radio" id="check_7" class="chk" name="chkAgreeGroup2_1" value="Y">
+                                        <input type="radio" id="check_7" class="chk chkY" name="chkAgreeGroup2_1" value="Y2" onchange="allCheck.isAll2('Y2', 'check_all02');">
                                         <label for="check_7">동의함</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="check_8" class="chk" name="chkAgreeGroup2_1" value="N">
+                                        <input type="radio" id="check_8" class="chk" name="chkAgreeGroup2_1" value="N" onchange="allCheck.isAll2('Y2', 'check_all02');">
                                         <label for="check_8">동의하지 않음</label>
                                     </div>
                                 </div>
@@ -112,11 +112,11 @@
                                 <p>피보험자의 질병·상해에 관한 정보(상병명, 진료기록, 기왕증 등) 민감정보 수집·이용에 동의하십니까?</p>
                                 <div class="form_agrchk_input">
                                     <div>
-                                        <input type="radio" id="check_9" class="chk" name="chkAgreeGroup2_2" value="Y">
+                                        <input type="radio" id="check_9" class="chk chkY" name="chkAgreeGroup2_2" value="Y2" onchange="allCheck.isAll2('Y2', 'check_all02');">
                                         <label for="check_9">동의함</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="check_10" class="chk" name="chkAgreeGroup2_2" value="N">
+                                        <input type="radio" id="check_10" class="chk" name="chkAgreeGroup2_2" value="N" onchange="allCheck.isAll2('Y2', 'check_all02');">
                                         <label for="check_10">동의하지 않음</label>
                                     </div>
                                 </div>
@@ -125,21 +125,21 @@
                                 <p>개인(신용)정보의 수집·이용에 동의 하십니까?</p>
                                 <div class="form_agrchk_input">
                                     <div>
-                                        <input type="radio" id="check_11" class="chk" name="chkAgreeGroup2_3" value="Y">
+                                        <input type="radio" id="check_11" class="chk chkY" name="chkAgreeGroup2_3" value="Y2" onchange="allCheck.isAll2('Y2', 'check_all02');">
                                         <label for="check_11">동의함</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="check_12" class="chk" name="chkAgreeGroup2_3" value="N">
+                                        <input type="radio" id="check_12" class="chk" name="chkAgreeGroup2_3" value="N" onchange="allCheck.isAll2('Y2', 'check_all02');">
                                         <label for="check_12">동의하지 않음</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li class="under_line">
+                    <li class="under_line nob">
                         <div class="title accordion">
                             <div>
-                                <input type="checkbox" id="check_all03" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                                <input type="checkbox" id="check_all03" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all'); allCheck.toggleAll2('Y3');">
                                 <label for="check_all03">3. 조회에 관한 사항</label>
                                 <span class="btn_down"></span>
                             </div>
@@ -149,11 +149,11 @@
                                 <p>주민등록번호, 외국인등록번호, 여권번호, 운전면허 번호 고유식별정보 수집·이용에 동의하십니까?</p>
                                 <div class="form_agrchk_input">
                                     <div>
-                                        <input type="radio" id="check_13" class="chk" name="chkAgreeGroup3_1" value="Y">
+                                        <input type="radio" id="check_13" class="chk chkY" name="chkAgreeGroup3_1" value="Y3" onchange="allCheck.isAll2('Y3', 'check_all03');">
                                         <label for="check_13">동의함</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="check_14" class="chk" name="chkAgreeGroup3_1" value="N">
+                                        <input type="radio" id="check_14" class="chk" name="chkAgreeGroup3_1" value="N" onchange="allCheck.isAll2('Y3', 'check_all03');">
                                         <label for="check_14">동의하지 않음</label>
                                     </div>
                                 </div>
@@ -162,11 +162,11 @@
                                 <p>피보험자의 질병·상해에 관한 정보(상병명, 진료기록, 기왕증 등) 민감정보 수집·이용에 동의하십니까?</p>
                                 <div class="form_agrchk_input">
                                     <div>
-                                        <input type="radio" id="check_15" class="chk" name="chkAgreeGroup3_2" value="Y">
+                                        <input type="radio" id="check_15" class="chk chkY" name="chkAgreeGroup3_2" value="Y3" onchange="allCheck.isAll2('Y3', 'check_all03');">
                                         <label for="check_15">동의함</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="check_16" class="chk" name="chkAgreeGroup3_2" value="N">
+                                        <input type="radio" id="check_16" class="chk" name="chkAgreeGroup3_2" value="N" onchange="allCheck.isAll2('Y3', 'check_all03');">
                                         <label for="check_16">동의하지 않음</label>
                                     </div>
                                 </div>
@@ -175,11 +175,11 @@
                                 <p>개인(신용)정보의 수집·이용에 동의 하십니까?</p>
                                 <div class="form_agrchk_input">
                                     <div>
-                                        <input type="radio" id="check_17" class="chk" name="chkAgreeGroup3_3" value="Y">
+                                        <input type="radio" id="check_17" class="chk chkY" name="chkAgreeGroup3_3" value="Y3" onchange="allCheck.isAll2('Y3', 'check_all03');">
                                         <label for="check_17">동의함</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="check_18" class="chk" name="chkAgreeGroup3_3" value="N">
+                                        <input type="radio" id="check_18" class="chk" name="chkAgreeGroup3_3" value="N" onchange="allCheck.isAll2('Y3', 'check_all03');">
                                         <label for="check_18">동의하지 않음</label>
                                     </div>
                                 </div>
@@ -190,7 +190,7 @@
             </div>
         </div>
 
-        <div class="form_agrchk agree_form">
+        <div class="form_agrchk agree_form line_top">
             <div class="title accordion">
                 <div>
                     <p class="form_agrchk_title">상품소개를 위한 상세 동의 (선택)</p><span class="btn_down"></span>
@@ -205,7 +205,7 @@
                     <li class="under_line nob">
                         <div class="title accordion">
                             <div>
-                                <input type="checkbox" id="check_19" name="chkAgreeGroup2" onchange="allCheck.isAll('chkAgreeGroup2');">
+                                <input type="checkbox" id="check_19" name="chkAgreeGroup2" onchange="allCheck.toggleAll2('Y4');">
                                 <label for="check_19">1. 수집·이용에 관한 사항</label>
                                 <span class="btn_down"></span>
                             </div>
@@ -215,11 +215,11 @@
                                 <p>개인(신용)정보의 수집·이용에 동의 하십니까? (동의등급, 보통)</p>
                                 <div class="form_agrchk_input">
                                     <div>
-                                        <input type="radio" id="check_20" class="chk" name="chkAgreeGroup2_1_1" value="Y">
+                                        <input type="radio" id="check_20" class="chk" name="chkAgreeGroup2_1_1" value="Y4" onchange="allCheck.isAll2('Y4', 'check_19');">
                                         <label for="check_20">동의함</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="check_21" class="chk" name="chkAgreeGroup2_1_1" value="N">
+                                        <input type="radio" id="check_21" class="chk" name="chkAgreeGroup2_1_1" value="N" onchange="allCheck.isAll2('Y4', 'check_19');">
                                         <label for="check_21">동의하지 않음</label>
                                     </div>
                                 </div>
@@ -229,7 +229,7 @@
                     <li class="under_line nob">
                         <div class="title accordion">
                             <div>
-                                <input type="checkbox" id="check_22" name="chkAgreeGroup2" onchange="allCheck.isAll('chkAgreeGroup2');">
+                                <input type="checkbox" id="check_22" name="chkAgreeGroup2" onchange="allCheck.toggleAll2('Y5');">
                                 <label for="check_22">2. 광고성 정보의 수신 동의</label>
                                 <span class="btn_down"></span>
                             </div>
@@ -239,11 +239,11 @@
                                 <p>전자적 전송매체를 통한 광고성 정보의 수신을 동의하시겠습니까?</p>
                                 <div class="form_agrchk_input">
                                     <div>
-                                        <input type="radio" id="check_23" class="chk" name="chkAgreeGroup2_1_2" value="Y">
+                                        <input type="radio" id="check_23" class="chk" name="chkAgreeGroup2_1_2" value="Y5" onchange="allCheck.isAll2('Y5', 'check_22');">
                                         <label for="check_23">동의함</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="check_24" class="chk" name="chkAgreeGroup2_1_2" value="N">
+                                        <input type="radio" id="check_24" class="chk" name="chkAgreeGroup2_1_2" value="N" onchange="allCheck.isAll2('Y5', 'check_22');">
                                         <label for="check_24">동의하지 않음</label>
                                     </div>
                                 </div>
@@ -253,7 +253,7 @@
                     <li>
                         <div class="title accordion">
                             <div>
-                                <input type="checkbox" id="check_25" name="chkAgreeGroup2" onchange="allCheck.isAll('chkAgreeGroup2');">
+                                <input type="checkbox" id="check_25" name="chkAgreeGroup2" onchange="allCheck.toggleAll2('Y6');">
                                 <label for="check_25">3. 수집·이용에 관한 사항</label>
                                 <span class="btn_down"></span>
                             </div>
@@ -263,11 +263,11 @@
                                 <p>개인(신용)정보의 수집·이용에 동의 하십니까? (동의등급, 보통)</p>
                                 <div class="form_agrchk_input">
                                     <div>
-                                        <input type="radio" id="check_26" class="chk" name="chkAgreeGroup2_1_3" value="Y">
+                                        <input type="radio" id="check_26" class="chk" name="chkAgreeGroup2_1_3" value="Y6" onchange="allCheck.isAll2('Y6', 'check_25');">
                                         <label for="check_26">동의함</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="check_27" class="chk" name="chkAgreeGroup2_1_3" value="N">
+                                        <input type="radio" id="check_27" class="chk" name="chkAgreeGroup2_1_3" value="N" onchange="allCheck.isAll2('Y6', 'check_25');">
                                         <label for="check_27">동의하지 않음</label>
                                     </div>
                                 </div>
@@ -277,7 +277,7 @@
                             <p>정보는 어떻게 전해 드릴까요?</p>
                             <ul>
                                 <li>
-                                    <input type="checkbox" id="form_infoBox_all" name="form_infoBox_allt" onchange="allCheck.toggleAll('form_infoBox_allt');">
+                                    <input type="checkbox" id="form_infoBox_all" name="form_infoBox_all1" onchange="allCheck.toggleAll('form_infoBox_allt');">
                                     <label for="form_infoBox_all">전체</label>
                                 </li>
                                 <li>
@@ -285,12 +285,12 @@
                                     <label for="form_infoBox_all01">전화(ARS)</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" id="form_infoBox_all01" name="form_infoBox_allt" onchange="allCheck.isAll('form_infoBox_allt', 'form_infoBox_all');">
-                                    <label for="form_infoBox_all01">문자/알림톡</label>
+                                    <input type="checkbox" id="form_infoBox_all02" name="form_infoBox_allt" onchange="allCheck.isAll('form_infoBox_allt', 'form_infoBox_all');">
+                                    <label for="form_infoBox_all02">문자/알림톡</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" id="form_infoBox_all01" name="form_infoBox_allt" onchange="allCheck.isAll('form_infoBox_allt', 'form_infoBox_all');">
-                                    <label for="form_infoBox_all01">이메일</label>
+                                    <input type="checkbox" id="form_infoBox_all03" name="form_infoBox_allt" onchange="allCheck.isAll('form_infoBox_allt', 'form_infoBox_all');">
+                                    <label for="form_infoBox_all03">이메일</label>
                                 </li>
                             </ul>
                         </div>
@@ -310,11 +310,19 @@
     </footer>
     <!-- // Footer -->
     <script>
+        const snscheck0 = document.querySelector('#check_25');
         const snscheck = document.querySelector('#check_26');
         const snscheck2 = document.querySelector('#check_27');
         snscheck.addEventListener('change', function() {
             if(check_26.checked){
                 document.querySelector('.form_infoBox').classList.add('on');
+            }
+        })
+        snscheck0.addEventListener('change', function() {
+            if(check_25.checked){
+                document.querySelector('.form_infoBox').classList.add('on');
+            }else{
+                document.querySelector('.form_infoBox').classList.remove('on');
             }
         })
         snscheck2.addEventListener('change', function() {

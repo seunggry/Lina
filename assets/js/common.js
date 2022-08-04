@@ -60,9 +60,50 @@ let allCheck = {
         }
         if (flag){ // 전체 체크일 시
             $chkAll.prop('checked', true);
+            $('.btnBox_next').addClass('on');
         } else {
             $chkAll.prop('checked', false);
+            $('.btnBox_next').removeClass('on');
         }
+    },
+    toggleAll2: function(_value){
+        var $ts2 = $(event.target)
+            , $chk2 = $('[value="'+_value+'"]');
+
+        $chk2.prop('checked', $ts2.prop('checked'));
+    },
+    isAll2: function(_value, _id){
+        var $ts2 = $(event.target)
+            , $chkAll2 = $('#'+_id)
+            , $chk2 = $('[value="'+_value+'"]')
+
+            , j = 0
+            , flag2 = false;
+
+        while (j < $chk2.length) {
+            flag2 = $chk2.eq(j).prop('checked');
+            if (!flag2){
+                break;
+            } else j++;
+        }
+        if (flag2){ // 전체 체크일 시
+            $chkAll2.prop('checked', true);
+        } else {
+            $chkAll2.prop('checked', false);
+        }
+    },
+    toggleAll3: function(_class){
+        var $ts3 = $(event.target)
+            , $chk3 = $('[class="'+_class+'"]');
+
+            if($ts3.prop('checked')){
+                $chk3.prop('checked', $ts3.prop('checked'));
+                $('.btnBox_next').addClass('on');
+            }else{
+                $chk3.prop('checked', false , $ts3.prop('checked'));
+                $('.btnBox_next').removeClass('on');
+            }
+        //$chk3.prop('checked', $ts3.prop('checked'));
     },
 
     init: function(){

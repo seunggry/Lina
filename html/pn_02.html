@@ -50,14 +50,14 @@
                         </div>
                         <div class="check-number">
                             <label for="phone_number1_1" class="lb">휴대폰번호</label>
-                            <input type="tel" id="phone_number1_1" class="" placeholder="‘-’ 없이 번호만 입력">
+                            <input type="tel" id="phone_number1_1" class="" placeholder="‘-’ 없이 번호만 입력" onchange="check_click();">
                         </div>
                     </div>
                     <div class="agree_form style2">
                         <div class="check_all">
                             <div class="check_top accordion">
                                 <div>
-                                    <input type="checkbox" id="check_all" name="chkAgreeGroup1_all" onchange="allCheck.toggleAll('chkAgreeGroup1');"> <!-- [20201109] 전체체크 함수 추가 -->
+                                    <input type="checkbox" id="check_all" name="chkAgreeGroup1_all" onchange="allCheck.toggleAll('chkAgreeGroup1'); check_click();"> <!-- [20201109] 전체체크 함수 추가 -->
                                     <label for="check_all">전체 동의</label>
                                     <span class="btn_down"></span>
                                 </div>
@@ -88,12 +88,12 @@
                         </div>
                     </div>
                     <div class="form_item">
-                        <button type="button" class="certification_btn">인증번호 발송</button>
+                        <button type="button" class="certification_btn" onclick="certificationBtn();" disabled>인증번호 발송</button>
                         <div class="certification_wrap">
                             <label for="phoneCheck1" class="lb">인증번호 6자리</label>
                             <div class="input certification">
                                 <span class="dv">
-                                    <input id="phoneCheck1" class="i_txt" type="tel" placeholder="‘-’ 없이 번호만 입력">
+                                    <input id="phoneCheck1" class="i_txt" type="tel" placeholder="‘-’ 없이 번호만 입력" onchange="certificationText();">
                                     <!-- <span class="timer">02:49</span> -->
                                 </span>
                                 <span class="dv">
@@ -113,7 +113,7 @@
             <div class="pop_indivi_box">
                 <img src="../assets/images/invalid_icon.png" class="invalid_icon" alt=""/>
                 <p class="txt01">가입설계 동의 및 <br/> 본인인증이 완료되었습니다.</p>
-                <button class="ppo_close" onclick="popCloseBtn();">닫기</button>
+                <button class="ppo_close" onclick="popCloseBtn(); location.href='sg_00.html';">닫기</button>
             </div>
         </div>
     </div>
@@ -124,7 +124,36 @@
     </footer>
     <!-- // Footer -->
     <script>
-        const popBtn = document.querySelector('.btnBox_next');
+        //인증번호 발송
+        document.querySelector('.certification_btn').disabled = true;
+        document.onkeyup = check_click;
+        document.onmouseup = check_click;
+        document.onmousedown = check_click;
+        function check_click(){
+            if(check_all.checked && !phone_number1_1.value ==''){
+                document.querySelector('.certification_btn').disabled = false;
+            }else{
+                document.querySelector('.certification_btn').disabled = true;
+            }
+        }
+
+        //인증번호 입력
+        function certificationBtn() {
+            document.querySelector('.certification_wrap').classList.add('on');
+        }
+
+        //인증 버튼 활성화
+        document.onkeyup = certificationText;
+        document.onmouseup = certificationText;
+        document.onmousedown = certificationText;
+        function certificationText() {
+            if (phoneCheck1.value == '') {
+                document.querySelector('.btnBox_next').classList.remove('on');
+            } else {
+                document.querySelector('.btnBox_next').classList.add('on');
+            }
+        }
+        //인증버튼 팝업
         const popWrap = document.querySelector('.pop_indivi');
         function popOpenBtn() {
             popWrap.classList.add('on');

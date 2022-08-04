@@ -32,18 +32,18 @@
             </div>
             <div class="detail" tabindex="0">
                 <div class="side_line">
-                    <input type="checkbox" id="check_all" name="chkAgreeGroup1_all" onchange="allCheck.toggleAll('chkAgreeGroup1');">
+                    <input type="checkbox" id="check_all" name="chkAgreeGroup1_all" onchange="allCheck.toggleAll('chkAgreeGroup1'); allCheck.toggleAll3('allchk');">
                     <label for="check_all">전체 동의</label>
                     <ul class="detail_line">
                         <li>
                             <div class="in_box02">
                                 <div class="form_agrchk_input line_one">
                                     <div>
-                                        <input type="radio" id="check_1" class="chk" name="chkAgreeGroup1_1" value="Y">
+                                        <input type="checkbox" id="check_1" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all'); allCheck.toggleAll2('chknum01');">
                                         <label for="check_1">초회 보험료 전체동의</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="check_2" class="chk" name="chkAgreeGroup1_1" value="N">
+                                        <input type="checkbox" id="check_2" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all'); allCheck.toggleAll2('chknum02');">
                                         <label for="check_2">계속 보험료 전체동의</label>
                                     </div>
                                 </div>
@@ -57,7 +57,7 @@
                     <li class="under_line nob">
                         <div class="title accordion">
                             <div>
-                                <input type="checkbox" id="check_all01" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                                <input type="checkbox" id="check_all01" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all'); allCheck.toggleAll('chkAgreeGroup1_1');">
                                 <label for="check_all01">1. 보험료 납부에 관한 사항</label>
                                 <span class="btn_down"></span>
                             </div>
@@ -67,12 +67,12 @@
                                 <p>당사는 매월 보험료 납입기일에 정기적으로 출금(결제)를 시도합니다. 만약 납부자님의 계좌 잔액 부족/카드 일시 사용 정지 등의 사유로 인하여 납부되지 못하는 경우에는 납 입기일 이후부터 보험계약 실효 전까지 지속적으로 보험료</p>
                                 <div class="form_agrchk_input">
                                     <div>
-                                        <input type="radio" id="check_1" class="chk" name="chkAgreeGroup1_1" value="Y">
-                                        <label for="check_1">초회 보험료</label>
+                                        <input type="checkbox" id="check_3" name="chkAgreeGroup1_1" class="allchk" value="chknum01" onchange="allCheck.isAll('chkAgreeGroup1_1', 'check_all01');">
+                                        <label for="check_3">초회 보험료</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="check_2" class="chk" name="chkAgreeGroup1_1" value="N">
-                                        <label for="check_2">계속 보험료</label>
+                                        <input type="checkbox" id="check_4" name="chkAgreeGroup1_1" class="allchk" value="chknum02" onchange="allCheck.isAll('chkAgreeGroup1_1', 'check_all01');">
+                                        <label for="check_4">계속 보험료</label>
                                     </div>
                                 </div>
                             </div>
@@ -81,46 +81,46 @@
                     <li class="under_line nob">
                         <div class="title accordion">
                             <div>
-                                <input type="checkbox" id="check_all02" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                                <input type="checkbox" id="check_all02" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all'); allCheck.toggleAll('chkAgreeGroup1_2');">
                                 <label for="check_all02">2. 개인(신용)정보의 수집·이용에 관한 사항</label>
-                                <span class="btn_down"></span>
+                                <span class="btn_down on"></span>
                             </div>
                         </div>
-                        <div class="detail" tabindex="0">
+                        <div class="detail" tabindex="0" style="display:none;">
                             <div class="in_box02">
                                 <p>당사는 매월 보험료 납입기일에 정기적으로 출금(결제)를 시도합니다. 만약 납부자님의 계좌 잔액 부족/카드 일시 사용 정지 등의 사유로 인하여 납부되지 못하는 경우에는 납 입기일 이후부터 보험계약 실효 전까지 지속적으로 보험료</p>
                                 <div class="form_agrchk_input">
                                     <div>
-                                        <input type="radio" id="check_7" class="chk" name="chkAgreeGroup2_1" value="Y">
-                                        <label for="check_7">초회 보험료</label>
+                                        <input type="checkbox" id="check_5" name="chkAgreeGroup1_2" class="allchk" value="chknum01" onchange="allCheck.isAll('chkAgreeGroup1_2', 'check_all02');">
+                                        <label for="check_5">초회 보험료</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="check_8" class="chk" name="chkAgreeGroup2_1" value="N">
-                                        <label for="check_8">계속 보험료</label>
+                                        <input type="checkbox" id="check_6" name="chkAgreeGroup1_2" class="allchk" value="chknum02" onchange="allCheck.isAll('chkAgreeGroup1_2', 'check_all02');">
+                                        <label for="check_6">계속 보험료</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li class="under_line">
+                    <li class="under_line nob">
                         <div class="title accordion">
                             <div>
-                                <input type="checkbox" id="check_all03" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');">
+                                <input type="checkbox" id="check_all03" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all'); allCheck.toggleAll('chkAgreeGroup1_3');">
                                 <label for="check_all03">3. 개인(신용)정보의 제공에 관한 사항</label>
-                                <span class="btn_down"></span>
+                                <span class="btn_down on"></span>
                             </div>
                         </div>
-                        <div class="detail" tabindex="0">
+                        <div class="detail" tabindex="0" style="display:none;">
                             <div class="in_box02">
                                 <p>당사는 매월 보험료 납입기일에 정기적으로 출금(결제)를 시도합니다. 만약 납부자님의 계좌 잔액 부족/카드 일시 사용 정지 등의 사유로 인하여 납부되지 못하는 경우에는 납 입기일 이후부터 보험계약 실효 전까지 지속적으로 보험료</p>
                                 <div class="form_agrchk_input">
                                     <div>
-                                        <input type="radio" id="check_13" class="chk" name="chkAgreeGroup3_1" value="Y">
-                                        <label for="check_13">초회 보험료</label>
+                                        <input type="checkbox" id="check_7" name="chkAgreeGroup1_3" class="allchk" value="chknum01" onchange="allCheck.isAll('chkAgreeGroup1_3', 'check_all03');">
+                                        <label for="check_7">초회 보험료</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="check_14" class="chk" name="chkAgreeGroup3_1" value="N">
-                                        <label for="check_14">계속 보험료</label>
+                                        <input type="checkbox" id="check_8" name="chkAgreeGroup1_3" class="allchk" value="chknum02" onchange="allCheck.isAll('chkAgreeGroup1_3', 'check_all03');">
+                                        <label for="check_8">계속 보험료</label>
                                     </div>
                                 </div>
                             </div>
@@ -129,7 +129,7 @@
                 </ul>
             </div>
         </div>
-        <div class="form_agrchk agree_form">
+        <div class="form_agrchk agree_form line_top">
             <div class="title accordion">
                 <div>
                     <p class="form_agrchk_title">출금정보입력</p><span class="btn_down"></span>
@@ -138,7 +138,7 @@
             <div class="detail" tabindex="0">
                 <div class="form_indivi">
                     <div class="form_indivi_box01">
-                        <h5><img src="../assets/images/tm_09_title.png" alt=""></h5>
+                        <h5>보험료 납부방법 선택</h5>
                         <div class="tabmenu2 t2 js_tab nob">
                             <ul role="tablist">
                                 <li role="presentation" class="active"><a href="#tabCont3_1" id="tab_btn_0_0" role="tab" aria-controls="tabCont3_1" aria-selected="true" title="현재선택">즉시이체</a></li>
@@ -150,14 +150,86 @@
                                 <div id="tabCont3_1" class="tab_panel t3">
                                     <div class="inner">
                                         <div class="table_type_list t2">
-                                            <img src="../assets/images/tm_09_img01.png" class="" alt=""/>
+                                            <ul class="tab_list01">
+                                                <li>
+                                                    <h5>결제금융기관 선택</h5>
+                                                    <select name="" id="">
+                                                        <option value="">신한은행</option>
+                                                        <option value="">우리은행</option>
+                                                        <option value="">기업은행</option>
+                                                    </select>
+                                                </li>
+                                                <li>
+                                                    <h5>출금계좌번호 입력</h5>
+                                                    <input type="text" placeholder="1104******09">
+                                                </li>
+                                                <li class="last">
+                                                    <div>
+                                                        <h5>예금주명</h5>
+                                                        <input type="text" placeholder="라인하">
+                                                    </div>
+                                                    <div>
+                                                        <h5>자동이체일 (2회차 이후)</h5>
+                                                        <div class="form_item telecom-item">
+                                                            <div class="check-wrap">  
+                                                                <div class="radio">
+                                                                    <input id="cert_telecom1" type="radio" name="cert_telecom" checked="">
+                                                                    <label for="cert_telecom1" class="lbl">10일</label>
+                                                                </div>   
+                                                                <div class="radio">
+                                                                    <input id="cert_telecom2" type="radio" name="cert_telecom">
+                                                                    <label for="cert_telecom2" class="lbl">15일</label>
+                                                                </div>  
+                                                                <div class="radio">
+                                                                    <input id="cert_telecom3" type="radio" name="cert_telecom">
+                                                                    <label for="cert_telecom3" class="lbl">25일</label>
+                                                                </div> 
+                                                                <div class="radio">
+                                                                    <input id="cert_telecom4" type="radio" name="cert_telecom">
+                                                                    <label for="cert_telecom4" class="lbl">말일</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div id="tabCont3_2" class="tab_panel t3">
                                     <div class="inner">
                                         <div class="table_type_list t2">
-                                            <img src="../assets/images/tm_09_img02.png" class="" alt=""/>
+                                            <ul class="tab_list01 st2">
+                                                <li>
+                                                    <h5>카드번호 입력</h5>
+                                                    <input type="text" value=" 1104  -   ****  -   ****  -   1234">
+                                                </li>
+                                                <li class="last">
+                                                    <div>
+                                                        <h5>카드사</h5>
+                                                        <select name="" id="">
+                                                            <option value="">신한은행</option>
+                                                            <option value="">우리은행</option>
+                                                            <option value="">기업은행</option>
+                                                        </select>
+                                                    </div>
+                                                    <div>
+                                                        <h5>유효기간 (월/년)</h5>
+                                                        <input type="text" placeholder="4자리 입력">
+                                                    </div>
+                                                </li>
+                                                <li class="last">
+                                                    <div>
+                                                        <h5>예금주명</h5>
+                                                        <input type="text" value="라인하">
+                                                    </div>
+                                                    <div>
+                                                        <h5>결제일 (2회차 이후)</h5>
+                                                        <input type="text" value="15일">
+                                                    </div>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
