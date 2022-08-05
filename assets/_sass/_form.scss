@@ -12,7 +12,7 @@
 .agree_form.style2 .check_all .check_bottom div:last-child {margin-bottom:0;}
 .agree_form.style2 .check_all .check_bottom div button {position:absolute; top:vw(5); right:0; width:vw(12); height:vw(22); background:url(../images/ico_agree_link.png) no-repeat 0 0; background-size:vw(6) vw(11);}
 .agree_form.style2{margin-top:0;}
-.agree_form.style2 label:before{top:vw(4);}
+// .agree_form.style2 label:before{top:vw(4);}
 .agree_form.style2 .check_all .check_top{border:0;padding:vw(24) 0 vw(15);}
 .agree_form.style2 .check_all .check_bottom label {padding-left:vw(32);@include font('SB', vw(17), 25/15);}
 .agree_form.style2 .check_all .check_bottom{border:vw(1) solid #dcdcdc;border-radius: vw(17);margin-bottom:vw(22);padding:vw(20) vw(24);}
@@ -47,7 +47,7 @@
 .form_agrchk .detail{position: relative;}
 .form_agrchk .detail > div.side_line, .form_agrchk ul li .detail{padding:0 vw(22);}
 .form_agrchk ul li{position: relative;}
-.form_agrchk ul li.under_line .detail{border-bottom:vw(12) solid #f3f3f3;padding-bottom:vw(44);margin-bottom:vw(44);}
+.form_agrchk ul li.under_line .detail{border-bottom:vw(8) solid #f3f3f3;padding-bottom:vw(44);margin-bottom:vw(44);}
 .form_agrchk ul li.under_line.nob .detail{border-bottom: 0;padding-bottom:0;margin-bottom:vw(30);}
 .form_agrchk ul li .in_box02{border-radius: vw(19);border:vw(1) solid #dcdcdc;overflow: hidden;}
 .form_agrchk ul li .in_box02+.in_box02{margin-top: vw(16);}
@@ -62,9 +62,12 @@
 .form_agrchk_btnBox{text-align: right;padding:0 vw(22);margin-top:vw(44);}
 .btnBox_next{background-color: #cbcbcb;border-radius:vw(48);padding: vw(17) vw(44);@include font('B', vw(14), 22/15);color:#fff;display: inline-block;}
 .btnBox_next.on{background-color: #0035c3;}
+.btnBox_back{@include font('B', vw(14), 22/15);color:#535353;}
 
 .detail_line{margin:vw(20) 0;}
-.line_top{border-top:vw(12) solid #f3f3f3;padding-top:vw(44);margin-top:vw(44);}
+.line_top{border-top:vw(8) solid #f3f3f3;padding-top:vw(44);margin-top:vw(44);}
+
+.masking{-webkit-text-security:disc;}
 
 //주민등록번호 수집 및 휴대폰 인증
 .indivi_num{@include font('B', vw(22), 27/15);color:#191919;margin: vw(24) 0;border-bottom:vw(1) solid #f4f4f4;} 

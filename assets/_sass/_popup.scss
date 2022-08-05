@@ -4,5 +4,5 @@
 .pop_indivi.on{opacity: 1;visibility: visible;}
 .pop_indivi .pop_indivi_box{max-width: vw(354);width:100%;text-align: center;background: #fff;border-radius: vw(20);padding:vw(39) vw(22) vw(22);}
 .pop_indivi .invalid_icon{width:vw(24);margin-bottom: vw(12)}
-.pop_indivi .txt01{@include font('SB', vw(20), 24/16);color:#191919;}
-.pop_indivi .ppo_close{background: #ebebeb;@include font('B', vw(20), 24/16);color:#191919;border-radius: vw(11);width:100%;height: vw(44);margin-top: vw(30);}
+.pop_indivi .txt01{@include font('SB', vw(18), 24/16);color:#191919;}
+.pop_indivi .ppo_close{background: #ebebeb;@include font('B', vw(16), 24/16);color:#191919;border-radius: vw(11);width:100%;height: vw(44);margin-top: vw(30);}

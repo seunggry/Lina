@@ -215,36 +215,12 @@
                                 <p>개인(신용)정보의 수집·이용에 동의 하십니까? (동의등급, 보통)</p>
                                 <div class="form_agrchk_input">
                                     <div>
-                                        <input type="radio" id="check_20" class="chk" name="chkAgreeGroup2_1_1" value="Y4" onchange="allCheck.isAll2('Y4', 'check_19');">
+                                        <input type="radio" id="check_20" class="chk" name="chkAgreeGroup2_1_1" value="Y4" onchange="allCheck.isAll2('Y4', 'check_19');"><!--  allCheck.toggleAll4('chk Ychk2'); -->
                                         <label for="check_20">동의함</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="check_21" class="chk" name="chkAgreeGroup2_1_1" value="N" onchange="allCheck.isAll2('Y4', 'check_19');">
+                                        <input type="radio" id="check_21" class="chk" name="chkAgreeGroup2_1_1" value="N" onchange="allCheck.isAll2('Y4', 'check_19');"> <!--  allCheck.toggleAll4('chk Nchk2'); -->
                                         <label for="check_21">동의하지 않음</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="under_line nob">
-                        <div class="title accordion">
-                            <div>
-                                <input type="checkbox" id="check_22" name="chkAgreeGroup2" onchange="allCheck.toggleAll2('Y5');">
-                                <label for="check_22">2. 광고성 정보의 수신 동의</label>
-                                <span class="btn_down"></span>
-                            </div>
-                        </div>
-                        <div class="detail" tabindex="0">
-                            <div class="in_box02">
-                                <p>전자적 전송매체를 통한 광고성 정보의 수신을 동의하시겠습니까?</p>
-                                <div class="form_agrchk_input">
-                                    <div>
-                                        <input type="radio" id="check_23" class="chk" name="chkAgreeGroup2_1_2" value="Y5" onchange="allCheck.isAll2('Y5', 'check_22');">
-                                        <label for="check_23">동의함</label>
-                                    </div>
-                                    <div>
-                                        <input type="radio" id="check_24" class="chk" name="chkAgreeGroup2_1_2" value="N" onchange="allCheck.isAll2('Y5', 'check_22');">
-                                        <label for="check_24">동의하지 않음</label>
                                     </div>
                                 </div>
                             </div>
@@ -254,20 +230,20 @@
                         <div class="title accordion">
                             <div>
                                 <input type="checkbox" id="check_25" name="chkAgreeGroup2" onchange="allCheck.toggleAll2('Y6'); infopop();">
-                                <label for="check_25">3. 수집·이용에 관한 사항</label>
+                                <label for="check_25">2. 광고성 정보의 수신 동의</label>
                                 <span class="btn_down"></span>
                             </div>
                         </div>
                         <div class="detail" tabindex="0">
                             <div class="in_box02">
-                                <p>개인(신용)정보의 수집·이용에 동의 하십니까? (동의등급, 보통)</p>
+                                <p>전자적 전송매체를 통한 광고성 정보의 수신을 동의하시겠습니까?</p>
                                 <div class="form_agrchk_input">
                                     <div>
-                                        <input type="radio" id="check_26" class="chk" name="chkAgreeGroup2_1_3" value="Y6" onchange="allCheck.isAll2('Y6', 'check_25'); infopop();">
+                                        <input type="radio" id="check_26" class="chk Ychk2" name="chkAgreeGroup2_1_3" value="Y6" onchange="allCheck.isAll2('Y6', 'check_25'); infopop();">
                                         <label for="check_26">동의함</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="check_27" class="chk" name="chkAgreeGroup2_1_3" value="N" onchange="allCheck.isAll2('Y6', 'check_25');">
+                                        <input type="radio" id="check_27" class="chk Nchk2" name="chkAgreeGroup2_1_3" value="N" onchange="allCheck.isAll2('Y6', 'check_25');">
                                         <label for="check_27">동의하지 않음</label>
                                     </div>
                                 </div>
@@ -298,7 +274,7 @@
                 </ul>
             </div>
             <div class="btn_wrap bottom form_agrchk_btnBox">
-                <a href="javascript:history.back();">이전으로</a>
+                <a href="javascript:history.back();" class="btnBox_back">이전으로</a>
                 <a class="btn btnBox_next" href="tm_09.html">다음</a>
             </div>
         </div>
@@ -309,7 +285,9 @@
     <footer>
     </footer>
     <!-- // Footer -->
+    
     <script>
+        //광고성 정보의 수신동의 팝업
         function infopop(event){
             const snscheck0 = document.querySelector('#check_25');
             const snscheck = document.querySelector('#check_26');

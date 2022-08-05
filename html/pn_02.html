@@ -22,7 +22,7 @@
         <div class="txt_group under_line">
             <h2>본인인증을 <br/>진행해주세요</h2>
             <p class="desc"><span class="point">라*하</span> 고객님 <br/> 주민번호 뒷 7자리를 입력해주세요.</p>
-            <p class="indivi_num"><span>610203</span> - <input type="password"></p>
+            <p class="indivi_num"><span>610203</span> - <input type="number" class="masking" maxlength="7" oninput="maxLengthCheck(this)"></p>
         </div>
         <div class="form_indivi">
             <h3>휴대폰 정보를 입력해주세요</h3>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="check-number">
                             <label for="phone_number1_1" class="lb">휴대폰번호</label>
-                            <input type="tel" id="phone_number1_1" class="" placeholder="‘-’ 없이 번호만 입력" onchange="check_click();">
+                            <input type="tel" id="phone_number1_1" class="" placeholder="‘-’ 없이 번호만 입력" onchange="check_click();" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                         </div>
                     </div>
                     <div class="agree_form style2">
@@ -93,7 +93,7 @@
                             <label for="phoneCheck1" class="lb">인증번호 6자리</label>
                             <div class="input certification">
                                 <span class="dv">
-                                    <input id="phoneCheck1" class="i_txt" type="tel" placeholder="‘-’ 없이 번호만 입력" onchange="certificationText();">
+                                    <input id="phoneCheck1" class="i_txt" type="tel" placeholder="‘-’ 없이 번호만 입력"> <!--  onchange="certificationText();" -->
                                     <!-- <span class="timer">02:49</span> -->
                                 </span>
                                 <span class="dv">
@@ -106,8 +106,8 @@
             </div>
         </div>
         <div class="btn_wrap bottom form_agrchk_btnBox">
-            <a href="javascript:history.back();">이전으로</a>
-            <a class="btn btnBox_next" onclick="popOpenBtn();">인증</a>
+            <a href="javascript:history.back();" class="btnBox_back">이전으로</a>
+            <a class="btn btnBox_next">인증</a>
         </div>
         <div class="pop_indivi">
             <div class="pop_indivi_box">
@@ -123,9 +123,9 @@
     <footer>
     </footer>
     <!-- // Footer -->
+    
     <script>
-        //인증번호 발송
-        document.querySelector('.certification_btn').disabled = true;
+        //인증번호 발송버튼 활성화/비활성화
         document.onkeyup = check_click;
         document.onmouseup = check_click;
         document.onmousedown = check_click;
@@ -137,27 +137,25 @@
             }
         }
 
-        //인증번호 입력
+        //인증번호 입력 활성화
         function certificationBtn() {
             document.querySelector('.certification_wrap').classList.add('on');
         }
 
         //인증 버튼 활성화
-        document.onkeyup = certificationText;
-        document.onmouseup = certificationText;
-        document.onmousedown = certificationText;
-        function certificationText() {
-            if (phoneCheck1.value == '') {
-                document.querySelector('.btnBox_next').classList.remove('on');
+        var oldVal="";
+        var btnPayment=$('.btnBox_next');
+        $("#phoneCheck1").on("change keyup paste", function() {
+            var currentVal = $(this).val().length;
+            if(currentVal == 6) {
+                btnPayment.addClass('on');
             } else {
-                document.querySelector('.btnBox_next').classList.add('on');
+                btnPayment.removeClass('on');
             }
-        }
+        });
+
         //인증버튼 팝업
         const popWrap = document.querySelector('.pop_indivi');
-        function popOpenBtn() {
-            popWrap.classList.add('on');
-        }
         function popCloseBtn() {
             popWrap.classList.remove('on');
         }

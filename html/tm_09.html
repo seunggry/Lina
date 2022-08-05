@@ -153,15 +153,17 @@
                                             <ul class="tab_list01">
                                                 <li>
                                                     <h5>결제금융기관 선택</h5>
-                                                    <select name="" id="">
-                                                        <option value="">신한은행</option>
-                                                        <option value="">우리은행</option>
-                                                        <option value="">기업은행</option>
+                                                    <select name="" id="" onchange="chageLangSelect()">
+                                                        <option value="">선택</option>
+                                                        <option value="">국민</option>
+                                                        <option value="">신한</option>
+                                                        <option value="">농협</option>
+                                                        <option value="">우체국</option>
                                                     </select>
                                                 </li>
                                                 <li>
                                                     <h5>출금계좌번호 입력</h5>
-                                                    <input type="text" placeholder="1104******09">
+                                                    <input type="number" placeholder="1104******09" id="accountN" disabled>
                                                 </li>
                                                 <li class="last">
                                                     <div>
@@ -203,20 +205,21 @@
                                             <ul class="tab_list01 st2">
                                                 <li>
                                                     <h5>카드번호 입력</h5>
-                                                    <input type="text" value=" 1104  -   ****  -   ****  -   1234">
+                                                    <input type="text" id="cardN" placeholder=" 1104  -   ****  -   ****  -   1234" maxlength="16" oninput="maxLengthCheck(this)">
                                                 </li>
                                                 <li class="last">
                                                     <div>
                                                         <h5>카드사</h5>
                                                         <select name="" id="">
-                                                            <option value="">신한은행</option>
-                                                            <option value="">우리은행</option>
-                                                            <option value="">기업은행</option>
+                                                            <option value="">BC</option>
+                                                            <option value="">삼성</option>
+                                                            <option value="">우리</option>
+                                                            <option value="">신한</option>
                                                         </select>
                                                     </div>
                                                     <div>
                                                         <h5>유효기간 (월/년)</h5>
-                                                        <input type="text" placeholder="4자리 입력">
+                                                        <input type="number" id="cardD" placeholder="4자리 입력" maxlength="4" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </li>
                                                 <li class="last">
@@ -226,7 +229,7 @@
                                                     </div>
                                                     <div>
                                                         <h5>결제일 (2회차 이후)</h5>
-                                                        <input type="text" value="15일">
+                                                        <input type="text" value="15일" disabled>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -239,8 +242,8 @@
                 </div>
             </div>
             <div class="btn_wrap bottom form_agrchk_btnBox">
-                <a href="javascript:history.back();">이전으로</a>
-                <a class="btn btnBox_next">다음</a>
+                <a href="javascript:history.back();" class="btnBox_back">이전으로</a>
+                <a class="btn btnBox_next" href="tm_10.html">다음</a>
             </div>
         </div>
     </div>
@@ -250,6 +253,18 @@
     <footer>
     </footer>
     <!-- // Footer -->
+    
+    <script>
+        function chageLangSelect() {
+            document.querySelector('#accountN').disabled = false;
+        }
+        document.querySelector('#cardN').addEventListener('blur', function(){
+            alert('카드번호를 정확히 입력해주세요.');
+        });
+        document.querySelector('#cardD').addEventListener('blur', function(){
+            alert('정확히 입력해주세요.');
+        });
+    </script>
 </div>
 </body>
 </html>

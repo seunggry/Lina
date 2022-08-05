@@ -4,6 +4,16 @@ $(function(){
 
 $(window).on('load', function(){
     allCheck.init();
+
+    $('.btnBox_next').on('click', function(e){
+        if(!$(this).hasClass('on')){
+            alert('동의항목을 확인 바랍니다.');
+            e.preventDefault();
+            e.stopPropagation();
+        }else{
+            $('.pop_indivi').addClass('on');
+        }
+    });
 });
 
 let commonJS = {
@@ -97,17 +107,34 @@ let allCheck = {
             , $chk3 = $('[class="'+_class+'"]');
 
             if($ts3.prop('checked')){
+                var body = $('body')[0];
                 $chk3.prop('checked', $ts3.prop('checked'));
                 $('.btnBox_next').addClass('on');
+                window.scrollTo({ left: 0, top: body.offsetHeight, behavior: "smooth" });
             }else{
                 $chk3.prop('checked', false , $ts3.prop('checked'));
                 $('.btnBox_next').removeClass('on');
+                window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
             }
-        //$chk3.prop('checked', $ts3.prop('checked'));
+    },
+    toggleAll4: function(_class){
+        var $ts4 = $(event.target)
+            , $chk4 = $('[class="'+_class+'"]');
+        $chk4.prop('checked', $ts4.prop('checked'));
     },
 
     init: function(){
         allCheck.toggleAll();
         allCheck.isAll();
+        allCheck.toggleAll2();
+        allCheck.isAll2();
+        allCheck.toggleAll3();
+        allCheck.toggleAll4();
+    }
+}
+
+function maxLengthCheck(object){
+    if (object.value.length > object.maxLength){
+        object.value = object.value.slice(0, object.maxLength);
     }
 }

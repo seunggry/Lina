@@ -33,7 +33,7 @@ img{width: 100%;}
 
 h2{margin-bottom: vw(20); @include font('EB', 24px, 32/24);}
 .txt_group{padding:0 20px;}
-.txt_group.under_line{border-bottom:vw(12) solid #f3f3f3;margin-bottom:vw(44);} //220803 추가
+.txt_group.under_line{border-bottom:vw(8) solid #f3f3f3;margin-bottom:vw(44);} //220803 추가
 .txt_group.line_flex{display: flex;align-items: center;justify-content:space-between;} //220803 추가
 .txt_group.line_flex img{width:vw(54);margin-top: vw(-24);}
 .txt_group h2{margin-bottom: 20px; @include font('EB', 24px, 32/24);}
