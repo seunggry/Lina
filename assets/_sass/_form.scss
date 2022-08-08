@@ -39,6 +39,7 @@
 .accordion.title label{width:calc(100% - vw(20));box-sizing: border-box;}
 
 //설계 동의폼
+.form_agrchk{margin-top: vw(20);}
 .form_agrchk .form_agrchk_title{@include font('SB', vw(16), 24/16);color:#000;margin-bottom:vw(25);position: relative;width: calc(100% - vw(20));}
 .form_agrchk .form_agrchk_box{padding: vw(20) vw(22) vw(20) vw(22); border-radius: vw(19); background-color: #f4f4f4;border:vw(1) solid #dcdcdc;margin: vw(21) 0 vw(36);@include font('R', vw(13), 22/15);color:#616161;}
 .form_agrchk .img_b{margin-bottom: vw(20);margin-top: vw(-20);vertical-align: top;}
