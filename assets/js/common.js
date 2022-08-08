@@ -117,19 +117,13 @@ let allCheck = {
                 window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
             }
     },
-    toggleAll4: function(_class){
-        var $ts4 = $(event.target)
-            , $chk4 = $('[class="'+_class+'"]');
-        $chk4.prop('checked', $ts4.prop('checked'));
-    },
-
+    
     init: function(){
         allCheck.toggleAll();
         allCheck.isAll();
         allCheck.toggleAll2();
         allCheck.isAll2();
         allCheck.toggleAll3();
-        allCheck.toggleAll4();
     }
 }
 

@@ -96,7 +96,7 @@
 .img_wrap{text-align: center;}
 .img_wrap .img_icon{max-width: 100%;}
 
-.form_infoBox{position: absolute; top: vw(185); left: 50%; width: calc(100% - vw(44)); background: #fff; border: 0.134vw solid #3c3c4a; box-sizing: border-box; z-index: 1;border-radius: vw(17);transform: translateX(-50%);padding: vw(21) vw(23);opacity: 0;visibility: hidden;transition: all .3s;}
+.form_infoBox{position: absolute; top: vw(145); left: 50%; width: calc(100% - vw(44)); background: #fff; border: 0.134vw solid #3c3c4a; box-sizing: border-box; z-index: 1;border-radius: vw(17);transform: translateX(-50%);padding: vw(21) vw(23);opacity: 0;visibility: hidden;transition: all .3s;}
 .form_infoBox::after, .form_infoBox::before{ content: ''; display: block; position: absolute; width: 0; height: 0; border-style: solid; transform: rotate(-90deg);left:vw(50)}
 .form_infoBox::after{top: vw(-29); border-color: transparent transparent transparent #fff; border-width: vw(15);}
 .form_infoBox::before{top: vw(-30); border-color: transparent transparent transparent #3c3c4a; border-width: vw(15);}

@@ -205,7 +205,7 @@
                     <li class="under_line nob">
                         <div class="title accordion">
                             <div>
-                                <input type="checkbox" id="check_19" name="chkAgreeGroup2" onchange="allCheck.toggleAll2('Y4');">
+                                <input type="checkbox" id="check_19" name="chkAgreeGroup2" onchange="allCheck.toggleAll2('Y4'); infopop();">
                                 <label for="check_19">1. 수집·이용에 관한 사항</label>
                                 <span class="btn_down"></span>
                             </div>
@@ -215,21 +215,42 @@
                                 <p>개인(신용)정보의 수집·이용에 동의 하십니까? (동의등급, 보통)</p>
                                 <div class="form_agrchk_input">
                                     <div>
-                                        <input type="radio" id="check_20" class="chk" name="chkAgreeGroup2_1_1" value="Y4" onchange="allCheck.isAll2('Y4', 'check_19');"><!--  allCheck.toggleAll4('chk Ychk2'); -->
+                                        <input type="radio" id="check_20" class="chk" name="chkAgreeGroup2_1_1" value="Y4" onchange="allCheck.isAll2('Y4', 'check_19'); infopop();">
                                         <label for="check_20">동의함</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="check_21" class="chk" name="chkAgreeGroup2_1_1" value="N" onchange="allCheck.isAll2('Y4', 'check_19');"> <!--  allCheck.toggleAll4('chk Nchk2'); -->
+                                        <input type="radio" id="check_21" class="chk" name="chkAgreeGroup2_1_1" value="N" onchange="allCheck.isAll2('Y4', 'check_19'); noChk();">
                                         <label for="check_21">동의하지 않음</label>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="form_infoBox">
+                                <p>정보는 어떻게 전해 드릴까요?</p>
+                                <ul>
+                                    <li>
+                                        <input type="checkbox" id="form_infoBox_all" name="form_infoBox_all1" onchange="allCheck.toggleAll('form_infoBox_allt');">
+                                        <label for="form_infoBox_all">전체</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="form_infoBox_all01" name="form_infoBox_allt" onchange="allCheck.isAll('form_infoBox_allt', 'form_infoBox_all');">
+                                        <label for="form_infoBox_all01">전화(ARS)</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="form_infoBox_all02" name="form_infoBox_allt" onchange="allCheck.isAll('form_infoBox_allt', 'form_infoBox_all');">
+                                        <label for="form_infoBox_all02">문자/알림톡</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="form_infoBox_all03" name="form_infoBox_allt" onchange="allCheck.isAll('form_infoBox_allt', 'form_infoBox_all');">
+                                        <label for="form_infoBox_all03">이메일</label>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </li>
                     <li>
                         <div class="title accordion">
                             <div>
-                                <input type="checkbox" id="check_25" name="chkAgreeGroup2" onchange="allCheck.toggleAll2('Y6'); infopop();">
+                                <input type="checkbox" id="check_25" name="chkAgreeGroup2" onchange="allCheck.toggleAll2('Y6');">
                                 <label for="check_25">2. 광고성 정보의 수신 동의</label>
                                 <span class="btn_down"></span>
                             </div>
@@ -239,36 +260,15 @@
                                 <p>전자적 전송매체를 통한 광고성 정보의 수신을 동의하시겠습니까?</p>
                                 <div class="form_agrchk_input">
                                     <div>
-                                        <input type="radio" id="check_26" class="chk Ychk2" name="chkAgreeGroup2_1_3" value="Y6" onchange="allCheck.isAll2('Y6', 'check_25'); infopop();">
+                                        <input type="radio" id="check_26" class="chk" name="chkAgreeGroup2_1_3" value="Y6" onchange="allCheck.isAll2('Y6', 'check_25'); noChk2();">
                                         <label for="check_26">동의함</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="check_27" class="chk Nchk2" name="chkAgreeGroup2_1_3" value="N" onchange="allCheck.isAll2('Y6', 'check_25');">
+                                        <input type="radio" id="check_27" class="chk" name="chkAgreeGroup2_1_3" value="N" onchange="allCheck.isAll2('Y6', 'check_25'); noChk();">
                                         <label for="check_27">동의하지 않음</label>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form_infoBox">
-                            <p>정보는 어떻게 전해 드릴까요?</p>
-                            <ul>
-                                <li>
-                                    <input type="checkbox" id="form_infoBox_all" name="form_infoBox_all1" onchange="allCheck.toggleAll('form_infoBox_allt');">
-                                    <label for="form_infoBox_all">전체</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="form_infoBox_all01" name="form_infoBox_allt" onchange="allCheck.isAll('form_infoBox_allt', 'form_infoBox_all');">
-                                    <label for="form_infoBox_all01">전화(ARS)</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="form_infoBox_all02" name="form_infoBox_allt" onchange="allCheck.isAll('form_infoBox_allt', 'form_infoBox_all');">
-                                    <label for="form_infoBox_all02">문자/알림톡</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="form_infoBox_all03" name="form_infoBox_allt" onchange="allCheck.isAll('form_infoBox_allt', 'form_infoBox_all');">
-                                    <label for="form_infoBox_all03">이메일</label>
-                                </li>
-                            </ul>
                         </div>
                     </li>
                 </ul>
@@ -288,15 +288,34 @@
     
     <script>
         //광고성 정보의 수신동의 팝업
-        function infopop(event){
-            const snscheck0 = document.querySelector('#check_25');
-            const snscheck = document.querySelector('#check_26');
+        function infopop(){
+            const snscheck0 = document.querySelector('#check_19');
+            const snscheck = document.querySelector('#check_20');
 
             if(snscheck.checked && snscheck0.checked){
                 document.querySelector('.form_infoBox').classList.add('on');
-                form_infoBox_all.focus();
+                check_25.checked = true;
+                check_26.checked = true;
             }else{
                 document.querySelector('.form_infoBox').classList.remove('on');
+                check_25.checked = false;
+                check_26.checked = false;
+            }
+        };
+        function noChk(){
+            if(check_21.checked){
+                check_25.checked = false;
+                check_26.checked = false;
+                check_27.checked = true;
+            }else{
+
+            }
+        };
+        function noChk2(){
+            if(check_26.checked){
+                check_20.checked = true;
+                check_19.checked = true;
+                infopop();
             }
         };
         $("body").click(function(e) { 
