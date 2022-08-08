@@ -112,7 +112,7 @@
 .tabmenu2.nob ul{display: flex;align-items: center;}
 .tabmenu2.nob ul li{width: 50%;}
 .tabmenu2.nob ul li:first-child{margin-left:0;}
-.tabmenu2.nob ul li a{position:relative;display:block;@include font('B', vw(17), 27/15);color:#535353; background:#f3f3f3;text-align: center;border-radius:vw(14);height:vw(44);display: flex;align-items: center;justify-content: center;}
+.tabmenu2.nob ul li a{position:relative;@include font('B', vw(17), 27/15);color:#535353; background:#f3f3f3;text-align: center;border-radius:vw(14);height:vw(44);display: flex;align-items: center;justify-content: center;}
 .tabmenu2.nob ul li.active a{color:#fff; background:#383b5a;}
 .tabmenu2.nob ul li+li{padding-left: vw(10);}
 .tab_panel{display:none;}

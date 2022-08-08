@@ -19,11 +19,11 @@
     <!-- // Header -->
 
     <!-- Contents -->
-    <div class="contents">
+    <div class="contents sign">
         <div class="txt_group">
             <div class="tit">
                 <h2>보험계약자 전자서명을 <br/>진행해주세요</h2>
-                <a href="#" class="btn_recruiter"><em>모집원 연결</em></a>
+                <a href="#" class="btn_recruiter" onclick="Dialog.open('#modalDialog')"><em>모집원 연결</em></a>
             </div>
             <p class="desc_box">
                 보험계약의 체결 및 이행을 위해 보험 청약내용, 개인정보
@@ -31,28 +31,39 @@
             </p>
         </div>
 
-        <div class="sign_agree">
-            <div class="chk_group">
+        <div class="agree">
+            <div class="chk_group required">
                 <input type="checkbox" id="sign_agree">
                 <label for="sign_agree">보험계약자 전자서명 동의</label>
             </div>
             <div class="sign_box">
-                <img src="" alt="">
+                <img src="../assets/images/tm_10_sign.png" alt="">
                 <a href="#" class="btn_reset">다시 서명 하기</a>
             </div>
         </div>
 
         <div class="btn_group">
             <a href="#" class="btn txt_link" onClick="history.back()">이전으로</a>
-            <a href="#" class="btn btn_type">서명 완료</a>
+            <a href="./tm_11.html" class="btn_type btn_page disable">서명 완료</a>
         </div>
     </div>
     <!-- // Contents -->
 
-    <!-- Footer -->
-    <footer>
-    </footer>
-    <!-- // Footer -->
+    <div id="modalDialog" class="dialog modal" role="dialog" aria-hidden="true" data-ishtml="true" aria-labelledby="modalDialogLabel">
+        <div class="dialog_wrap">
+            <div class="dialog_con">
+                <div class="img_group">
+                    <img src="../assets/images/tm_01_modal.jpg" alt="">
+                </div>
+                <a href="#" onclick="Dialog.close('#modalDialog');" class="call_close">통화 종료</a>
+            </div>
+        </div>
+    </div>
 </div>
+<script>
+    $(function(){
+       commonJS.signClick();
+    });
+</script>
 </body>
 </html>

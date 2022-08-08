@@ -23,7 +23,7 @@
         <div class="txt_group">
             <div class="tit">
                 <h2>알릴 의무사항 진행 전 <br/> 중요사항을 확인해주세요</h2>
-                <a href="#" class="btn_recruiter"></a>
+                <a href="#" class="btn_recruiter" onclick="Dialog.open('#modalDialog')"><em>모집원 연결</em></a>
             </div>
             <div class="notice_box">
                 <p class="point">
@@ -51,7 +51,7 @@
             <ul class="ask_list">
                 <li class="ask_box">
                     <p class="tit">1. 현재 틀니를 하고 계십니까?</p>
-                    <ul class="radio_group">
+                    <ul class="radio_group required">
                         <li>
                             <input type="radio" id="radio1_yes" name="radio1">
                             <label for="radio1_yes">예</label>
@@ -70,7 +70,7 @@
                         사실이 있거나 치료가 필요하다는 진단을 받은 적이
                         있습니까?
                     </p>
-                    <ul class="radio_group">
+                    <ul class="radio_group required">
                         <li>
                             <input type="radio" id="radio2_yes" name="radio2">
                             <label for="radio2_yes">예</label>
@@ -88,7 +88,7 @@
                         받았거나 치주 수술이 필요하다는 진단을 받은 적이
                         있습니까?
                     </p>
-                    <ul class="radio_group">
+                    <ul class="radio_group required">
                         <li>
                             <input type="radio" id="radio3_yes" name="radio3">
                             <label for="radio3_yes">예</label>
@@ -103,16 +103,22 @@
         </div>
 
         <div class="btn_group">
-            <a href="#" class="btn txt_link" onClick="history.back()">이전으로</a>
-            <a href="./tm_04.html" class="btn btn_type">다음</a>
+            <a href="./tm_02.html" class="txt_link">이전으로</a>
+            <a href="./tm_04.html" class="btn_type btn_page disable">다음</a>
         </div>
     </div>
     <!-- // Contents -->
 
-    <!-- Footer -->
-    <footer>
-    </footer>
-    <!-- // Footer -->
+    <div id="modalDialog" class="dialog modal" role="dialog" aria-hidden="true" data-ishtml="true" aria-labelledby="modalDialogLabel">
+        <div class="dialog_wrap">
+            <div class="dialog_con">
+                <div class="img_group">
+                    <img src="../assets/images/tm_01_modal.jpg" alt="">
+                </div>
+                <a href="#" onclick="Dialog.close('#modalDialog');" class="call_close">통화 종료</a>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

@@ -20,9 +20,11 @@
 
     <!-- Contents -->
     <div class="contents">
-        <div class="txt_group line_flex">
-            <h2>보험료 결제정보를 <br/>확인해 주세요</h2>
-            <a href=""><img src="../assets/images/ico_recruiter.png" alt=""></a>
+        <div class="txt_group">
+            <div class="tit">
+                <h2>보험료 결제정보를 <br/>확인해 주세요</h2>
+                <a href="#" class="btn_recruiter" onclick="Dialog.open('#modalDialog')"><em>모집원 연결</em></a>
+            </div>
         </div>
         <div class="form_agrchk agree_form">
             <div class="title accordion">
@@ -249,10 +251,16 @@
     </div>
     <!-- // Contents -->
 
-    <!-- Footer -->
-    <footer>
-    </footer>
-    <!-- // Footer -->
+    <div id="modalDialog" class="dialog modal" role="dialog" aria-hidden="true" data-ishtml="true" aria-labelledby="modalDialogLabel">
+        <div class="dialog_wrap">
+            <div class="dialog_con">
+                <div class="img_group">
+                    <img src="../assets/images/tm_01_modal.jpg" alt="">
+                </div>
+                <a href="#" onclick="Dialog.close('#modalDialog');" class="call_close">통화 종료</a>
+            </div>
+        </div>
+    </div>
     
     <script>
         function chageLangSelect() {

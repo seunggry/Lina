@@ -23,11 +23,11 @@
         <div class="txt_group">
             <div class="tit">
                 <h2>계약 주요내용을 <br/> 확인해주세요</h2>
-                <a href="#" class="btn_highlight"></a>
+                <a href="#" class="btn_highlight effect"><em>형광펜 버튼</em></a>
             </div>
             <p class="desc"><span class="point">라*하</span> 고객님 <br/> 가입하실 보험계약정보를 확인해주세요.</p>
             <dl class="info_box">
-                <dt>(무)THE건강한치아보험V(갱신형)</dt>
+                <dt class="highlight">(무)THE건강한치아보험V(갱신형)</dt>
                 <dd>
                     <p>월 납입보험료</p>
                     <p class="price">27,500 <small>원</small></p>
@@ -75,7 +75,7 @@
                 <dl class="info_box2">
                     <dt>
                         (무)THE건강한치아보험V(갱신형)
-                        <span>10년 만기  10년납  5,000만원</span>
+                        <span class="highlight">10년 만기  10년납  5,000만원</span>
                     </dt>
                     <dd>
                         <p>보험료</p>
@@ -91,15 +91,15 @@
                         <ul class="list">
                             <li>
                                 <span class="tit">금, 도재</span>
-                                <span class="price">15 <small>만원</small></span>
+                                <span class="price highlight">15 <small>만원</small></span>
                             </li>
                             <li>
                                 <span class="tit">아말감</span>
-                                <span class="price">1 <small>만원</small></span>
+                                <span class="price highlight">1 <small>만원</small></span>
                             </li>
                             <li>
                                 <span class="tit">기타</span>
-                                <span class="price">5 <small>만원</small></span>
+                                <span class="price highlight">5 <small>만원</small></span>
                             </li>
                         </ul>
                     </dd>
@@ -108,30 +108,30 @@
                         <p class="price">20 <small>만원</small></p>
                     </dd>
                 </dl>
-
-                <hr class="line_bar2">
-
-                <img src="../assets/images/img_01.jpg" alt="">
             </div>
             <div id="tabCont3_3" class="tab_panel" role="tabpanel" aria-labelledby="tab_btn_0_2" aria-expanded="false">
-                <div class="info_box2">
-                    <ul class="list2">
-                        <li>
-                            <p class="tit">계약자</p>
-                            <span>라*하</span>
-                        </li>
-                        <li>
-                            <p class="tit">피보험자</p>
-                            <span>라*하</span>
-                        </li>
-                        <li>
-                            <p class="tit">장해시수익자</p>
-                            <span>라*하</span>
-                        </li>
-                    </ul>
+                <div class="info_group">
+                    <p class="sub_tit highlight">계약관계자</p>
+                    <div class="info_box2">
+                        <ul class="list2">
+                            <li>
+                                <p class="tit">계약자</p>
+                                <span>라*하</span>
+                            </li>
+                            <li>
+                                <p class="tit">피보험자</p>
+                                <span>라*하</span>
+                            </li>
+                            <li>
+                                <p class="tit">장해시수익자</p>
+                                <span>라*하</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+
                 <div class="form_group">
-                    <p class="sub_tit">계약자주소/연락처</p>
+                    <p class="sub_tit highlight">계약자주소/연락처</p>
                     <ul class="form">
                         <li>
                             <span class="tit">연락처</span>
@@ -144,15 +144,22 @@
                         </li>
                     </ul>
                     <div class="chk_group">
-                        <p class="tit">증권약관 발행방법</p>
-                        <ul class="list">
+                        <p class="tit highlight">증권약관 발행방법</p>
+                        <ul class="list required">
                             <li>
                                 <input type="checkbox" id="chk_mobile">
                                 <label for="chk_mobile">모바일</label>
                             </li>
                             <li>
-                                <input type="checkbox" id="chk_email">
+                                <input type="checkbox" id="chk_email" class="tooltip_open">
                                 <label for="chk_email">이메일</label>
+
+                                <div class="form_infoBox type2">
+                                    <div class="form">
+                                        <span class="tit">이메일</span>
+                                        <input type="text" value="email@gmail.com">
+                                    </div>
+                                </div>
                             </li>
                             <li>
                                 <input type="checkbox" id="chk_mail">
@@ -161,25 +168,19 @@
                         </ul>
                     </div>
                 </div>
-                <div class="btn_agree_chk">
+                <div class="btn_agree_chk required">
                     <input type="checkbox" id="agree_chk">
                     <label for="agree_chk">위 내용을 모두 확인하고 이에 동의합니다.</label>
                 </div>
                 <div class="btn_group spacing">
-                    <a href="#" class="btn txt_link">이전으로</a>
-                    <a href="./tm_03.html" class="btn btn_type">다음</a>
+                    <a href="./tm_01.html" class="txt_link">이전으로</a>
+                    <a href="./tm_03.html" class="btn_type btn_page disable">다음</a>
                 </div>
             </div>
         </div>
-
-
     </div>
     <!-- // Contents -->
 
-    <!-- Footer -->
-    <footer>
-    </footer>
-    <!-- // Footer -->
 </div>
 </body>
 </html>

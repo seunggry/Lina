@@ -21,7 +21,13 @@
     <!-- Contents -->
     <div class="contents">
         <div class="txt_group">
-            <h2>TM모바일청약을 <br/> 안내해드립니다</h2>
+            <div class="tit">
+                <h2>TM모바일청약을 <br/> 안내해드립니다</h2>
+                <div class="btn_group2">
+                    <a href="#" class="btn_highlight"><em>형광펜 버튼</em></a>
+                    <a href="#" class="btn_recruiter" onclick="Dialog.open('#modalDialog')"><em>모집원 연결</em></a>
+                </div>
+            </div>
             <p class="desc">안녕하세요. <span class="point">라*하</span> 고객님 <br/> 라이나생명과 함께해주셔서 감사합니다.</p>
             <p class="desc_box">
                 고객님의 계약체결을 위해 모바일로 청약을 진행하며, <br/>
@@ -68,10 +74,16 @@
     </div>
     <!-- // Contents -->
 
-    <!-- Footer -->
-    <footer>
-    </footer>
-    <!-- // Footer -->
+    <div id="modalDialog" class="dialog modal" role="dialog" aria-hidden="true" data-ishtml="true" aria-labelledby="modalDialogLabel">
+        <div class="dialog_wrap">
+            <div class="dialog_con">
+                <div class="img_group">
+                    <img src="../assets/images/tm_01_modal.jpg" alt="">
+                </div>
+                <a href="#" onclick="Dialog.close('#modalDialog');" class="call_close">통화 종료</a>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
