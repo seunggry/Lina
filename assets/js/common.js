@@ -58,69 +58,48 @@ let commonJS = {
             }
         });
     },
+    pageBtnDisable:function(){
+      let pageBtn = $('.btn_page');
+
+      pageBtn.on('click', function(){
+          if($(this).hasClass('disable')){
+              pageBtn.bind('click', false);
+              alert('동의항목을 확인 바랍니다.');
+          }
+      });
+    },
     pageBtnActive:function(){
         let requiredValue = $('body').find('.required');
         let pageBtn = $('.btn_page');
         let pageBtnChkBox = $('.btn_page_chk').find('input');
-        let requiredInput = requiredValue.find('input');
-        let isChecked, chkValue1, chkValue2, count = 0, totalCount = 0;
+        let requiredInput = $('.required input');
+        let count = 0, count2 = 0;
 
         requiredInput.on('change', function(e){
-            let target = e.target;
-            let requiredChildInput =  $(target).parents('.required').find('input');
-            let requiredChildInputLength = $(target).parents('.required').find('input').length;
-            let requiredChildInputRadioLength = $(target).parents('.required').find('input[type=radio]').length;
-            isChecked = $(target).prop('checked');
+            let target = $(e.target);
+            let required = target.parents('.required');
+            let requiredChildInputLength = required.find('input').length;
+            let requiredChildInputChk = required.find('input:checked');
+            let isChecked = target.prop('checked');
 
-            // requireChildInputsRadio();
-            requireChildInputs();
-            requireOneInput();
+            if(requiredChildInputLength > 1){
+                if(target.prop('type') === 'checkbox'){
+                    requiredChildInputChk.length >= 1 ? count = 1 : count = 0;
+                } else if(target.prop('type') === 'radio') {
+                    requiredChildInputChk.length >= 1 ? count++ : count--;
+                }
+            } else if(requiredChildInputLength === 1) {
+                isChecked ? count2++ : count2--;
+            }
 
-            if(totalCount < requiredValue.length){
+            if(count + count2 < requiredValue.length){
                 pageBtn.addClass('disable');
-                pageBtn.attr('disabled', 'disabled');
-
+                pageBtn.bind('click', false);
                 pageBtnChkBox.prop('checked', false);
-
             } else{
                 pageBtn.removeClass('disable');
-                pageBtn.removeAttr('disabled');
-
+                pageBtn.unbind('click', false);
                 pageBtnChkBox.prop('checked', true);
-            }
-
-            // console.log(count, totalCount, requiredValue.length);
-            // function requireChildInputsRadio(){
-            //     if(requiredChildInputRadioLength > 1){
-            //         // isChecked || !isChecked ? totalCount++ : totalCount--;
-            //         if(isChecked){
-            //             count++;
-            //             totalCount = 1;
-            //         } else{
-            //             count--;
-            //             requiredChildInputRadioLength === count || count < 1 ? totalCount = 0 : totalCount = 1;
-            //         }
-            //
-            //         console.log(isChecked, totalCount);
-            //     }
-            // }
-
-            function requireChildInputs(){
-                if(requiredChildInputLength > 1){
-                    if(isChecked){
-                        count <= requiredChildInputLength ? count++ : count;
-                        totalCount = 1;
-                    } else{
-                        count--;
-                        requiredChildInputLength === count || count < 1 ? totalCount = 0 : totalCount = 1;
-                    }
-                }
-            }
-
-            function requireOneInput(){
-                if(requiredChildInputLength === 1){
-                    isChecked ? totalCount++ : totalCount--;
-                }
             }
         });
     },
@@ -167,6 +146,12 @@ let commonJS = {
 
         });
     },
+    popupOpen:function(param){
+        $('#'+ param).addClass('show');
+    },
+    popupClose:function(param){
+        $('#'+ param).removeClass('show');
+    },
 
 
     init:function(){
@@ -174,6 +159,7 @@ let commonJS = {
         commonJS.clickDefault();
         commonJS.highlightBtnClick();
         commonJS.formInfoBoxShow();
+        commonJS.pageBtnDisable();
         commonJS.pageBtnActive();
         commonJS.audioControl();
     }
@@ -248,6 +234,46 @@ let allCheck = {
                 $('.btnBox_next').removeClass('on');
                 window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
             }
+    },
+    toggleAll4: function(_name){
+        let $ts = $(event.target)
+            , popId = $ts.parents('.dialog.page').attr('id')
+            , chkList = $('.import_chk_list li a[data-pop='+ popId +']').find('.ico_chk input[type=checkbox]')
+            , $chk = $('[name="'+_name+'"]')
+            , chkTrue = $ts.prop('checked');
+
+        $chk.prop('checked', $ts.prop('checked'));
+
+        if(chkTrue){
+            chkList.prop('checked', true);
+        } else{
+            chkList.prop('checked', false);
+        }
+    },
+    isAll4: function(_name, _id){
+        var $ts = $(event.target)
+            , popId = $ts.parents('.dialog.page').attr('id')
+            , chkList = $('.import_chk_list li a[data-pop='+ popId +']').find('.ico_chk input[type=checkbox]')
+            , $chkAll = $('#'+_id)
+            , $chk = $('[name="'+_name+'"]')
+
+            , i = 0
+            , flag = false;
+
+        while (i < $chk.length) {
+            flag = $chk.eq(i).prop('checked');
+            if (!flag){
+                break;
+            } else i++;
+        }
+        if (flag){ // 전체 체크일 시
+            $chkAll.prop('checked', true);
+            chkList.prop('checked', true);
+        } else {
+            $chkAll.prop('checked', false);
+            chkList.prop('checked', false);
+
+        }
     },
     
     init: function(){
