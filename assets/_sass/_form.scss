@@ -100,6 +100,7 @@
 .form_infoBox::after, .form_infoBox::before{ content: ''; display: block; position: absolute; width: 0; height: 0; border-style: solid; transform: rotate(-90deg);left:vw(50)}
 .form_infoBox::after{top: vw(-29); border-color: transparent transparent transparent #fff; border-width: vw(15);}
 .form_infoBox::before{top: vw(-30); border-color: transparent transparent transparent #3c3c4a; border-width: vw(15);}
+.form_infoBox.tm::after, .form_infoBox.tm::before{left:vw(50);}
 .form_infoBox.on{opacity: 1;visibility: visible;}
 .form_infoBox p{@include font('R', vw(15), 24/15);color:#616161;}
 .form_infoBox ul{display: flex;align-items: center;flex-wrap: wrap;}

@@ -249,13 +249,34 @@ let allCheck = {
                 window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
             }
     },
-    
+    isAll3: function(_name, _id){
+        var $ts3 = $(event.target)
+            , $chkAll3 = $('#'+_id)
+            , $chk3 = $('[name="'+_name+'"]')
+
+            , i = 0
+            , flag3 = false;
+
+        while (i < $chk3.length) {
+            flag3 = $chk3.eq(i).prop('checked');
+            if (!flag3){
+                break;
+            } else i++;
+        }
+        if (flag3){ // 전체 체크일 시
+            $chkAll3.prop('checked', true);
+        } else {
+            $chkAll3.prop('checked', false);
+        }
+    },
+
     init: function(){
         allCheck.toggleAll();
         allCheck.isAll();
         allCheck.toggleAll2();
         allCheck.isAll2();
         allCheck.toggleAll3();
+        allCheck.isAll3();
     }
 }
 
