@@ -112,6 +112,14 @@ h2{@include font('EB', vw(24), 32/24);}
 .ask_box .radio_group label::before{content: ''; display: inline-block; margin-right: vw(10); width: vw(22); height: vw(22); background:url(../images/ico_agree_chk_off2.png) no-repeat center/ 100% auto;}
 .ask_box .radio_group input[type="radio"]:checked ~ label{color: #fff; background: #150f96;}
 .ask_box .radio_group input[type="radio"]:checked ~ label::before{background-image: url(../images/ico_agree_chk_on2.png);}
+.ask_box .chk_group1{display: flex;}
+.ask_box .chk_group1 li{position: relative; margin-top: vw(16); flex: 1; height: vw(60);}
+.ask_box .chk_group1 li.half{flex: none; margin-left: auto; width: 48.295%;}
+.ask_box .chk_group1 label{position: absolute; top: 0; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; @include font('SB', vw(14)); background: #f4f4f4; border-radius: vw(20);}
+.ask_box .chk_group1 label::before{content: ''; display: inline-block; margin-right: vw(10); width: vw(22); height: vw(22); background:url(../images/ico_agree_chk_off2.png) no-repeat center/ 100% auto;}
+.ask_box .chk_group1 input[type="checkbox"]:checked ~ label{color: #fff; background: #150f96;}
+.ask_box .chk_group1 input[type="checkbox"]:checked ~ label::before{background-image: url(../images/ico_agree_chk_on2.png);}
+
 
 .import_chk_list{margin-top: vw(26); padding: 0 vw(20);}
 .import_chk_list li a{display: flex; align-items: center; justify-content: space-between; padding: vw(20); width: 100%; border: vw(1) solid #dcdcdc; border-radius: vw(15); box-sizing: border-box;}
@@ -141,9 +149,6 @@ h2{@include font('EB', vw(24), 32/24);}
 .dialog.page .pop_con .img_table{overflow: scroll; margin-top: vw(30); width: 100%;}
 .dialog.page .pop_con .img_table img{width: vw(582);}
 .dialog.page .pop_con .fixed{position: fixed; left: 0; bottom: 0; margin: 0; padding: vw(13) vw(20) vw(25); width: 100%; background: rgba(255, 255, 255, 0.8);}
-
-//.header.pop{display: flex; align-items: center; justify-content: space-between;}
-//.header.pop .pop_prev{width: vw(48); height: vw(48); background: url(../images/ico_prev.png) no-repeat left center/vw(9) vw(17);}
 
 .confirm_list{margin-top: vw(20);}
 .confirm_list li + li{margin-top: vw(30);}
