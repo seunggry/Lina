@@ -96,6 +96,7 @@ let commonJS = {
                 pageBtn.addClass('disable');
                 pageBtn.bind('click', false);
                 pageBtnChkBox.prop('checked', false);
+
             } else{
                 pageBtn.removeClass('disable');
                 pageBtn.unbind('click', false);
@@ -235,7 +236,49 @@ let allCheck = {
                 window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
             }
     },
-    toggleAll4: function(_name){
+    isAll3: function(_class, _id){
+        var $ts = $(event.target)
+            , $chkAll = $('#'+_id)
+            , $chk = $('[class="'+_class+'"]')
+
+            , i = 0
+            , flag = false;
+
+        while (i < $chk.length) {
+            flag = $chk.eq(i).prop('checked');
+            if (!flag){
+                break;
+            } else i++;
+        }
+        if (flag){ // 전체 체크일 시
+            $chkAll.prop('checked', true);
+            $('.btnBox_next').addClass('on');
+        } else {
+            $chkAll.prop('checked', false);
+            $('.btnBox_next').removeClass('on');
+        }
+    },
+    isAll4: function(_name, _id){
+        var $ts = $(event.target)
+            , $chkAll = $('#'+_id)
+            , $chk = $('[name="'+_name+'"]')
+
+            , i = 0
+            , flag = false;
+
+        while (i < $chk.length) {
+            flag = $chk.eq(i).prop('checked');
+            if (!flag){
+                break;
+            } else i++;
+        }
+        if (flag){ // 전체 체크일 시
+            $chkAll.prop('checked', true);
+        } else {
+            $chkAll.prop('checked', false);
+        }
+    },
+    toggleAll5: function(_name){
         let $ts = $(event.target)
             , popId = $ts.parents('.dialog.page').attr('id')
             , chkList = $('.import_chk_list li a[data-pop='+ popId +']').find('.ico_chk input[type=checkbox]')
@@ -250,7 +293,7 @@ let allCheck = {
             chkList.prop('checked', false);
         }
     },
-    isAll4: function(_name, _id){
+    isAll5: function(_name, _id){
         var $ts = $(event.target)
             , popId = $ts.parents('.dialog.page').attr('id')
             , chkList = $('.import_chk_list li a[data-pop='+ popId +']').find('.ico_chk input[type=checkbox]')
@@ -275,13 +318,14 @@ let allCheck = {
 
         }
     },
-    
+
     init: function(){
         allCheck.toggleAll();
         allCheck.isAll();
         allCheck.toggleAll2();
         allCheck.isAll2();
         allCheck.toggleAll3();
+        allCheck.isAll3();
     }
 }
 

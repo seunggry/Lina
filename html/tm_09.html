@@ -266,12 +266,16 @@
         function chageLangSelect() {
             document.querySelector('#accountN').disabled = false;
         }
-        document.querySelector('#cardN').addEventListener('blur', function(){
-            alert('카드번호를 정확히 입력해주세요.');
-        });
-        document.querySelector('#cardD').addEventListener('blur', function(){
-            alert('정확히 입력해주세요.');
-        });
+        document.querySelector('#cardN').onblur = function(e){
+            if(cardN.value.length != 16){
+                alert('카드번호를 정확히 입력해야합니다.');
+            }
+        }
+        document.querySelector('#cardD').onblur = function(e){
+            if(cardD.value.length != 4){
+                alert('정확히 입력해주세요.');
+            }
+        }
     </script>
 </div>
 </body>

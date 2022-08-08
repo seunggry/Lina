@@ -39,6 +39,7 @@
 .accordion.title label{width:calc(100% - vw(20));box-sizing: border-box;}
 
 //설계 동의폼
+.form_agrchk{margin-top: vw(20);}
 .form_agrchk .form_agrchk_title{@include font('SB', vw(16), 24/16);color:#000;margin-bottom:vw(25);position: relative;width: calc(100% - vw(20));}
 .form_agrchk .form_agrchk_box{padding: vw(20) vw(22) vw(20) vw(22); border-radius: vw(19); background-color: #f4f4f4;border:vw(1) solid #dcdcdc;margin: vw(21) 0 vw(36);@include font('R', vw(13), 22/15);color:#616161;}
 .form_agrchk .img_b{margin-bottom: vw(20);margin-top: vw(-20);vertical-align: top;}
@@ -100,6 +101,7 @@
 .form_infoBox::after, .form_infoBox::before{ content: ''; display: block; position: absolute; width: 0; height: 0; border-style: solid; transform: rotate(-90deg);left:vw(50)}
 .form_infoBox::after{top: vw(-29); border-color: transparent transparent transparent #fff; border-width: vw(15);}
 .form_infoBox::before{top: vw(-30); border-color: transparent transparent transparent #3c3c4a; border-width: vw(15);}
+.form_infoBox.tm::after, .form_infoBox.tm::before{left:vw(50);}
 .form_infoBox.on{opacity: 1;visibility: visible;}
 .form_infoBox p{@include font('R', vw(15), 24/15);color:#616161;}
 .form_infoBox ul{display: flex;align-items: center;flex-wrap: wrap;}
