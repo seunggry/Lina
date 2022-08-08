@@ -249,26 +249,49 @@ let allCheck = {
                 window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
             }
     },
-    isAll3: function(_name, _id){
-        var $ts3 = $(event.target)
-            , $chkAll3 = $('#'+_id)
-            , $chk3 = $('[name="'+_name+'"]')
+    isAll3: function(_class, _id){
+        var $ts = $(event.target)
+            , $chkAll = $('#'+_id)
+            , $chk = $('[class="'+_class+'"]')
 
             , i = 0
-            , flag3 = false;
+            , flag = false;
 
-        while (i < $chk3.length) {
-            flag3 = $chk3.eq(i).prop('checked');
-            if (!flag3){
+        while (i < $chk.length) {
+            flag = $chk.eq(i).prop('checked');
+            if (!flag){
                 break;
             } else i++;
         }
-        if (flag3){ // 전체 체크일 시
-            $chkAll3.prop('checked', true);
+        if (flag){ // 전체 체크일 시
+            $chkAll.prop('checked', true);
+            $('.btnBox_next').addClass('on');
         } else {
-            $chkAll3.prop('checked', false);
+            $chkAll.prop('checked', false);
+            $('.btnBox_next').removeClass('on');
         }
     },
+    isAll4: function(_name, _id){
+        var $ts = $(event.target)
+            , $chkAll = $('#'+_id)
+            , $chk = $('[name="'+_name+'"]')
+
+            , i = 0
+            , flag = false;
+
+        while (i < $chk.length) {
+            flag = $chk.eq(i).prop('checked');
+            if (!flag){
+                break;
+            } else i++;
+        }
+        if (flag){ // 전체 체크일 시
+            $chkAll.prop('checked', true);
+        } else {
+            $chkAll.prop('checked', false);
+        }
+    },
+    
 
     init: function(){
         allCheck.toggleAll();
