@@ -22,7 +22,7 @@
         <div class="txt_group under_line">
             <h2>본인인증을 <br/>진행해주세요</h2>
             <p class="desc"><span class="point">라*하</span> 고객님 <br/> 주민번호 뒷 7자리를 입력해주세요.</p>
-            <p class="indivi_num"><span>610203</span> - <input type="number" class="masking" maxlength="7" oninput="maxLengthCheck(this)"></p>
+            <p class="indivi_num"><span>610203</span> - <input type="text" pattern="[0-9]*" class="masking" maxlength="7" oninput="maxLengthCheck(this)"></p>
         </div>
         <div class="form_indivi">
             <h3>휴대폰 정보를 입력해주세요</h3>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="check-number">
                             <label for="phone_number1_1" class="lb">휴대폰번호</label>
-                            <input type="tel" id="phone_number1_1" class="" placeholder="‘-’ 없이 번호만 입력" onchange="check_click();" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                            <input type="tel" id="phone_number1_1" placeholder="‘-’ 없이 번호만 입력" onchange="check_click();">
                         </div>
                     </div>
                     <div class="agree_form style2">

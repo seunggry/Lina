@@ -165,7 +165,7 @@
                                                 </li>
                                                 <li>
                                                     <h5>출금계좌번호 입력</h5>
-                                                    <input type="number" placeholder="1104******09" id="accountN" disabled>
+                                                    <input type="text" pattern="[0-9]*" placeholder="1104******09" id="accountN" disabled>
                                                 </li>
                                                 <li class="last">
                                                     <div>
@@ -207,7 +207,7 @@
                                             <ul class="tab_list01 st2">
                                                 <li>
                                                     <h5>카드번호 입력</h5>
-                                                    <input type="text" id="cardN" placeholder=" 1104  -   ****  -   ****  -   1234" maxlength="16" oninput="maxLengthCheck(this)">
+                                                    <input type="text" pattern="[0-9]*" id="cardN" placeholder=" 1104  -   ****  -   ****  -   1234" maxlength="16" oninput="maxLengthCheck(this)">
                                                 </li>
                                                 <li class="last">
                                                     <div>
@@ -221,7 +221,7 @@
                                                     </div>
                                                     <div>
                                                         <h5>유효기간 (월/년)</h5>
-                                                        <input type="number" id="cardD" placeholder="4자리 입력" maxlength="4" oninput="maxLengthCheck(this)">
+                                                        <input type="text" pattern="[0-9]*" id="cardD" placeholder="4자리 입력" maxlength="4" oninput="maxLengthCheck(this)">
                                                     </div>
                                                 </li>
                                                 <li class="last">

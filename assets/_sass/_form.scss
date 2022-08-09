@@ -21,7 +21,7 @@
 .form_item .input{display:table;width:100%;table-layout:fixed;position:relative;}
 .form_item .input .dv{display:table-cell;position:relative;vertical-align:middle}
 .form_item .btn.t1 {width:100%; height:40px; padding-left: 0; padding-right: 0; line-height:40px; color:#535353; background: #f3f3f3; border-radius:10px;text-align: center;}
-.form_item .i_txt{width:calc(100% - 50px);height:40px; padding:0 10px; line-height:40px; border-bottom:1px solid #000;background-color:#fff;@include font('B', 16px, 27/16);vertical-align:middle;-webkit-transition:border 0.3s;transition:border 0.3s;outline:none;}
+.form_item .i_txt{border:0;border-radius:0;width:calc(100% - 50px);height:40px; padding:0 10px; line-height:40px; border-bottom:1px solid #000;background-color:#fff;@include font('B', 16px, 27/16);vertical-align:middle;-webkit-transition:border 0.3s;transition:border 0.3s;outline:none;}
 .form_item .i_txt::placeholder{color:#d4d4d4;}
 .form_item .input .dv { display: table-cell; position: relative; vertical-align: middle; }
 .form_item .input.certification .dv:last-child { width: 84px;}
