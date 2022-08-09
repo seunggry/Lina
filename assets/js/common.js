@@ -96,6 +96,33 @@ let commonJS = {
             }
         });
     },
+    importChk:function(){
+        let pageBtn = $('.contents .btn_page');
+        let importInput = $('.contents .import_chk_list').find('.ico_chk');
+
+        $(document).on('change', importInput, function(){
+            if(importChecked()){
+                pageBtn.removeClass('disable');
+                pageBtn.unbind('click', false);
+            } else {
+                pageBtn.addClass('disable');
+            }
+        });
+
+        function importChecked(){
+            let result = true;
+
+            importInput.each(function(){
+                let isChecked = $(this).find('input').prop('checked');
+                if(!isChecked){
+                    console.log(isChecked);
+                    return result = false;
+                }
+            });
+            console.log(result);
+            return result;
+        }
+    },
     requiredChk:function(className){
         let pageBtn = $('.'+ className).find('.btn_page');
         let requiredValue = $('.'+ className).find('.required');
@@ -132,6 +159,7 @@ let commonJS = {
                     }
                 }
             });
+
             return result;
         }
     },
@@ -209,6 +237,7 @@ let commonJS = {
         commonJS.clickDefault();
         commonJS.highlightBtnClick();
         commonJS.formInfoBoxShow();
+        commonJS.importChk();
         commonJS.pageBtnDisable();
         commonJS.pageBtnActive();
         commonJS.audioControl();
@@ -379,32 +408,7 @@ let allCheck = {
             highlight.removeClass('on');
         }
     },
-    importChk:function(){
-        let pageBtn = $('.contents .btn_page');
-        let importInput = $('.contents .import_chk_list').find('.ico_chk');
 
-        $(document).on('change', importInput, function(){
-            if(importChecked()){
-                pageBtn.removeClass('disable');
-                pageBtn.unbind('click', false);
-            } else {
-                pageBtn.addClass('disable');
-            }
-        });
-
-        function importChecked(){
-            let result = true;
-
-            importInput.each(function(){
-                let isChecked = $(this).find('input').prop('checked');
-                if(!isChecked){
-                    return result = false;
-                }
-            });
-            console.log(result);
-            return result;
-        }
-    },
 
     init:function(){
 
