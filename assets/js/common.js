@@ -79,7 +79,7 @@ let commonJS = {
         commonJS.requiredChk('dialog');
     },
     pageBtnChk:function(param){
-        let pageBtn = $('.btn_page');
+        let pageBtn = $('.dialog .btn_page');
         let data = $('a[data-pop=' + param + ']');
         let highlight = data.find('.tit .highlight');
 
@@ -97,19 +97,16 @@ let commonJS = {
         });
     },
     requiredChk:function(className){
-        let pageBtn = $('.btn_page');
+        let pageBtn = $('.'+ className).find('.btn_page');
         let requiredValue = $('.'+ className).find('.required');
         let requiredInput = requiredValue.find('input');
-        let pageBtnChkBox = $('.btn_page_chk').find('input');
 
         requiredInput.on('change', function() {
             if(requiredCheck()){
                 pageBtn.removeClass('disable');
                 pageBtn.unbind('click', false);
-                pageBtnChkBox.prop('checked', true);
             } else {
                 pageBtn.addClass('disable');
-                pageBtnChkBox.prop('checked', false);
             }
         });
 
@@ -189,7 +186,7 @@ let commonJS = {
         audioList.forEach(function(value){
             let valueParent = value.parentNode;
             let initAudioTxt = valueParent.getElementsByTagName('span')[0];
-            let initHightLight = valueParent.parentNode.nextElementSibling.querySelectorAll('.highlight');;
+            let initHightLight = valueParent.parentNode.nextElementSibling.querySelectorAll('.highlight');
 
             value.pause();
             valueParent.classList.remove('stop');
@@ -384,22 +381,29 @@ let allCheck = {
     },
     importChk:function(){
         let pageBtn = $('.contents .btn_page');
-        let importInput = $('.import_chk_list .ico_chk').find('input');
-        let result;
+        let importInput = $('.contents .import_chk_list').find('.ico_chk');
 
         $(document).on('change', importInput, function(){
-            importInput.each(function(){
-                result = $(this).prop('checked');
-                return result;
-            });
-
-            if(result){
+            if(importChecked()){
                 pageBtn.removeClass('disable');
                 pageBtn.unbind('click', false);
             } else {
                 pageBtn.addClass('disable');
             }
         });
+
+        function importChecked(){
+            let result = true;
+
+            importInput.each(function(){
+                let isChecked = $(this).find('input').prop('checked');
+                if(!isChecked){
+                    return result = false;
+                }
+            });
+            console.log(result);
+            return result;
+        }
     },
 
     init:function(){
