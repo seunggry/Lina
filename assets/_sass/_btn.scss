@@ -1,23 +1,41 @@
 @charset "UTF-8";
 
 /* btn */
-a[class*=btn]{display: inline-block; @include font('B', vw(14)); box-sizing: border-box;}
+a[class*=btn]{display: inline-block; @include font('B', 14px); box-sizing: border-box;}
 [class*=btn_type].disable{background: #cbcbcb;}
 
-.btn_group{margin: vw(38) 0 vw(25); padding: 0 vw(20); display: flex; align-items: center; justify-content: space-between; }
+.btn_group{margin: 38px 0 25px; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; }
 .btn_group.spacing{padding: 0;}
 .btn_group2{font-size: 0;}
-.btn_group2 a + a{margin-left: vw(10);}
-.btn_type{margin-left: auto; padding: 0 vw(46); height: vw(50); color: #fff; line-height: vw(50); background: #0035c3; border-radius: vw(44);}
-.btn_type2{width: 100%; height: vw(50); color: #fff; line-height: vw(50); text-align: center; background: #0035c3; border-radius: vw(44);}
-.btn_type3{width: 100%; height: vw(40); @include font('B', vw(15)); line-height: vw(40); border: vw(1) solid #979797; border-radius: vw(10); text-align: center;}
-.txt_link{display: inline-block; @include font('B', vw(14)); color: #535353;}
+.btn_group2 a + a{margin-left: 10px;}
+.btn_type{margin-left: auto; padding: 0 46px; height: 50px; color: #fff; line-height: 50px; background: #0035c3; border-radius: 44px;}
+.btn_type2{width: 100%; height: 50px; color: #fff; line-height: 50px; text-align: center; background: #0035c3; border-radius: 44px;}
+.btn_type3{width: 100%; height: 40px; @include font('B', 15px); line-height: 40px; border: 1px solid #979797; border-radius: 10px; text-align: center;}
+.txt_link{display: inline-block; @include font('B', 14px); color: #535353;}
 
-.btn_highlight{width: vw(48); height: vw(48); background: url(../images/ico_pen.png) no-repeat center/ 100% auto; border-radius: 50%; box-shadow: 0 vw(2) vw(4) 0 rgba(0, 0, 0, 0.17);}
-.btn_recruiter{width: vw(48); height: vw(48); background: url(../images/ico_recruiter.png) no-repeat center/ 100% auto; border-radius: 50%; box-shadow: 0 vw(2) vw(4) 0 rgba(0, 0, 0, 0.17);}
+.btn_highlight{width: 48px; height: 48px; background: url(../images/ico_pen.png) no-repeat center/ 100% auto; border-radius: 50%; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.17);}
+.btn_recruiter{width: 48px; height: 48px; background: url(../images/ico_recruiter.png) no-repeat center/ 100% auto; border-radius: 50%; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.17);}
 
-.btn_agree_chk{position: relative; width: 100%; height: vw(50);}
-.btn_agree_chk label{position: absolute; top: 0; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; @include font('SB', vw(15)); color: #fff; line-height: vw(50); background: #cbcbcb; border-radius: vw(44);}
-.btn_agree_chk label::before{content: ''; display: inline-block; margin-right: vw(5); width: vw(22); height: vw(22); background:url(../images/ico_all_chk_off.png) no-repeat center/ 100% auto;}
+.btn_agree_chk{position: relative; width: 100%; height: 50px;}
+.btn_agree_chk label{position: absolute; top: 0; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; @include font('SB', 15px); color: #fff; line-height: 50px; background: #cbcbcb; border-radius: 44px;}
+.btn_agree_chk label::before{content: ''; display: inline-block; margin-right: 5px; width: 22px; height: 22px; background:url(../images/ico_all_chk_off.png) no-repeat center/ 100% auto;}
 .btn_agree_chk input[type="checkbox"]:checked ~ label{background: #150f96;}
 .btn_agree_chk input[type="checkbox"]:checked ~ label::before{background-image: url(../images/ico_all_chk_on.png);}
+
+@media all and (max-width: 750px){
+  a[class*=btn]{font-size: vw(14);}
+
+  .btn_group{margin: vw(38) 0 vw(25); padding: 0 vw(20);}
+  .btn_group2 a + a{margin-left: vw(10);}
+  .btn_type{padding: 0 vw(46); height: vw(50); line-height: vw(50); border-radius: vw(44);}
+  .btn_type2{height: vw(50); line-height: vw(50); border-radius: vw(44);}
+  .btn_type3{height: vw(40); font-size: vw(15); line-height: vw(40); border-width: vw(1); border-radius: vw(10);}
+  .txt_link{font-size: vw(14);}
+
+  .btn_highlight{width: vw(48); height: vw(48); box-shadow: 0 vw(2) vw(4) 0 rgba(0, 0, 0, 0.17);}
+  .btn_recruiter{width: vw(48); height: vw(48); box-shadow: 0 vw(2) vw(4) 0 rgba(0, 0, 0, 0.17);}
+
+  .btn_agree_chk{height: vw(50);}
+  .btn_agree_chk label{font-size: vw(15); line-height: vw(50); border-radius: vw(44);}
+  .btn_agree_chk label::before{margin-right: vw(5); width: vw(22); height: vw(22);}
+}
