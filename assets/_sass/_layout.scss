@@ -158,7 +158,7 @@ h2{@include font('EB', 24px, 32/24);}
 .confirm_list .tit .btn_listen{display: flex; align-items: center; justify-content: center; width: 105px; height: 30px; font-size: 12px; border: 1px solid #dcdcdc; border-radius: 15px;}
 .confirm_list .tit .btn_listen::before{content: ''; display: inline-block; margin-right: 6px; width: 15px; height: 11px; background: url(../images/ico_listen.png) no-repeat center/100% auto; }
 .confirm_list .tit .btn_listen.stop{background: #f3f3f3; border-width: 0;}
-.confirm_list .tit .btn_listen.stop::before{background-image: url(../images/ico_listen.png);}
+.confirm_list .tit .btn_listen.stop::before{background-image: url(../images/ico_stop.png);}
 .confirm_list .detail_box{overflow: hidden; margin-top: 15px; border: 1px solid #dcdcdc; border-radius: 15px;}
 .confirm_list .detail_box p{padding: 16px 20px; @include font('SB', 13px, 22/13); color: #535353; white-space: normal; word-break: break-all;}
 .confirm_list .detail_box .highlight{color: #150f96;}
