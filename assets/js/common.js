@@ -81,14 +81,18 @@ let commonJS = {
     pageBtnChk:function(param){
         let pageBtn = $('.btn_page');
         let data = $('a[data-pop=' + param + ']');
+        let highlight = data.find('.tit .highlight');
 
         pageBtn.on('click', function(){
             let pageBtnStatus = $(this).hasClass('disable');
 
             if(!pageBtnStatus){
                 data.find('.ico_chk input').prop('checked', true);
+                highlight.addClass('on');
+
             } else {
                 data.find('.ico_chk input').prop('checked', false);
+                highlight.removeClass('on');
             }
         });
     },
@@ -328,8 +332,11 @@ let allCheck = {
     },
     toggleAll5: function(_name){
         let $ts = $(event.target)
+            , pop = $ts.parents('.dialog.page')
             , popId = $ts.parents('.dialog.page').attr('id')
-            , chkList = $('.import_chk_list li a[data-pop='+ popId +']').find('.ico_chk input[type=checkbox]')
+            , dataPop = $('.import_chk_list li a[data-pop='+ popId +']')
+            , chkList = dataPop.find('.ico_chk input[type=checkbox]')
+            , highlight = dataPop.find('.tit .highlight')
             , $chk = $('[name="'+_name+'"]')
             , chkTrue = $ts.prop('checked');
 
@@ -337,17 +344,23 @@ let allCheck = {
 
         if(chkTrue){
             chkList.prop('checked', true);
+            pop.removeClass('show');
+            highlight.addClass('on');
         } else{
             chkList.prop('checked', false);
+            pop.addClass('show');
+            highlight.removeClass('on');
         }
     },
     isAll5: function(_name, _id){
         var $ts = $(event.target)
-            , popId = $ts.parents('.dialog.page').attr('id')
-            , chkList = $('.import_chk_list li a[data-pop='+ popId +']').find('.ico_chk input[type=checkbox]')
+            , pop = $ts.parents('.dialog.page')
+            , popId = pop.attr('id')
+            , dataPop = $('.import_chk_list li a[data-pop='+ popId +']')
+            , chkList = dataPop.find('.ico_chk input[type=checkbox]')
+            , highlight = dataPop.find('.tit .highlight')
             , $chkAll = $('#'+_id)
             , $chk = $('[name="'+_name+'"]')
-
             , i = 0
             , flag = false;
 
@@ -360,10 +373,13 @@ let allCheck = {
         if (flag){ // 전체 체크일 시
             $chkAll.prop('checked', true);
             chkList.prop('checked', true);
+            pop.removeClass('show');
+            highlight.addClass('on');
         } else {
             $chkAll.prop('checked', false);
             chkList.prop('checked', false);
-
+            pop.addClass('show');
+            highlight.removeClass('on');
         }
     },
     importChk:function(){

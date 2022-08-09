@@ -24,7 +24,7 @@ img{width: 100%;}
 .point{color: #150f96 !important;}
 .bold{font-family: "AppleSDGothicNeoB", "sf-ui-display-bold", sans-serif; color: #150f96;}
 
-.highlight{position: relative; z-index: 1;}
+.highlight{position: relative; z-index: 1; display: inline-block;}
 .highlight::after{content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 43%; background: #ffed00; z-index: -1; transition: all 0.3s;}
 .highlight.on::after{width: 100%; opacity: 0.8;}
 
@@ -95,8 +95,9 @@ h2{@include font('EB', vw(24), 32/24);}
 .notice .btn_agree_chk{margin: vw(33) 0 vw(25);}
 .notice .obligation_group{padding: 0 vw(20);}
 .notice_box{overflow: hidden; margin-top: vw(20); border: vw(1) solid #dcdcdc; border-radius: vw(15);}
+.notice_box.type2{border-width: 0;}
 .notice_box .point{padding: vw(16) vw(20); @include font('B', vw(13));}
-.notice_box .detail{padding: vw(16) vw(20); background: #f4f4f4; color: #616161;}
+.notice_box .detail{padding: vw(16) vw(20); background: #f4f4f4; color: #616161; line-height: 1.5;}
 .notice_box .detail .bold{color: #191919;}
 .notice_box .detail li + li{margin-top: vw(9);}
 
