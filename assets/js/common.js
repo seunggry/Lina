@@ -83,14 +83,18 @@ let commonJS = {
         let data = $('a[data-pop=' + param + ']');
         let highlight = data.find('.tit .highlight');
 
-        pageBtn.on('click', function(){
+        pageBtn.on('click', function(e){
+            let dialog = $(this).parents('.dialog');
             let pageBtnStatus = $(this).hasClass('disable');
 
             if(!pageBtnStatus){
                 data.find('.ico_chk input').prop('checked', true);
                 highlight.addClass('on');
-
+                if(dialog){
+                    dialog.removeClass('show');
+                }
             } else {
+                e.preventDefault();
                 data.find('.ico_chk input').prop('checked', false);
                 highlight.removeClass('on');
             }
@@ -115,11 +119,9 @@ let commonJS = {
             importInput.each(function(){
                 let isChecked = $(this).find('input').prop('checked');
                 if(!isChecked){
-                    console.log(isChecked);
                     return result = false;
                 }
             });
-            console.log(result);
             return result;
         }
     },
