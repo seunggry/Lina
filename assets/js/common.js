@@ -239,7 +239,6 @@ let commonJS = {
         commonJS.clickDefault();
         commonJS.highlightBtnClick();
         commonJS.formInfoBoxShow();
-        commonJS.importChk();
         commonJS.pageBtnDisable();
         commonJS.pageBtnActive();
         commonJS.audioControl();
