@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 html, body{@include wrapper;}
-body{@include wrapper; margin: 0 auto; width: 750px; min-width: 375px; @include font('R', 13px);}
+body{@include wrapper; margin: 0 auto; width: 750px; @include font('R', 13px);}
 #wrap{box-sizing: border-box;}
 
 header{padding: 60px 20px 34px; width: 100%; box-sizing: border-box;}
