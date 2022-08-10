@@ -6,7 +6,7 @@
 .agree_form label {display:block; position:relative;cursor:pointer; vertical-align:middle;@include font('SB', 17px, 25/15);color:#000;padding-left: 32px;}
 .agree_form label span {font-weight:700;}
 .agree_form label:before {content:'';  position:absolute; top:0; left:0; width: 25px; height: 25px; background:url(../images/ico_agree_chk_off2.png) no-repeat 0 0; background-size:25px auto;}
-.agree_form input:checked+label:before {content:''; background:url(../images/ico_agree_chk_on2.png) no-repeat 0 0; background-size:25px auto;}
+.agree_form input:checked+label:before {content:''; background:url(../images/ico_agree_chk_on3.png) no-repeat 0 0; background-size:25px auto;}
 
 .agree_form.style2 .check_all .check_bottom div {position:relative; margin-bottom:9px;}
 .agree_form.style2 .check_all .check_bottom div:last-child {margin-bottom:0;}
@@ -16,7 +16,7 @@
 .agree_form.style2 .check_all .check_bottom label {padding-left:32px; @include font('SB', 17px, 25/15);}
 .agree_form.style2 .check_all .check_bottom{border:1px solid #dcdcdc;border-radius: 17px;margin-bottom:22px;padding:20px 24px;}
 .agree_form.style2 .check_all .check_bottom label:before{top: 4px; left: 0;width: 25px; height: 25px;background: url(../images/ico_agree_chk_off2.png) no-repeat 0 0;background-size: 25px auto;}
-.agree_form.style2 .check_all .check_bottom input:checked + label:before{background: url(../images/ico_agree_chk_on2.png) no-repeat 0 0; background-size: 25px auto;}
+.agree_form.style2 .check_all .check_bottom input:checked + label:before{background: url(../images/ico_agree_chk_on3.png) no-repeat 0 0; background-size: 25px auto;}
 
 .form_item .input{display:table;width:100%;table-layout:fixed;position:relative;}
 .form_item .input .dv{display:table-cell;position:relative;vertical-align:middle}

@@ -154,8 +154,7 @@ legend {
   height: 1px;
   margin: -1px;
   overflow: hidden;
-  -webkit-clip-path: polygon(0 0, 0 0, 0 0);
-          clip-path: polygon(0 0, 0 0, 0 0);
+  clip-path: polygon(0 0, 0 0, 0 0);
 }
 
 select, textarea, input, label {
@@ -223,8 +222,7 @@ div {
   height: 1px;
   margin: -1px;
   overflow: hidden;
-  -webkit-clip-path: polygon(0 0, 0 0, 0 0);
-          clip-path: polygon(0 0, 0 0, 0 0);
+  clip-path: polygon(0 0, 0 0, 0 0);
 }
 
 .agree_form input {
@@ -263,7 +261,7 @@ div {
 
 .agree_form input:checked + label:before {
   content: "";
-  background: url(../images/ico_agree_chk_on2.png) no-repeat 0 0;
+  background: url(../images/ico_agree_chk_on3.png) no-repeat 0 0;
   background-size: 25px auto;
 }
 
@@ -319,7 +317,7 @@ div {
 }
 
 .agree_form.style2 .check_all .check_bottom input:checked + label:before {
-  background: url(../images/ico_agree_chk_on2.png) no-repeat 0 0;
+  background: url(../images/ico_agree_chk_on3.png) no-repeat 0 0;
   background-size: 25px auto;
 }
 
@@ -361,16 +359,9 @@ div {
   font-size: 16px;
   line-height: 1.6875;
   vertical-align: middle;
+  -webkit-transition: border 0.3s;
   transition: border 0.3s;
   outline: none;
-}
-
-.form_item .i_txt::-moz-placeholder {
-  color: #d4d4d4;
-}
-
-.form_item .i_txt:-ms-input-placeholder {
-  color: #d4d4d4;
 }
 
 .form_item .i_txt::placeholder {
@@ -677,8 +668,7 @@ div {
   height: 1px;
   margin: -1px;
   overflow: hidden;
-  -webkit-clip-path: polygon(0 0, 0 0, 0 0);
-          clip-path: polygon(0 0, 0 0, 0 0);
+  clip-path: polygon(0 0, 0 0, 0 0);
 }
 
 .telecom-item .lbl:before {
@@ -729,14 +719,6 @@ div {
   font-size: 14px;
   line-height: 2.4;
   color: #191919;
-}
-
-.telecom-item .check-number input::-moz-placeholder {
-  color: #d4d4d4;
-}
-
-.telecom-item .check-number input:-ms-input-placeholder {
-  color: #d4d4d4;
 }
 
 .telecom-item .check-number input::placeholder {
@@ -929,14 +911,6 @@ div {
   line-height: 1.8;
   color: #191919;
   border-bottom: 1px solid #f4f4f4;
-}
-
-.tab_list01 li input::-moz-placeholder {
-  color: #d4d4d4;
-}
-
-.tab_list01 li input:-ms-input-placeholder {
-  color: #d4d4d4;
 }
 
 .tab_list01 li input::placeholder {
@@ -1465,8 +1439,7 @@ header em {
   height: 1px;
   margin: -1px;
   overflow: hidden;
-  -webkit-clip-path: polygon(0 0, 0 0, 0 0);
-          clip-path: polygon(0 0, 0 0, 0 0);
+  clip-path: polygon(0 0, 0 0, 0 0);
 }
 
 .contents {
@@ -1479,8 +1452,7 @@ header em {
   height: 1px;
   margin: -1px;
   overflow: hidden;
-  -webkit-clip-path: polygon(0 0, 0 0, 0 0);
-          clip-path: polygon(0 0, 0 0, 0 0);
+  clip-path: polygon(0 0, 0 0, 0 0);
 }
 
 .section {
@@ -1679,8 +1651,6 @@ h2 {
 }
 
 .info_box dt {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
 }
 
@@ -1696,8 +1666,6 @@ h2 {
 
 .info_box2 dt span {
   display: inline-block;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   font-family: "AppleSDGothicNeoSB", "sf-ui-display-semibold";
   font-size: 13px;
@@ -1768,8 +1736,6 @@ h2 {
 }
 
 .tab_con .highlight {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
 }
 
@@ -1873,7 +1839,7 @@ h2 {
 }
 
 .chk_group input[type=checkbox]:checked ~ label::before {
-  background-image: url(../images/ico_agree_chk_on.png);
+  background-image: url(../images/ico_agree_chk_on3.png);
 }
 
 .chk_group .list {
@@ -1996,7 +1962,7 @@ h2 {
 }
 
 .ask_box .radio_group input[type=radio]:checked ~ label::before {
-  background-image: url(../images/ico_agree_chk_on2.png);
+  background-image: url(../images/ico_agree_chk_on3.png);
 }
 
 .ask_box .chk_group1 {
@@ -2045,7 +2011,7 @@ h2 {
 }
 
 .ask_box .chk_group1 input[type=checkbox]:checked ~ label::before {
-  background-image: url(../images/ico_agree_chk_on2.png);
+  background-image: url(../images/ico_agree_chk_on3.png);
 }
 
 .import_chk_list {
@@ -2083,7 +2049,7 @@ h2 {
 }
 
 .import_chk_list .ico_chk input[type=checkbox]:checked ~ label {
-  background-image: url(../images/ico_agree_chk_on.png);
+  background-image: url(../images/ico_agree_chk_on3.png);
 }
 
 .dialog {
@@ -2177,8 +2143,7 @@ h2 {
   height: 1px;
   margin: -1px;
   overflow: hidden;
-  -webkit-clip-path: polygon(0 0, 0 0, 0 0);
-          clip-path: polygon(0 0, 0 0, 0 0);
+  clip-path: polygon(0 0, 0 0, 0 0);
 }
 
 .dialog.page .pop_header .pop_prev {

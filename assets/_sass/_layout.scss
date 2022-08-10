@@ -88,7 +88,7 @@ h2{@include font('EB', 24px, 32/24);}
 .chk_group .tit{margin-bottom: 18px; @include font('SB', 16px, 24/16); color: #000;}
 .chk_group label{position: relative; padding-left: 27px; @include font('SB', 15px);}
 .chk_group label::before{content: ''; position:absolute; top: 50%; left: 0; transform: translateY(-50%); width: 22px; height: 22px; background:url(../images/ico_agree_chk_off2.png) no-repeat center/ 100% auto;}
-.chk_group input[type="checkbox"]:checked ~ label::before{background-image: url(../images/ico_agree_chk_on.png);}
+.chk_group input[type="checkbox"]:checked ~ label::before{background-image: url(../images/ico_agree_chk_on3.png);}
 .chk_group .list{position: relative; display: flex; align-items: center;}
 .chk_group .list li + li{margin-left: 60px;}
 
@@ -112,14 +112,14 @@ h2{@include font('EB', 24px, 32/24);}
 .ask_box .radio_group label{position: absolute; top: 0; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; @include font('SB', 14px); background: #f4f4f4; border-radius: 20px;}
 .ask_box .radio_group label::before{content: ''; display: inline-block; margin-right: 10px; width: 22px; height: 22px; background:url(../images/ico_agree_chk_off2.png) no-repeat center/ 100% auto;}
 .ask_box .radio_group input[type="radio"]:checked ~ label{color: #fff; background: #150f96;}
-.ask_box .radio_group input[type="radio"]:checked ~ label::before{background-image: url(../images/ico_agree_chk_on2.png);}
+.ask_box .radio_group input[type="radio"]:checked ~ label::before{background-image: url(../images/ico_agree_chk_on3.png);}
 .ask_box .chk_group1{display: flex;}
 .ask_box .chk_group1 li{position: relative; margin-top: 16px; flex: 1; height: 60px;}
 .ask_box .chk_group1 li.half{flex: none; margin-left: auto; width: 48.295%;}
 .ask_box .chk_group1 label{position: absolute; top: 0; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; @include font('SB', 14px); background: #f4f4f4; border-radius: 20px;}
 .ask_box .chk_group1 label::before{content: ''; display: inline-block; margin-right: 10px; width: 22px; height: 22px; background:url(../images/ico_agree_chk_off2.png) no-repeat center/ 100% auto;}
 .ask_box .chk_group1 input[type="checkbox"]:checked ~ label{color: #fff; background: #150f96;}
-.ask_box .chk_group1 input[type="checkbox"]:checked ~ label::before{background-image: url(../images/ico_agree_chk_on2.png);}
+.ask_box .chk_group1 input[type="checkbox"]:checked ~ label::before{background-image: url(../images/ico_agree_chk_on3.png);}
 
 
 .import_chk_list{margin-top: 26px; padding: 0 20px;}
@@ -127,7 +127,7 @@ h2{@include font('EB', 24px, 32/24);}
 .import_chk_list li + li{margin-top: 12px;}
 .import_chk_list .tit{@include font('SB', 15px, 20/15);}
 .import_chk_list .ico_chk label{content: ''; display: inline-block; width: 22px; height: 22px; background:url(../images/ico_agree_chk_off2.png) no-repeat center/ 100% auto;}
-.import_chk_list .ico_chk input[type="checkbox"]:checked ~ label{background-image: url(../images/ico_agree_chk_on.png);}
+.import_chk_list .ico_chk input[type="checkbox"]:checked ~ label{background-image: url(../images/ico_agree_chk_on3.png);}
 
 //dialog modal
 .dialog{position:fixed; top:0; left: -300%; display: flex; align-items: center; justify-content: center; padding: 20px; width: 100vw; height: 100vh; opacity: 0; z-index: 9999; box-sizing: border-box; transition: left 0s 0.2s, opacity 0s 0.2s, background 0.45s cubic-bezier(0.22,0.61,0.2,1) 0.15s;}
