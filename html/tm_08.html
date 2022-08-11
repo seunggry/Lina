@@ -207,7 +207,7 @@
                     <li class="under_line nob">
                         <div class="title accordion">
                             <div>
-                                <input type="checkbox" id="check_19" name="chkAgreeGroup2" onchange="allCheck.toggleAll2('Y4'); noChk2();">
+                                <input type="checkbox" id="check_19" name="chkAgreeGroup2" onchange="allCheck.toggleAll2('Y4'); noChk2();" onclick="noclick();">
                                 <label for="check_19">1. 수집·이용에 관한 사항</label>
                                 <span class="btn_down"></span>
                             </div>
@@ -316,34 +316,55 @@
                 check_25.checked = false;
                 check_26.checked = false;
                 check_27.checked = true;
+                infopop();
             }
             if(check_27.checked){
                 form_infoBox_all.checked = false;
                 form_infoBox_all01.checked = false;
                 form_infoBox_all02.checked = false;
                 form_infoBox_all03.checked = false;
-                form_infoBox_all04.checked = false;
+                document.querySelector('.form_infoBox').classList.remove('on');
             }
         };
         function noChk2(){
             if(check_20.checked && check_19.checked){
                 check_25.checked = true;
                 check_26.checked = true;
-                infopop();
+                document.querySelector('.form_infoBox').classList.add('on');
             }
-            // else{
-            //     check_25.checked = false;
-            //     check_26.checked = false;
-            // }
+            else{
+                check_25.checked = false;
+                check_26.checked = false;
+                document.querySelector('.form_infoBox').classList.remove('on');
+            }
         };
 
-        $("body").click(function(e) { 
+        function noclick() {
+            if(check_19.checked){
+                document.querySelector('.btnBox_next').classList.remove('on');
+            }
+        }
+
+        document.getElementById('check_26').addEventListener('click', function(){
+            document.querySelector('.form_infoBox').toggle('on');
+        });
+
+        $("body").click(function(e) {
+            var formchk = $("input:checkbox[name=form_infoBox_allt]:checked").length;
+            //console.log(formchk);
             if($(".form_infoBox").hasClass('on')) {
-                if(!$('.form_infoBox').has(e.target).length) { 
-                    $(".form_infoBox").removeClass('on');
+                if(!$('.form_infoBox').has(e.target).length) {
+                    if(formchk === 0){
+                        alert('정보전달방법을 1개 이상 선택해주세요.');
+                    }else{
+                        $(".form_infoBox").removeClass('on');
+                        $('.btnBox_next').addClass('on');
+                    }
                 } 
             }
         });
+
+
     </script>
 </div>
 </body>
