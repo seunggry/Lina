@@ -50,7 +50,7 @@
                         </div>
                         <div class="check-number">
                             <label for="phone_number1_1" class="lb">휴대폰번호</label>
-                            <input type="tel" id="phone_number1_1" placeholder="‘-’ 없이 번호만 입력" onchange="check_click();">
+                            <input type="tel" id="phone_number1_1" placeholder="‘-’ 없이 번호만 입력" maxlength="11" oninput="maxLengthCheck(this)" onchange="check_click();">
                         </div>
                     </div>
                     <div class="agree_form style2">
@@ -65,24 +65,24 @@
                             <div class="check_bottom detail">
                                 <!-- [20201109] 청약확인서 동의 약관 추가 -->
                                 <div>
-                                    <input type="checkbox" id="check_4" class="chk" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');"> <!-- [20201109] 전체체크 함수 추가 -->
-                                    <label for="check_4">청약확인서 열람 및 인증 동의</label>
-                                    <button type="button" onclick="Dialog.open('#termsSubscription')"><span class="offscreen">청약확인서 열람 및 인증 동의 이동</span></button>
+                                    <input type="checkbox" id="check_4" class="chk" name="chkAgreeGroup1" onchange="allCheck.isAll1('chkAgreeGroup1', 'check_all');"> <!-- [20201109] 전체체크 함수 추가 -->
+                                    <label for="check_4">개인정보 이용 동의</label>
+                                    <button type="button" onclick="Dialog.open('#termsSubscription')"><span class="offscreen">개인정보 이용 동의</span></button>
                                 </div>
                                 <div>
-                                    <input type="checkbox" id="check_1" class="chk" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');"> <!-- [20201109] 전체체크 함수 추가 -->
-                                    <label for="check_1">휴대폰 본인인증 이용 동의</label>
-                                    <button type="button" onclick="Dialog.open('#termsTel')"><span class="offscreen">휴대폰 본인인증 이용 동의 이동</span></button>
+                                    <input type="checkbox" id="check_1" class="chk" name="chkAgreeGroup1" onchange="allCheck.isAll1('chkAgreeGroup1', 'check_all');"> <!-- [20201109] 전체체크 함수 추가 -->
+                                    <label for="check_1">고유식별 정보 처리 동의</label>
+                                    <button type="button" onclick="Dialog.open('#termsTel')"><span class="offscreen">고유식별 정보 처리 동의</span></button>
                                 </div>
                                 <div>
-                                    <input type="checkbox" id="check_2" class="chk" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');"> <!-- [20201109] 전체체크 함수 추가 -->
-                                    <label for="check_2">전자금융거래 이용약관 동의</label>
-                                    <button type="button" onclick="Dialog.open('#termsAgree1')"><span class="offscreen">전자금융거래 이용약관 동의 이동</span></button>
+                                    <input type="checkbox" id="check_2" class="chk" name="chkAgreeGroup1" onchange="allCheck.isAll1('chkAgreeGroup1', 'check_all');"> <!-- [20201109] 전체체크 함수 추가 -->
+                                    <label for="check_2">서비스 이용약관 동의</label>
+                                    <button type="button" onclick="Dialog.open('#termsAgree1')"><span class="offscreen">서비스 이용약관 동의</span></button>
                                 </div>
                                 <div>
-                                    <input type="checkbox" id="check_3" class="chk" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');"> <!-- [20201109] 전체체크 함수 추가 -->
-                                    <label for="check_3">전자금융 서비스 약관 동의</label>
-                                    <button type="button" onclick="Dialog.open('#termsAgree2')"><span class="offscreen">전자금융 서비스 약관 동의 이동</span></button>
+                                    <input type="checkbox" id="check_3" class="chk" name="chkAgreeGroup1" onchange="allCheck.isAll1('chkAgreeGroup1', 'check_all');"> <!-- [20201109] 전체체크 함수 추가 -->
+                                    <label for="check_3">통신사 이용약관 동의</label>
+                                    <button type="button" onclick="Dialog.open('#termsAgree2')"><span class="offscreen">통신사 이용약관 동의</span></button>
                                 </div>
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                             <label for="phoneCheck1" class="lb">인증번호 6자리</label>
                             <div class="input certification">
                                 <span class="dv">
-                                    <input id="phoneCheck1" class="i_txt" type="tel" placeholder="‘-’ 없이 번호만 입력"> <!--  onchange="certificationText();" -->
+                                    <input id="phoneCheck1" class="i_txt" type="tel" maxlength="6" oninput="maxLengthCheck(this)" onchange="check_click();" placeholder="‘-’ 없이 번호만 입력"> <!--  onchange="certificationText();" -->
                                     <!-- <span class="timer">02:49</span> -->
                                 </span>
                                 <span class="dv">

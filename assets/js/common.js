@@ -274,6 +274,28 @@ let allCheck = {
             $('.btnBox_next').removeClass('on');
         }
     },
+    isAll1: function(_name, _id){
+        var $ts = $(event.target)
+            , $chkAll = $('#'+_id)
+            , $chk = $('[name="'+_name+'"]')
+
+            , i = 0
+            , flag = false;
+
+        while (i < $chk.length) {
+            flag = $chk.eq(i).prop('checked');
+            if (!flag){
+                break;
+            } else i++;
+        }
+        if (flag){ // 전체 체크일 시
+            $chkAll.prop('checked', true);
+            $('.certification_btn').prop('disabled', false);
+        } else {
+            $chkAll.prop('checked', false);
+            $('.certification_btn').prop('disabled', true);
+        }
+    },
     toggleAll2: function(_value){
         var $ts2 = $(event.target)
             , $chk2 = $('[value="'+_value+'"]');

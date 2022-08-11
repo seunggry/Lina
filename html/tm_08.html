@@ -207,7 +207,7 @@
                     <li class="under_line nob">
                         <div class="title accordion">
                             <div>
-                                <input type="checkbox" id="check_19" name="chkAgreeGroup2" onchange="allCheck.toggleAll2('Y4'); infopop();">
+                                <input type="checkbox" id="check_19" name="chkAgreeGroup2" onchange="allCheck.toggleAll2('Y4'); noChk2();">
                                 <label for="check_19">1. 수집·이용에 관한 사항</label>
                                 <span class="btn_down"></span>
                             </div>
@@ -217,12 +217,36 @@
                                 <p>개인(신용)정보의 수집·이용에 동의 하십니까? (동의등급, 보통)</p>
                                 <div class="form_agrchk_input">
                                     <div>
-                                        <input type="radio" id="check_20" class="chk" name="chkAgreeGroup2_1_1" value="Y4" onchange="allCheck.isAll2('Y4', 'check_19'); infopop();">
+                                        <input type="radio" id="check_20" class="chk" name="chkAgreeGroup2_1_1" value="Y4" onchange="allCheck.isAll2('Y4', 'check_19'); noChk2();">
                                         <label for="check_20">동의함</label>
                                     </div>
                                     <div>
                                         <input type="radio" id="check_21" class="chk" name="chkAgreeGroup2_1_1" value="N" onchange="allCheck.isAll2('Y4', 'check_19'); noChk();">
                                         <label for="check_21">동의하지 않음</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title accordion">
+                            <div>
+                                <input type="checkbox" id="check_25" name="chkAgreeGroup2" onchange="allCheck.toggleAll2('Y6'); infopop();">
+                                <label for="check_25">2. 광고성 정보의 수신 동의</label>
+                                <span class="btn_down"></span>
+                            </div>
+                        </div>
+                        <div class="detail" tabindex="0">
+                            <div class="in_box02">
+                                <p>전자적 전송매체를 통한 광고성 정보의 수신을 동의하시겠습니까?</p>
+                                <div class="form_agrchk_input">
+                                    <div>
+                                        <input type="radio" id="check_26" class="chk" name="chkAgreeGroup2_1_3" value="Y6" onchange="allCheck.isAll2('Y6', 'check_25'); infopop();">
+                                        <label for="check_26">동의함</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="check_27" class="chk" name="chkAgreeGroup2_1_3" value="N" onchange="allCheck.isAll2('Y6', 'check_25'); noChk();">
+                                        <label for="check_27">동의하지 않음</label>
                                     </div>
                                 </div>
                             </div>
@@ -249,35 +273,11 @@
                             </div>
                         </div>
                     </li>
-                    <li>
-                        <div class="title accordion">
-                            <div>
-                                <input type="checkbox" id="check_25" name="chkAgreeGroup2" onchange="allCheck.toggleAll2('Y6');">
-                                <label for="check_25">2. 광고성 정보의 수신 동의</label>
-                                <span class="btn_down"></span>
-                            </div>
-                        </div>
-                        <div class="detail" tabindex="0">
-                            <div class="in_box02">
-                                <p>전자적 전송매체를 통한 광고성 정보의 수신을 동의하시겠습니까?</p>
-                                <div class="form_agrchk_input">
-                                    <div>
-                                        <input type="radio" id="check_26" class="chk" name="chkAgreeGroup2_1_3" value="Y6" onchange="allCheck.isAll2('Y6', 'check_25'); noChk2();">
-                                        <label for="check_26">동의함</label>
-                                    </div>
-                                    <div>
-                                        <input type="radio" id="check_27" class="chk" name="chkAgreeGroup2_1_3" value="N" onchange="allCheck.isAll2('Y6', 'check_25'); noChk();">
-                                        <label for="check_27">동의하지 않음</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
                 </ul>
             </div>
             <div class="btn_wrap bottom form_agrchk_btnBox">
                 <a href="./tm_04.html" class="btnBox_back">이전으로</a>
-                <a class="btn btnBox_next" href="tm_09.html">다음</a>
+                <a class="btn btnBox_next ckk" href="tm_09.html">다음</a>
             </div>
         </div>
     </div>
@@ -298,17 +298,17 @@
     <script>
         //광고성 정보의 수신동의 팝업
         function infopop(){
-            const snscheck0 = document.querySelector('#check_19');
-            const snscheck = document.querySelector('#check_20');
+            const snscheck0 = document.querySelector('#check_25');
+            const snscheck = document.querySelector('#check_26');
 
             if(snscheck.checked && snscheck0.checked){
                 document.querySelector('.form_infoBox').classList.add('on');
-                check_25.checked = true;
-                check_26.checked = true;
+                check_19.checked = true;
+                check_20.checked = true;
             }else{
                 document.querySelector('.form_infoBox').classList.remove('on');
-                check_25.checked = false;
-                check_26.checked = false;
+                check_19.checked = false;
+                check_20.checked = false;
             }
         };
         function noChk(){
@@ -316,17 +316,27 @@
                 check_25.checked = false;
                 check_26.checked = false;
                 check_27.checked = true;
-            }else{
-
+            }
+            if(check_27.checked){
+                form_infoBox_all.checked = false;
+                form_infoBox_all01.checked = false;
+                form_infoBox_all02.checked = false;
+                form_infoBox_all03.checked = false;
+                form_infoBox_all04.checked = false;
             }
         };
         function noChk2(){
-            if(check_26.checked){
-                check_20.checked = true;
-                check_19.checked = true;
+            if(check_20.checked && check_19.checked){
+                check_25.checked = true;
+                check_26.checked = true;
                 infopop();
             }
+            // else{
+            //     check_25.checked = false;
+            //     check_26.checked = false;
+            // }
         };
+
         $("body").click(function(e) { 
             if($(".form_infoBox").hasClass('on')) {
                 if(!$('.form_infoBox').has(e.target).length) { 
