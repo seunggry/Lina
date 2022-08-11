@@ -46,23 +46,48 @@ let commonJS = {
           highlightTxt.addClass('on');
       });
     },
+    highlightRedClick:function(){
+        $('.highlight.red').on('click', function(){
+           $(this).addClass('pen');
+        });
+    },
     formInfoBoxShow:function(){
         let tooltipBtn = $('.form_group .tooltip_open');
 
-        tooltipBtn.on('click', function(){
+        tooltipBtn.on('click', function(e){
+            e.stopPropagation();
             let infoBox = $(this).siblings('.form_infoBox');
-            let infoBoxInputValue = infoBox.find('input').prop('value');
+            let infoBoxInput = infoBox.find('input');
 
             $(this).prop('checked', false);
+
             if(!infoBox.hasClass('on')){
                 infoBox.addClass('on');
+                formInfoBoxHide();
             } else{
                 infoBox.removeClass('on');
+                $('body').off('click');
             }
 
-            if(infoBoxInputValue.length > 10) {
-                $(this).prop('checked', true);
+            function formInfoBoxHide(){
+                $('body').on('click', function(e){
+                    let target = $(e.target);
+
+                    if(!target.hasClass('form_infoBox') && target.parents('.form_infoBox').length < 1){
+                        infoBox.removeClass('on');
+                    }
+                });
             }
+
+            infoBoxInput.on('change', function(){
+                let checkBox = $(this).parents('.form_infoBox').siblings('input');
+
+                if($(this).prop('value').length > 10) {
+                    checkBox.prop('checked', true);
+                } else {
+                    checkBox.prop('checked', false);
+                }
+            });
         });
     },
     pageBtnDisable:function(){
@@ -103,6 +128,7 @@ let commonJS = {
     importChk:function(){
         let pageBtn = $('.contents .btn_page');
         let importInput = $('.contents .import_chk_list').find('.ico_chk');
+        let checked = importInput.prop('checked');
 
         $(document).on('change', importInput, function(){
             if(importChecked()){
@@ -169,31 +195,51 @@ let commonJS = {
         $('.btn_listen').on('click', function(){
             let audio = this.getElementsByTagName('audio')[0];
             let stop = this.classList.contains('stop');
-            let hightlight = this.parentNode.nextElementSibling.querySelectorAll('.highlight');
+            let highLight = this.parentNode.nextElementSibling.querySelectorAll('.highlight');
             let audioTxt = this.getElementsByTagName('span')[0];
+            let confirmChkInput = this.parentNode.nextElementSibling.querySelector('.detail_box .chk_group2 input');
 
             commonJS.initAudio();
+            commonJS.audioStop();
 
             if(audio){
                 if(!stop){
                     audio.play();
                     this.classList.add('stop');
                     audioTxt.innerText = '음성 중지';
-                    hightlight.forEach(function(value){
+                    highLight.forEach(function(value){
                         value.classList.add('on');
                     });
+                    confirmChkInput.setAttribute('disabled', true);
                 } else{
                     audio.pause();
                     audio.currentTime = 0;
                     this.classList.remove('stop');
                     audioTxt.innerText = '음성 듣기';
-                    hightlight.forEach(function(value){
+                    highLight.forEach(function(value){
                         value.classList.remove('on');
                     });
+                    confirmChkInput.removeAttribute('disabled');
                 }
             } else{
                 console.log("해당 오디오 없음");
             }
+
+            audio.addEventListener('timeupdate', function (){
+                let confirmChkInput = this.parentNode.parentNode.nextElementSibling.querySelector('.detail_box .chk_group2 input');
+                let btnListen = this.parentNode;
+
+                if(audio.duration === audio.currentTime && audio.currentTime > 0){
+                    confirmChkInput.removeAttribute('disabled');
+                    confirmChkInput.setAttribute('checked', true);
+                    btnListen.classList.remove('stop');
+                    audioTxt.innerText = '음성 듣기';
+                    highLight.forEach(function(value){
+                        value.classList.remove('on');
+                    });
+                }
+            });
+
         });
     },
     signClick:function(){
@@ -216,15 +262,21 @@ let commonJS = {
         audioList.forEach(function(value){
             let valueParent = value.parentNode;
             let initAudioTxt = valueParent.getElementsByTagName('span')[0];
-            let initHightLight = valueParent.parentNode.nextElementSibling.querySelectorAll('.highlight');
+            let initHighLight = valueParent.parentNode.nextElementSibling.querySelectorAll('.highlight');
 
             value.pause();
             valueParent.classList.remove('stop');
             initAudioTxt.innerText = '음성 듣기';
-            initHightLight.forEach(function(value){
+            initHighLight.forEach(function(value){
                 value.classList.remove('on');
             });
         });
+    },
+    audioStop:function(){
+        $('.pop_header .btn_recruiter').on('click', function(){
+            commonJS.initAudio();
+        });
+
     },
     popupOpen:function(param){
         $('#'+ param).addClass('show');
@@ -233,11 +285,11 @@ let commonJS = {
         $('#'+ param).removeClass('show');
         commonJS.initAudio();
     },
-
     init:function(){
         commonJS.accordion();
         commonJS.clickDefault();
         commonJS.highlightBtnClick();
+        commonJS.highlightRedClick();
         commonJS.formInfoBoxShow();
         commonJS.pageBtnDisable();
         commonJS.pageBtnActive();
