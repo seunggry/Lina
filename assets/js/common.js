@@ -319,7 +319,7 @@ let commonJS = {
         commonJS.formInfoBoxShow();
         commonJS.pageBtnDisable();
         commonJS.pageBtnActive();
-        commonJS.timeStamp();
+        // commonJS.timeStamp();
         commonJS.audioControl();
     }
 }
