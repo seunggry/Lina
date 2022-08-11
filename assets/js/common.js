@@ -278,11 +278,37 @@ let commonJS = {
         });
 
     },
+    timeStamp:function(){
+        $('.timeStamp').on('click', function(){
+            let today = new Date();
+            let year = today.getFullYear();
+            let month = ('0' + (today.getMonth() + 1)).slice(-2);
+            let day = ('0' + today.getDate()).slice(-2);
+
+            let hours = ('0' + today.getHours()).slice(-2);
+            let minutes = ('0' + today.getMinutes()).slice(-2);
+
+            let dateString = year + '.' + month + '.' + day;
+            let timeString = hours + ':' + minutes;
+
+            let timeStampInput = $(this).children('input').prop('checked');
+            let $html = '<p class="currentTime"><span>' + dateString+ '</span><span>' + timeString + '</span></p>';
+
+            if(timeStampInput){
+                $(this).after($html);
+            } else{
+                $(this).siblings('.currentTime').remove();
+            }
+
+        });
+    },
     popupOpen:function(param){
         $('#'+ param).addClass('show');
+        $('body').css('overflow', 'hidden');
     },
     popupClose:function(param){
         $('#'+ param).removeClass('show');
+        $('body').css('overflow', '');
         commonJS.initAudio();
     },
     init:function(){
@@ -293,6 +319,7 @@ let commonJS = {
         commonJS.formInfoBoxShow();
         commonJS.pageBtnDisable();
         commonJS.pageBtnActive();
+        commonJS.timeStamp();
         commonJS.audioControl();
     }
 }

@@ -27,10 +27,12 @@ img{width: 100%;}
 .highlight{position: relative; z-index: 1; display: inline-block;}
 .highlight::after{content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 43%; background: #ffed00; z-index: -1; transition: all 0.3s;}
 .highlight.on::after{width: 100%; opacity: 0.8;}
-.highlight.red.pen::after{height: 20%; background: #ff0404;}
+.highlight.red.pen::after{height: 30%; background: #ff0404;}
 
+.currentTime{margin-top: 10px; padding-right: 20px; @include font('B', 14px); text-align: right;}
+.currentTime span:nth-child(2){display: inline-block; margin-left: 10px;}
 
-h2{@include font('EB', 24px, 32/24);}
+h2{@include font('B', 24px, 32/24);}
 .sub_tit{@include font('SB', 16px, 24/16);}
 .txt_group{padding:0 20px;}
 .txt_group.under_line{border-bottom:12px solid #f3f3f3;margin-bottom:44px;}
@@ -94,7 +96,7 @@ h2{@include font('EB', 24px, 32/24);}
 .chk_group .list{position: relative; display: flex; align-items: center;}
 .chk_group .list li + li{margin-left: 60px;}
 
-.notice .btn_agree_chk{margin: 33px 0 25px;}
+.notice .btn_agree_chk{margin-top: 33px;}
 .notice .obligation_group{padding: 0 20px;}
 .notice_box{overflow: hidden; margin-top: 20px; border: 1px solid #150f96; border-radius: 15px;}
 .notice_box.type2{border-width: 0;}
@@ -144,14 +146,18 @@ h2{@include font('EB', 24px, 32/24);}
 .dialog.bottom.show .dialog_wrap{bottom: 0;}
 
 .dialog.page{display: none;}
+//.dialog.page.spacing{padding: 0;}
 .dialog.page.show{overflow: auto; display: block; background: #fff;}
 .dialog.page .pop_header{display: flex; align-items: center; justify-content: space-between; padding: 40px 0 34px; width: 100%; box-sizing: border-box;}
 .dialog.page .pop_header em{@include hiddenText;}
 .dialog.page .pop_header .pop_prev{width: 48px; height: 48px; background: url(../images/ico_prev.png) no-repeat left center/9px 17px;}
-.dialog.page .pop_con .btn_agree_chk{margin: 50px 0 25px;}
+.dialog.page .pop_con .btn_agree_chk{margin-top: 50px;}
 .dialog.page .pop_con .img_table{overflow: scroll; margin-top: 30px; width: 100%; height: calc(100vh - 288px);}
 .dialog.page .pop_con .img_table img{width: 582px;}
 .dialog.page .pop_con .fixed{position: fixed; left: 0; bottom: 0; margin: 0; padding: 13px 20px 25px; width: 100%; background: rgba(255, 255, 255, 0.8);}
+
+#addressFind.dialog.page{padding: 0;}
+
 
 .confirm_list{margin-top: 20px;}
 .confirm_list li + li{margin-top: 30px;}
@@ -193,6 +199,9 @@ h2{@include font('EB', 24px, 32/24);}
 
   .line_bar{margin: vw(40) 0; height: vw(8);}
   .line_bar2{margin: vw(40) 0 vw(40) vw(-20); width: calc(100% + vw(40)); height: vw(8);}
+
+  .currentTime{margin-top: vw(10); padding-right: vw(20); font-size: vw(14);}
+  .currentTime span:nth-child(2){margin-left: vw(10);}
 
   h2{font-size: vw(24);}
   .sub_tit{font-size: vw(16);}
@@ -244,7 +253,7 @@ h2{@include font('EB', 24px, 32/24);}
   .chk_group label::before{width: vw(22); height: vw(22);}
   .chk_group .list li + li{margin-left: vw(60);}
 
-  .notice .btn_agree_chk{margin: vw(33) 0 vw(25);}
+  .notice .btn_agree_chk{margin-top: vw(33);}
   .notice .obligation_group{padding: 0 vw(20);}
   .notice_box{margin-top: vw(20); border-width: vw(1); border-radius: vw(15);}
   .notice_box .point{padding: vw(16) vw(20); font-size: vw(13);}
@@ -276,7 +285,7 @@ h2{@include font('EB', 24px, 32/24);}
 
   .dialog.page .pop_header{padding: vw(40) 0 vw(34);}
   .dialog.page .pop_header .pop_prev{width: vw(48); height: vw(48); background-size: vw(9) vw(17);}
-  .dialog.page .pop_con .btn_agree_chk{margin: vw(50) 0 vw(25);}
+  .dialog.page .pop_con .btn_agree_chk{margin-top: vw(50);}
   .dialog.page .pop_con .img_table{margin-top: vw(30); height: calc(100vh - vw(288));}
   .dialog.page .pop_con .img_table img{width: vw(582);}
   .dialog.page .pop_con .fixed{padding: vw(13) vw(20) vw(25);}
