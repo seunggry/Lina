@@ -186,7 +186,7 @@
                                                 </li>
                                                 <li>
                                                     <h5>출금계좌번호 입력</h5>
-                                                    <input type="text" pattern="[0-9]*" placeholder="1104******09" id="accountN" disabled>
+                                                    <input type="text" pattern="[0-9]*" id="accountN" disabled>
                                                 </li>
                                                 <li class="last">
                                                     <div>
@@ -228,7 +228,12 @@
                                             <ul class="tab_list01 st2">
                                                 <li>
                                                     <h5>카드번호 입력</h5>
-                                                    <input type="text" pattern="[0-9]*" id="cardN" placeholder=" 1104  -   ****  -   ****  -   1234" maxlength="16" oninput="maxLengthCheck(this)">
+                                                    <p class="line_01">
+                                                        <input type="text" pattern="[0-9]*" id="cardN" maxlength="4" oninput="maxLengthCheck(this)" onlyNumber><i>-</i>
+                                                        <input type="text" pattern="[0-9]*" id="cardN2" maxlength="4" oninput="maxLengthCheck(this)" onlyNumber><i>-</i>
+                                                        <input type="text" pattern="[0-9]*" id="cardN3" maxlength="4" oninput="maxLengthCheck(this)" onlyNumber><i>-</i>
+                                                        <input type="text" pattern="[0-9]*" id="cardN4" maxlength="4" oninput="maxLengthCheck(this)" onlyNumber>
+                                                    </p>
                                                 </li>
                                                 <li class="last">
                                                     <div>
@@ -242,7 +247,10 @@
                                                     </div>
                                                     <div>
                                                         <h5>유효기간 (월/년)</h5>
-                                                        <input type="text" pattern="[0-9]*" id="cardD" placeholder="4자리 입력" maxlength="4" oninput="maxLengthCheck(this)">
+                                                        <p class="line_01">
+                                                            <input type="text" pattern="[0-9]*" id="cardD" maxlength="2" oninput="maxLengthCheck(this)"><i>/</i>
+                                                            <input type="text" pattern="[0-9]*" id="cardD2" maxlength="2" oninput="maxLengthCheck(this)">
+                                                        </p>
                                                     </div>
                                                 </li>
                                                 <li class="last">
@@ -288,12 +296,32 @@
             document.querySelector('#accountN').disabled = false;
         }
         document.querySelector('#cardN').onblur = function(e){
-            if(cardN.value.length != 16){
+            if(cardN.value.length !== 4 ){
+                alert('카드번호를 정확히 입력해야합니다.');
+            }
+        }
+        document.querySelector('#cardN2').onblur = function(e){
+            if(cardN2.value.length !== 4 ){
+                alert('카드번호를 정확히 입력해야합니다.');
+            }
+        }
+        document.querySelector('#cardN3').onblur = function(e){
+            if(cardN3.value.length !== 4 ){
+                alert('카드번호를 정확히 입력해야합니다.');
+            }
+        }
+        document.querySelector('#cardN4').onblur = function(e){
+            if(cardN4.value.length !== 4 ){
                 alert('카드번호를 정확히 입력해야합니다.');
             }
         }
         document.querySelector('#cardD').onblur = function(e){
-            if(cardD.value.length != 4){
+            if(cardD.value == ''){
+                alert('정확히 입력해주세요.');
+            }
+        }
+        document.querySelector('#cardD2').onblur = function(e){
+            if(cardD2.value == ''){
                 alert('정확히 입력해주세요.');
             }
         }

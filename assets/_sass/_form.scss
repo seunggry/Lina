@@ -127,6 +127,9 @@
 .tab_list01 li select{width:100%;border:0;border-bottom:1px solid #f4f4f4;@include font('B', 18px, 27/15);color:#191919;background: url(../images/btn_select01.png)no-repeat center right;background-size: 15px auto;}
 .tab_list01 li input{position: static; opacity: 1; width: 100%; height: auto;@include font('B', 18px, 27/15);color:#191919;border-bottom:1px solid #f4f4f4;}
 .tab_list01 li input::placeholder{color:#d4d4d4;}
+.tab_list01 li .line_01{display: flex;}
+.tab_list01 li .line_01 input{padding: 0 5px;}
+.tab_list01 li .line_01 i{padding: 0 10px;}
 .tab_list01 li.last{display: flex;align-items: flex-start;justify-content: space-between;}
 .tab_list01 li > div:first-child{width:100px;}
 .tab_list01 li > div:last-child{width:calc(100% - 120px);}
