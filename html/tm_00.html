@@ -6,22 +6,160 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>라이나생명</title>
     <script src="../assets/js/lib/jquery-3.6.0.js"></script>
-    <script src="../assets/js/ui_common.js"></script>
     <script src="../assets/js/common.js"></script>
     <link rel="stylesheet" href="../assets/css/ui-common.css">
 </head>
 <body>
 <div id="wrap">
-    
+    <!-- Header -->
+    <header>
+        <h1 class="logo"><a href="#"><em>라이나생명</em></a></h1>
+    </header>
+    <!-- // Header -->
+
     <!-- Contents -->
-    <div class="contents intro">
-        <div class="img_group">
-            <img src="../assets/images/tm_00.png" alt="">
-            <a href="./tm_01.html" class="link"></a>
+    <div class="contents">
+        <div class="txt_group under_line">
+            <h2>본인인증을 <br/>진행해주세요</h2>
+            <p class="desc"><span class="point">라*하</span> 고객님 <br/> 주민번호 뒷 7자리를 입력해주세요.</p>
+            <p class="indivi_num"><span>610203</span> - <input type="text" pattern="[0-9]*" class="masking" maxlength="7" oninput="maxLengthCheck(this)"></p>
+        </div>
+        <div class="form_indivi">
+            <h3>휴대폰 정보를 입력해주세요</h3>
+            <div class="form_indivi_box01">
+                <h4>통신사 선택</h4>
+                <div class="form_indivi_box02">
+                    <div class="form_item telecom-item">
+                        <div class="check-wrap">  
+                            <div class="radio">
+                                <input id="cert_telecom1" type="radio" name="cert_telecom" checked>
+                                <label for="cert_telecom1" class="lbl">SKT</label>
+                            </div>   
+                            <div class="radio">
+                                <input id="cert_telecom2" type="radio" name="cert_telecom">
+                                <label for="cert_telecom2" class="lbl">KT</label>
+                            </div>  
+                            <div class="radio">
+                                <input id="cert_telecom3" type="radio" name="cert_telecom">
+                                <label for="cert_telecom3" class="lbl">LG U+</label>
+                            </div> 
+                            <div class="radio">
+                                <input id="cert_telecom4" type="radio" name="cert_telecom">
+                                <label for="cert_telecom4" class="lbl">알뜰폰</label>
+                            </div>
+                        </div>
+                        <div class="check-number">
+                            <label for="phone_number1_1" class="lb">휴대폰번호</label>
+                            <input type="tel" id="phone_number1_1" placeholder="‘-’ 없이 번호만 입력" maxlength="11" oninput="maxLengthCheck(this)" onchange="check_click();">
+                        </div>
+                    </div>
+                    <div class="agree_form style2">
+                        <div class="check_all">
+                            <div class="check_top accordion">
+                                <div>
+                                    <input type="checkbox" id="check_all" name="chkAgreeGroup1_all" onchange="allCheck.toggleAll('chkAgreeGroup1'); check_click();"> <!-- [20201109] 전체체크 함수 추가 -->
+                                    <label for="check_all">전체 동의</label>
+                                    <span class="btn_down"></span>
+                                </div>
+                            </div>
+                            <div class="check_bottom detail">
+                                <!-- [20201109] 청약확인서 동의 약관 추가 -->
+                                <div>
+                                    <input type="checkbox" id="check_4" class="chk" name="chkAgreeGroup1" onchange="allCheck.isAll1('chkAgreeGroup1', 'check_all');"> <!-- [20201109] 전체체크 함수 추가 -->
+                                    <label for="check_4">개인정보 이용 동의</label>
+                                    <button type="button" onclick="Dialog.open('#termsSubscription')"><span class="offscreen">개인정보 이용 동의</span></button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="check_1" class="chk" name="chkAgreeGroup1" onchange="allCheck.isAll1('chkAgreeGroup1', 'check_all');"> <!-- [20201109] 전체체크 함수 추가 -->
+                                    <label for="check_1">고유식별 정보 처리 동의</label>
+                                    <button type="button" onclick="Dialog.open('#termsTel')"><span class="offscreen">고유식별 정보 처리 동의</span></button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="check_2" class="chk" name="chkAgreeGroup1" onchange="allCheck.isAll1('chkAgreeGroup1', 'check_all');"> <!-- [20201109] 전체체크 함수 추가 -->
+                                    <label for="check_2">서비스 이용약관 동의</label>
+                                    <button type="button" onclick="Dialog.open('#termsAgree1')"><span class="offscreen">서비스 이용약관 동의</span></button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="check_3" class="chk" name="chkAgreeGroup1" onchange="allCheck.isAll1('chkAgreeGroup1', 'check_all');"> <!-- [20201109] 전체체크 함수 추가 -->
+                                    <label for="check_3">통신사 이용약관 동의</label>
+                                    <button type="button" onclick="Dialog.open('#termsAgree2')"><span class="offscreen">통신사 이용약관 동의</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_item">
+                        <button type="button" class="certification_btn" onclick="certificationBtn();" disabled>인증번호 발송</button>
+                        <div class="certification_wrap">
+                            <label for="phoneCheck1" class="lb">인증번호 6자리</label>
+                            <div class="input certification">
+                                <span class="dv">
+                                    <input id="phoneCheck1" class="i_txt" type="tel" maxlength="6" oninput="maxLengthCheck(this)" onchange="check_click();" placeholder="‘-’ 없이 번호만 입력"> <!--  onchange="certificationText();" -->
+                                    <!-- <span class="timer">02:49</span> -->
+                                </span>
+                                <span class="dv">
+                                    <a href="#" class="btn t1" role="button">재발송</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn_wrap bottom form_agrchk_btnBox">
+            <a href="javascript:history.back();" class="btnBox_back">이전으로</a>
+            <a class="btn btnBox_next">인증</a>
+        </div>
+        <div class="pop_indivi">
+            <div class="pop_indivi_box">
+                <img src="../assets/images/invalid_icon.png" class="invalid_icon" alt=""/>
+                <p class="txt01">가입설계 동의 및 <br/> 본인인증이 완료되었습니다.</p>
+                <button class="ppo_close" onclick="popCloseBtn(); location.href='tm_01.html';">닫기</button>
+            </div>
         </div>
     </div>
     <!-- // Contents -->
+
+    <!-- Footer -->
+    <footer>
+    </footer>
+    <!-- // Footer -->
     
+    <script>
+        //인증번호 발송버튼 활성화/비활성화
+        document.onkeyup = check_click;
+        document.onmouseup = check_click;
+        document.onmousedown = check_click;
+        function check_click(){
+            if(check_all.checked && !phone_number1_1.value ==''){
+                document.querySelector('.certification_btn').disabled = false;
+            }else{
+                document.querySelector('.certification_btn').disabled = true;
+            }
+        }
+
+        //인증번호 입력 활성화
+        function certificationBtn() {
+            document.querySelector('.certification_wrap').classList.add('on');
+        }
+
+        //인증 버튼 활성화
+        var oldVal="";
+        var btnPayment=$('.btnBox_next');
+        $("#phoneCheck1").on("change keyup paste", function() {
+            var currentVal = $(this).val().length;
+            if(currentVal == 6) {
+                btnPayment.addClass('on');
+            } else {
+                btnPayment.removeClass('on');
+            }
+        });
+
+        //인증버튼 팝업
+        const popWrap = document.querySelector('.pop_indivi');
+        function popCloseBtn() {
+            popWrap.classList.remove('on');
+        }
+    </script>
 </div>
 </body>
 </html>
