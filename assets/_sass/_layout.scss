@@ -168,6 +168,7 @@ h2{@include font('B', 24px, 32/24);}
 .confirm_list .detail_box p{padding: 16px 20px; @include font('SB', 13px, 22/13); color: #535353; white-space: normal; word-break: break-all;}
 .confirm_list .detail_box .highlight{color: #150f96;}
 .confirm_list .detail_box .blue{color: #150f96;}
+.confirm_list .detail_box .blue.default .highlight::after{width: 100%;}
 .confirm_list .detail_box .chk_group2{position: relative; padding: 20px 0; box-sizing: border-box;}
 .confirm_list .detail_box .chk_group2 label{position: absolute; top: 0; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; @include font('SB', 15px); background: #f4f4f4;}
 .confirm_list .detail_box .chk_group2 label::before{content: ''; display: inline-block; margin-right: 10px; width: 22px; height: 22px; background:url(../images/ico_agree_chk_off2.png) no-repeat center/ 100% auto;}
@@ -175,9 +176,8 @@ h2{@include font('B', 24px, 32/24);}
 .confirm_list .detail_box .chk_group2 input[type="checkbox"]:checked ~ label::before{background-image: url(../images/ico_agree_chk_on3.png);}
 
 .sign .agree{margin-top: 30px; padding: 0 20px;}
-.sign .agree .sign_box{overflow: hidden; position: relative; margin-top: 20px; padding: 20px; width: 100%; height: 208px; border: 1px solid #dcdcdc; border-radius: 15px;}
-.sign .agree .sign_box img{display: none;}
-.sign .agree .sign_box .btn_reset{position: absolute; bottom: 20px; right: 20px; padding: 0 14px; height: 30px; line-height: 30px; border: 1px solid #c2c2c2; border-radius: 15px;}
+.sign .agree .sign_box{overflow: hidden; position: relative; margin-top: 20px; width: 100%; height: 208px; border: 1px solid #dcdcdc; border-radius: 15px;}
+.sign .agree .sign_box .btn_reset{position: absolute; bottom: 20px; right: 20px; padding: 0 14px; height: 30px; line-height: 30px; border: 1px solid #c2c2c2; border-radius: 15px; background: #fff;}
 .sign .agree .sign_box .btn_reset::before{content: ''; display: inline-block; margin-right: 5px; width: 13px; height: 14px; background: url(../images/ico_reset.png) no-repeat center/100% auto; }
 
 .intro{position: relative;}

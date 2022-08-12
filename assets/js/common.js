@@ -250,20 +250,6 @@ let commonJS = {
 
         });
     },
-    signClick:function(){
-        let signChk = $('.sign .agree .chk_group input[type=checkbox]');
-
-        signChk.on('change', function(){
-           let isChk = $(this).prop('checked');
-           let signImg = $(this).parents('.agree').find('.sign_box img');
-
-            if(isChk){
-                signImg.stop().show();
-            } else{
-                signImg.stop().hide();
-            }
-        });
-    },
     initAudio:function(){
         let audioList = document.querySelectorAll('.btn_listen audio');
 

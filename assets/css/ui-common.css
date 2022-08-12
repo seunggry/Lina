@@ -2316,6 +2316,10 @@ h2 {
   color: #150f96;
 }
 
+.confirm_list .detail_box .blue.default .highlight::after {
+  width: 100%;
+}
+
 .confirm_list .detail_box .chk_group2 {
   position: relative;
   padding: 20px 0;
@@ -2362,15 +2366,10 @@ h2 {
   overflow: hidden;
   position: relative;
   margin-top: 20px;
-  padding: 20px;
   width: 100%;
   height: 208px;
   border: 1px solid #dcdcdc;
   border-radius: 15px;
-}
-
-.sign .agree .sign_box img {
-  display: none;
 }
 
 .sign .agree .sign_box .btn_reset {
@@ -2382,6 +2381,7 @@ h2 {
   line-height: 30px;
   border: 1px solid #c2c2c2;
   border-radius: 15px;
+  background: #fff;
 }
 
 .sign .agree .sign_box .btn_reset::before {
