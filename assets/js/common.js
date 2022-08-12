@@ -58,13 +58,8 @@ let commonJS = {
             e.stopPropagation();
             let infoBox = $(this).siblings('.form_infoBox');
             let infoBoxInput = infoBox.find('input');
-            let value = infoBoxInput.prop('value');
 
-            if(value.length > 6) {
-                $(this).prop('checked', true);
-            } else {
-                $(this).prop('checked', false);
-            }
+            $(this).prop('checked', false);
 
             formInfoBoxShow();
             formInfoBoxChange();
