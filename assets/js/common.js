@@ -59,10 +59,10 @@ let commonJS = {
             let infoBox = $(this).siblings('.form_infoBox');
             let infoBoxInput = infoBox.find('input');
 
-            $(this).prop('checked', false);
+            // $(this).prop('checked', false);
 
             formInfoBoxShow();
-            formInfoBoxChange();
+            // formInfoBoxChange();
 
             function formInfoBoxShow(){
                 if(!infoBox.hasClass('on')){
