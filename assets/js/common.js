@@ -278,6 +278,7 @@ let commonJS = {
             let initHighLight = valueParent.parentNode.nextElementSibling.querySelectorAll('.highlight');
 
             value.pause();
+            value.currentTime = 0;
             valueParent.classList.remove('stop');
             initAudioTxt.innerText = '음성 듣기';
             initHighLight.forEach(function(value){
