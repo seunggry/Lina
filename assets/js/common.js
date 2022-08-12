@@ -340,7 +340,6 @@ let commonJS = {
         commonJS.pageBtnActive();
         commonJS.timeStamp();
         commonJS.audioControl();
-        commonJS.clickAlert();
     }
 }
 
