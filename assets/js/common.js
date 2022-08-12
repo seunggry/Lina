@@ -290,7 +290,6 @@ let commonJS = {
         $('.pop_header .btn_recruiter').on('click', function(){
             commonJS.initAudio();
         });
-
     },
     timeStamp:function(){
         $('.timeStamp').on('click', function(){
@@ -493,6 +492,7 @@ let allCheck = {
             chkList.prop('checked', true);
             pop.removeClass('show');
             highlight.addClass('on');
+            commonJS.initAudio();
         } else{
             chkList.prop('checked', false);
             pop.addClass('show');
