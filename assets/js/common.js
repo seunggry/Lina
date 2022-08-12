@@ -59,26 +59,20 @@ let commonJS = {
             let infoBox = $(this).siblings('.form_infoBox');
             let infoBoxInput = infoBox.find('input');
 
-            // $(this).prop('checked', false);
-
-            formInfoBoxShow();
-            // formInfoBoxChange();
-
-            function formInfoBoxShow(){
-                if(!infoBox.hasClass('on')){
-                    infoBox.addClass('on');
-                    formInfoBoxHide();
-                } else{
-                    infoBox.removeClass('on');
-                    $('body').off('click');
-                }
+            if($(this).prop('checked')){
+                infoBox.addClass('on');
+                formInfoBoxHide();
+            } else{
+                infoBox.removeClass('on');
+                $('body').off('click');
             }
 
             function formInfoBoxHide(){
                 $('body').on('click', function(e){
+                    e.stopPropagation();
                     let target = $(e.target);
 
-                    if(!target.hasClass('form_infoBox') && target.parents('.form_infoBox').length < 1 && !target.hasClass('tooltip_open')){
+                    if(!target.hasClass('form_infoBox') && target.parents('.form_infoBox').length < 1){
                         infoBox.removeClass('on');
                     }
                 });
