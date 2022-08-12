@@ -146,7 +146,6 @@ h2{@include font('B', 24px, 32/24);}
 .dialog.bottom.show .dialog_wrap{bottom: 0;}
 
 .dialog.page{display: none;}
-//.dialog.page.spacing{padding: 0;}
 .dialog.page.show{overflow: auto; display: block; background: #fff;}
 .dialog.page .pop_header{display: flex; align-items: center; justify-content: space-between; padding: 40px 0 34px; width: 100%; box-sizing: border-box;}
 .dialog.page .pop_header em{@include hiddenText;}
@@ -155,9 +154,7 @@ h2{@include font('B', 24px, 32/24);}
 .dialog.page .pop_con .img_table{overflow: scroll; margin-top: 30px; width: 100%; height: calc(100vh - 288px);}
 .dialog.page .pop_con .img_table img{width: 582px;}
 .dialog.page .pop_con .fixed{position: fixed; left: 0; bottom: 0; margin: 0; padding: 13px 20px 25px; width: 100%; background: rgba(255, 255, 255, 0.8);}
-
 #addressFind.dialog.page{padding: 0;}
-
 
 .confirm_list{margin-top: 20px;}
 .confirm_list li + li{margin-top: 30px;}

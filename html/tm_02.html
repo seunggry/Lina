@@ -158,7 +158,7 @@
                         </li>
                         <li>
                             <span class="tit">주소</span>
-                            <input type="text" value="서울특별시 종로구 삼봉로 48">
+                            <input type="text">
                             <a href="javascript:commonJS.popupOpen('addressFind')" class="btn_address btn_type3">주소 찾기</a>
                         </li>
                     </ul>
@@ -176,7 +176,7 @@
                                 <div class="form_infoBox type2">
                                     <div class="form">
                                         <span class="tit">이메일</span>
-                                        <input type="text" value="email@gmail.com">
+                                        <input type="text" placeholder="email@gmail.com">
                                     </div>
                                 </div>
                             </li>
@@ -200,10 +200,28 @@
     </div>
     <!-- // Contents -->
     <!-- Popup -->
+    <div id="modalDialog" class="dialog modal" role="dialog" aria-hidden="true" data-ishtml="true" aria-labelledby="modalDialogLabel">
+        <div class="dialog_wrap">
+            <div class="dialog_con">
+                <div class="img_group">
+                    <img src="../assets/images/tm_01_modal.jpg" alt="">
+                </div>
+                <a href="#" onclick="Dialog.close('#modalDialog');" class="call_close">통화 종료</a>
+            </div>
+        </div>
+    </div>
+
     <div id="addressFind" class="dialog page spacing">
         <img src="../assets/images/popup_address.png" alt="" onclick="commonJS.popupClose('addressFind')">
     </div>
     <!-- //Popup -->
 </div>
+<script>
+    $(function(){
+        $('#addressFind img').on('click', function(){
+            $('.form .btn_address').siblings('input').prop('value', '서울특별시 종로구 삼봉로 48');
+        });
+    });
+</script>
 </body>
 </html>

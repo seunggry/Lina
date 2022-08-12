@@ -51,43 +51,56 @@ let commonJS = {
            $(this).addClass('pen');
         });
     },
-    formInfoBoxShow:function(){
+    formInfoBoxControl:function(){
         let tooltipBtn = $('.form_group .tooltip_open');
 
         tooltipBtn.on('click', function(e){
             e.stopPropagation();
             let infoBox = $(this).siblings('.form_infoBox');
             let infoBoxInput = infoBox.find('input');
+            let value = infoBoxInput.prop('value');
 
-            $(this).prop('checked', false);
+            if(value.length > 6) {
+                $(this).prop('checked', true);
+            } else {
+                $(this).prop('checked', false);
+            }
 
-            if(!infoBox.hasClass('on')){
-                infoBox.addClass('on');
-                formInfoBoxHide();
-            } else{
-                infoBox.removeClass('on');
-                $('body').off('click');
+            formInfoBoxShow();
+            formInfoBoxChange();
+
+            function formInfoBoxShow(){
+                if(!infoBox.hasClass('on')){
+                    infoBox.addClass('on');
+                    formInfoBoxHide();
+                } else{
+                    infoBox.removeClass('on');
+                    $('body').off('click');
+                }
             }
 
             function formInfoBoxHide(){
                 $('body').on('click', function(e){
                     let target = $(e.target);
 
-                    if(!target.hasClass('form_infoBox') && target.parents('.form_infoBox').length < 1){
+                    if(!target.hasClass('form_infoBox') && target.parents('.form_infoBox').length < 1 && !target.hasClass('tooltip_open')){
                         infoBox.removeClass('on');
                     }
                 });
             }
 
-            infoBoxInput.on('change', function(){
-                let checkBox = $(this).parents('.form_infoBox').siblings('input');
+            function formInfoBoxChange(){
+                infoBoxInput.on('change keyup paste', function(){
+                    let checkBox = $(this).parents('.form_infoBox').siblings('input');
+                    let inputValue = $(this).prop('value');
 
-                if($(this).prop('value').length > 10) {
-                    checkBox.prop('checked', true);
-                } else {
-                    checkBox.prop('checked', false);
-                }
-            });
+                    if(inputValue.length > 6) {
+                        checkBox.prop('checked', true);
+                    } else {
+                        checkBox.prop('checked', false);
+                    }
+                });
+            }
         });
     },
     pageBtnDisable:function(){
@@ -311,16 +324,22 @@ let commonJS = {
         $('body').css('overflow', '');
         commonJS.initAudio();
     },
+    clickAlert: function(className, text){
+        $('.'+ className).on('click', function(){
+            alert(text);
+        });
+    },
     init:function(){
         commonJS.accordion();
         commonJS.clickDefault();
         commonJS.highlightBtnClick();
         commonJS.highlightRedClick();
-        commonJS.formInfoBoxShow();
+        commonJS.formInfoBoxControl();
         commonJS.pageBtnDisable();
         commonJS.pageBtnActive();
-        // commonJS.timeStamp();
+        commonJS.timeStamp();
         commonJS.audioControl();
+        commonJS.clickAlert();
     }
 }
 
