@@ -325,7 +325,7 @@ let commonJS = {
         commonJS.initAudio();
     },
     clickAlert: function(className, text){
-        $('.'+ className).on('click', function(){
+        $('.'+ className).on('click', function(e){
             alert(text);
         });
     },
