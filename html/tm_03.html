@@ -9,6 +9,37 @@
     <script src="../assets/js/ui_common.js"></script>
     <script src="../assets/js/common.js"></script>
     <link rel="stylesheet" href="../assets/css/ui-common.css">
+    <script>
+        window.onload = function() {
+            $('#nextPage').on('click', function(){
+                var agreeChk = $("#agree_chk").is(':checked') ? "T" : "F";
+                setCookie("c_agree_chk", agreeChk , 1);
+
+                //알릴의무사항
+                var radio1 = $("input[name='radio1']:checked").val();
+                setCookie("c_radio1", radio1 , 1);
+                var radio2 = $("input[name='radio2']:checked").val();
+                setCookie("c_radio2", radio2 , 1);
+                var radio3 = $("input[name='radio3']:checked").val();
+                setCookie("c_radio3", radio3 , 1);
+
+                window.location.href = "./tm_04.html";
+            });
+
+            var c_agreeChk = getCookies("c_agree_chk");
+            if (c_agreeChk == "T"){
+                //$("#agree_chk").prop("checked", true);
+                $("#agree_chk").trigger('click');
+                //다음버튼 활성화
+            }
+            var c_radio1    = getCookies("c_radio1");
+            $("input[name='radio1']:radio[value='" + c_radio1 + "']").prop('checked', true);
+            var c_radio2    = getCookies("c_radio2");
+            $("input[name='radio2']:radio[value='" + c_radio2 + "']").prop('checked', true);
+            var c_radio3    = getCookies("c_radio3");
+            $("input[name='radio3']:radio[value='" + c_radio3 + "']").prop('checked', true);
+        }
+    </script>
 </head>
 <body>
 <div id="wrap">
@@ -69,7 +100,7 @@
                             <label for="radio1_yes">예</label>
                         </li>
                         <li>
-                            <input type="radio" id="radio1_no" name="radio1" checked>
+                            <input type="radio" id="radio1_no" name="radio1">
                             <label for="radio1_no">아니오</label>
                         </li>
                     </ul>
@@ -88,7 +119,7 @@
                             <label for="radio2_yes">예</label>
                         </li>
                         <li>
-                            <input type="radio" id="radio2_no" name="radio2" checked>
+                            <input type="radio" id="radio2_no" name="radio2">
                             <label for="radio2_no">아니오</label>
                         </li>
                     </ul>
@@ -106,7 +137,7 @@
                             <label for="radio3_yes">예</label>
                         </li>
                         <li>
-                            <input type="radio" id="radio3_no" name="radio3" checked>
+                            <input type="radio" id="radio3_no" name="radio3">
                             <label for="radio3_no">아니오</label>
                         </li>
                     </ul>

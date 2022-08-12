@@ -9,6 +9,54 @@
     <script src="../assets/js/ui_common.js"></script>
     <script src="../assets/js/common.js"></script>
     <link rel="stylesheet" href="../assets/css/ui-common.css">
+    <script>
+        window.onload = function() {
+            $('#nextPage').on('click', function(){
+                //1. 보장내용
+                var agreeChk = $("#agree_chk").is(':checked') ? "T" : "F";
+                setCookie("tb04_agree_chk", agreeChk , 1);
+
+                //2. 보험계약 이동에 따른 비교 안내
+                var radio1 = $("input[name='radio1']:checked").val();
+                setCookie("tm4_radio1", radio1 , 1);
+                var radio2 = $("input[name='radio2']:checked").val();
+                setCookie("tm4_radio2", radio2 , 1);
+
+                //3. 중요사항 안내
+                var agreeChk1 = $("#agree_chk1").is(':checked') ? "T" : "F";
+                setCookie("tb04_agree_chk1", agreeChk1 , 1);
+
+                window.location.href = "./tm_08.html";
+            });
+
+            //1. 보장내용
+            var tb04SgreeChk = getCookies("tb04_agree_chk");
+            if (tb04SgreeChk == "T") {
+                $("#agree_chk").trigger('click');
+            }
+
+            //2. 보험계약 이동에 따른 비교 안내
+            var tm4_radio1    = getCookies("tm4_radio1");
+            $("input[name='radio1']:radio[value='" + tm4_radio1 + "']").prop('checked', true);
+            var tm4_radio2    = getCookies("tm4_radio2");
+            $("input[name='radio2']:radio[value='" + tm4_radio2 + "']").prop('checked', true);
+
+            if (tm4_radio1 != null && tm4_radio2 == "Y") {
+                //다음버튼 활성화
+                $("#next2").trigger('click');
+                $("#check2").prop("checked", true);
+            } else {
+                $("#check2").prop("checked", false);
+            }
+
+            //3. 중요사항 안내
+
+            var tb04SgreeChk1 = getCookies("tb04_agree_chk1");
+            if (tb04SgreeChk1 == "T") {
+                $("#agree_chk1").trigger('click');
+            }
+        }
+    </script>
 </head>
 <body>
 <div id="wrap">
@@ -83,6 +131,12 @@
             <a href="#" class="btn_recruiter" onclick="Dialog.open('#modalDialog')"><em>모집원 연결</em></a>
         </div>
         <div class="pop_con">
+            <div class="txt_group">
+                <p class="desc_box">
+                    모집인 음성이 아닌 AI음성봇을 통해 듣기를 원하시면 음성듣기 버튼을 눌러 주세요.
+                    언제든지 모집인과 통화를 원하시면 상담원 버튼을 누르시면 모집인과 바로 연결됩니다.
+                </p>
+            </div>
             <h2>보장내용 확인</h2>
 
             <ol class="confirm_list">
@@ -106,7 +160,7 @@
                         </p>
                         <div class="chk_group2">
                             <input type="checkbox" id="chk_confirm1" name="chkAgreeGroup" onchange="allCheck.isAll5('chkAgreeGroup', 'agree_chk');">
-                            <label for="chk_confirm1">확인</label>
+                            <label for="chk_confirm1">이해했음</label>
                         </div>
                     </div>
                 </li>
@@ -129,7 +183,7 @@
                         </p>
                         <div class="chk_group2">
                             <input type="checkbox" id="chk_confirm2" name="chkAgreeGroup" onchange="allCheck.isAll5('chkAgreeGroup', 'agree_chk');">
-                            <label for="chk_confirm2">확인</label>
+                            <label for="chk_confirm2">이해했음</label>
                         </div>
                     </div>
                 </li>
@@ -166,7 +220,7 @@
                         </p>
                         <div class="chk_group2">
                             <input type="checkbox" id="chk_confirm3" name="chkAgreeGroup" onchange="allCheck.isAll5('chkAgreeGroup', 'agree_chk');">
-                            <label for="chk_confirm3">확인</label>
+                            <label for="chk_confirm3">이해했음</label>
                         </div>
                     </div>
                 </li>
@@ -187,7 +241,7 @@
                         </p>
                         <div class="chk_group2">
                             <input type="checkbox" id="chk_confirm4" name="chkAgreeGroup" onchange="allCheck.isAll5('chkAgreeGroup', 'agree_chk');">
-                            <label for="chk_confirm4">확인</label>
+                            <label for="chk_confirm4">이해했음</label>
                         </div>
                     </div>
                 </li>
@@ -210,7 +264,7 @@
                         </p>
                         <div class="chk_group2">
                             <input type="checkbox" id="chk_confirm5" name="chkAgreeGroup" onchange="allCheck.isAll5('chkAgreeGroup', 'agree_chk');">
-                            <label for="chk_confirm5">확인</label>
+                            <label for="chk_confirm5">이해했음</label>
                         </div>
                     </div>
                 </li>
@@ -232,7 +286,7 @@
                         </p>
                         <div class="chk_group2">
                             <input type="checkbox" id="chk_confirm6" name="chkAgreeGroup" onchange="allCheck.isAll5('chkAgreeGroup', 'agree_chk');">
-                            <label for="chk_confirm6">확인</label>
+                            <label for="chk_confirm6">이해했음</label>
                         </div>
                     </div>
                 </li>
@@ -253,7 +307,7 @@
                         </p>
                         <div class="chk_group2">
                             <input type="checkbox" id="chk_confirm7" name="chkAgreeGroup" onchange="allCheck.isAll5('chkAgreeGroup', 'agree_chk');">
-                            <label for="chk_confirm7">확인</label>
+                            <label for="chk_confirm7">이해했음</label>
                         </div>
                     </div>
                 </li>
@@ -334,6 +388,12 @@
         </header>
 
         <div class="pop_con">
+            <div class="txt_group">
+                <p class="desc_box">
+                    모집인 음성이 아닌 AI음성봇을 통해 듣기를 원하시면 음성듣기 버튼을 눌러 주세요.
+                    언제든지 모집인과 통화를 원하시면 상담원 버튼을 누르시면 모집인과 바로 연결됩니다.
+                </p>
+            </div>
             <h2>중요사항 안내</h2>
 
             <ol class="confirm_list">
@@ -356,7 +416,7 @@
                         </p>
                         <div class="chk_group2">
                             <input type="checkbox" id="chk_confirm8" name="chkAgreeGroup1" onchange="allCheck.isAll5('chkAgreeGroup1', 'agree_chk1');">
-                            <label for="chk_confirm8">확인</label>
+                            <label for="chk_confirm8">이해했음</label>
                         </div>
                     </div>
                 </li>
@@ -379,7 +439,7 @@
                         </p>
                         <div class="chk_group2">
                             <input type="checkbox" id="chk_confirm9" name="chkAgreeGroup1" onchange="allCheck.isAll5('chkAgreeGroup1', 'agree_chk1');">
-                            <label for="chk_confirm9">확인</label>
+                            <label for="chk_confirm9">이해했음</label>
                         </div>
                     </div>
                 </li>
@@ -401,7 +461,7 @@
                         </p>
                         <div class="chk_group2">
                             <input type="checkbox" id="chk_confirm10" name="chkAgreeGroup1" onchange="allCheck.isAll5('chkAgreeGroup1', 'agree_chk1');">
-                            <label for="chk_confirm10">확인</label>
+                            <label for="chk_confirm10">이해했음</label>
                         </div>
                     </div>
                 </li>
@@ -425,7 +485,7 @@
                         </p>
                         <div class="chk_group2">
                             <input type="checkbox" id="chk_confirm11" name="chkAgreeGroup1" onchange="allCheck.isAll5('chkAgreeGroup1', 'agree_chk1');">
-                            <label for="chk_confirm11">확인</label>
+                            <label for="chk_confirm11">이해했음</label>
                         </div>
                     </div>
                 </li>
@@ -447,7 +507,7 @@
                         </p>
                         <div class="chk_group2">
                             <input type="checkbox" id="chk_confirm12" name="chkAgreeGroup1" onchange="allCheck.isAll5('chkAgreeGroup1', 'agree_chk1');">
-                            <label for="chk_confirm12">확인</label>
+                            <label for="chk_confirm12">이해했음</label>
                         </div>
                     </div>
                 </li>
@@ -469,7 +529,7 @@
                         </p>
                         <div class="chk_group2">
                             <input type="checkbox" id="chk_confirm13" name="chkAgreeGroup1" onchange="allCheck.isAll5('chkAgreeGroup1', 'agree_chk1');">
-                            <label for="chk_confirm13">확인</label>
+                            <label for="chk_confirm13">이해했음</label>
                         </div>
                     </div>
                 </li>
@@ -491,7 +551,7 @@
                         </p>
                         <div class="chk_group2">
                             <input type="checkbox" id="chk_confirm14" name="chkAgreeGroup1" onchange="allCheck.isAll5('chkAgreeGroup1', 'agree_chk1');">
-                            <label for="chk_confirm14">확인</label>
+                            <label for="chk_confirm14">이해했음</label>
                         </div>
                     </div>
                 </li>
@@ -513,7 +573,7 @@
                         </p>
                         <div class="chk_group2">
                             <input type="checkbox" id="chk_confirm15" name="chkAgreeGroup1" onchange="allCheck.isAll5('chkAgreeGroup1', 'agree_chk1');">
-                            <label for="chk_confirm15">확인</label>
+                            <label for="chk_confirm15">이해했음</label>
                         </div>
                     </div>
                 </li>
@@ -535,7 +595,7 @@
                         </p>
                         <div class="chk_group2">
                             <input type="checkbox" id="chk_confirm16" name="chkAgreeGroup1" onchange="allCheck.isAll5('chkAgreeGroup1', 'agree_chk1');">
-                            <label for="chk_confirm16">확인</label>
+                            <label for="chk_confirm16">이해했음</label>
                         </div>
                     </div>
                 </li>
@@ -557,7 +617,7 @@
                         </p>
                         <div class="chk_group2">
                             <input type="checkbox" id="chk_confirm17" name="chkAgreeGroup1" onchange="allCheck.isAll5('chkAgreeGroup1', 'agree_chk1');">
-                            <label for="chk_confirm17">확인</label>
+                            <label for="chk_confirm17">이해했음</label>
                         </div>
                     </div>
                 </li>

@@ -153,6 +153,8 @@ h2{@include font('B', 24px, 32/24);}
 .dialog.page .pop_con .btn_agree_chk{margin-top: 50px;}
 .dialog.page .pop_con .img_table{overflow: scroll; margin-top: 30px; width: 100%; height: calc(100vh - 288px);}
 .dialog.page .pop_con .img_table img{width: 582px;}
+.dialog.page .pop_con .txt_group{padding: 0;}
+.dialog.page .pop_con .txt_group .desc_box{margin-top: 0; margin-bottom: 20px;}
 .dialog.page .pop_con .fixed{position: fixed; left: 0; bottom: 0; margin: 0; padding: 13px 20px 25px; width: 100%; background: rgba(255, 255, 255, 0.8);}
 #addressFind.dialog.page{padding: 0;}
 
@@ -285,6 +287,7 @@ h2{@include font('B', 24px, 32/24);}
   .dialog.page .pop_con .btn_agree_chk{margin-top: vw(50);}
   .dialog.page .pop_con .img_table{margin-top: vw(30); height: calc(100vh - vw(288));}
   .dialog.page .pop_con .img_table img{width: vw(582);}
+  .dialog.page .pop_con .txt_group .desc_box{margin-bottom: vw(20);}
   .dialog.page .pop_con .fixed{padding: vw(13) vw(20) vw(25);}
 
   .confirm_list{margin-top: vw(20);}

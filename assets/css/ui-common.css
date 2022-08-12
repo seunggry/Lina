@@ -2228,6 +2228,15 @@ h2 {
   width: 582px;
 }
 
+.dialog.page .pop_con .txt_group {
+  padding: 0;
+}
+
+.dialog.page .pop_con .txt_group .desc_box {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
 .dialog.page .pop_con .fixed {
   position: fixed;
   left: 0;
@@ -2714,6 +2723,9 @@ h2 {
   }
   .dialog.page .pop_con .img_table img {
     width: 155.2vw;
+  }
+  .dialog.page .pop_con .txt_group .desc_box {
+    margin-bottom: 5.334vw;
   }
   .dialog.page .pop_con .fixed {
     padding: 3.467vw 5.334vw 6.667vw;

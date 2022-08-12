@@ -522,3 +522,33 @@ function maxLengthCheck(object){
         object.value = object.value.slice(0, object.maxLength);
     }
 }
+
+//cookie 저장
+var setCookie = function(name, value, day) {
+    var date = new Date();
+    date.setTime(date.getTime() + day * 60 * 60 * 24 * 1000);
+    document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + ';path=/';
+};
+
+//cookie 조회
+var getCookie = function(name) {
+    var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+    return value? value[2] : null;
+};
+
+//cookies 조회
+var getCookies = function(name) {            // 여러개의 쿠키를 읽어온다.
+    var cookies = document.cookie.split("; ");
+    for (var i=0; i<cookies.length; i++) {
+        if (cookies[i].split("=")[0] == name)  {
+            txtName = cookies[i].split("=")[1];
+        }
+    }
+    return txtName;
+};
+
+//cookie 삭제
+var deleteCookie = function(name) {
+    var date = new Date();
+    document.cookie = name + "= " + "; expires=" + date.toUTCString() + "; path=/";
+}

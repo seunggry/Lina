@@ -8,6 +8,57 @@
     <script src="../assets/js/lib/jquery-3.6.0.js"></script>
     <script src="../assets/js/common.js"></script>
     <link rel="stylesheet" href="../assets/css/ui-common.css">
+    <script>
+        window.onload = function() {
+            $('#nextPage').on('click', function(){
+                var checkAll01 = $("#check_all01").is(':checked') ? "T" : "F";
+                setCookie("tm08_check_all01", checkAll01 , 1);
+                var checkAll02 = $("#check_all02").is(':checked') ? "T" : "F";
+                setCookie("tm08_check_all02", checkAll02 , 1);
+                var checkAll03 = $("#check_all03").is(':checked') ? "T" : "F";
+                setCookie("tm08_check_all03", checkAll03 , 1);
+
+                var radio1 = $("input[name='chkAgreeGroup2_1_1']:checked").val();
+                setCookie("tm08_radio1", radio1 , 1);
+
+                var radio2 = $("input[name='chkAgreeGroup2_1_3']:checked").val();
+                setCookie("tm08_radio2", radio2 , 1);
+
+                var form_infoBox_all1 = $("#form_infoBox_all1").is(':checked') ? "T" : "F";
+                setCookie("tm08_infoBox_all1", form_infoBox_all1 , 1);
+
+                window.location.href = "./tm_09.html";
+            });
+
+            var c_checkAll01 = getCookies("tm08_check_all01");
+            if (c_checkAll01 == "T") {
+                $("#check_all01").trigger('click');
+            }
+
+            var c_checkAll02 = getCookies("tm08_check_all02");
+            if (c_checkAll02 == "T") {
+                $("#check_all02").trigger('click');
+            }
+
+            var c_checkAll03 = getCookies("tm08_check_all03");
+            if (c_checkAll03 == "T") {
+                $("#check_all03").trigger('click');
+            }
+
+            var tm08_radio1    = getCookies("tm08_radio1");
+            $("input[name='chkAgreeGroup2_1_1']:radio[value='" + tm08_radio1 + "']").prop('checked', true);
+
+            var tm08_radio2    = getCookies("tm08_radio2");
+            //$("input[name='chkAgreeGroup2_1_3']:radio[value='" + tm08_radio2 + "']").prop('checked', true);
+            if (tm08_radio2 == "Y6")
+                $("#chkAgreeGroup2_1_3").trigger('click');
+
+            var tm08_infoBox_all1 = getCookies("tm08_infoBox_all1");
+            if (tm08_infoBox_all1 == "T"){
+                $("#form_infoBox_all1").trigger('click');
+            }
+        }
+    </script>
 </head>
 <body>
 <div id="wrap">
