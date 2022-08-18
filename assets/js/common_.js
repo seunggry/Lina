@@ -267,6 +267,43 @@ let commonJS = {
         });
     },
     timeStamp:function(){
+        let timeStamp = document.querySelector('.timeStamp');
+
+        if(timeStamp !== null){
+            timeStamp.addEventListener('click', function(e){
+                e.stopPropagation();
+
+                let today   = new Date,
+                    year    = today.getFullYear(),
+                    month   = ('0' + (today.getMonth() + 1)).slice(-2),
+                    day     = ('0' + today.getDate()).slice(-2),
+                    hours   = ('0' + today.getHours()).slice(-2),
+                    minutes = ('0' + today.getMinutes()).slice(-2);
+
+                let dateString = year + '.' + month + '.' + day,
+                    timeString = hours + ':' + minutes,
+                    $html = '<span>' + dateString+ '</span><span>' + timeString + '</span>';
+
+                let timeStampInput = this.children[0],
+                    tagNameP       = document.createElement('p');
+
+                tagNameP.className = 'currentTime';
+                tagNameP.innerHTML = $html;
+
+                timeStampInput.onchange = function(){
+                    let timeStampClass = this.parentNode;
+                    let currentTime = timeStampClass.nextElementSibling;
+
+                    if(this.checked){
+                        timeStampClass.after(tagNameP);
+                    } else{
+                        if(currentTime.classList.contains('currentTime')) currentTime.remove();
+                    }
+                };
+            });
+        }
+
+        /*
         $('.timeStamp').on('click', function(){
             let today = new Date();
             let year = today.getFullYear();
@@ -289,6 +326,8 @@ let commonJS = {
             }
 
         });
+
+         */
     },
     popupOpen:function(param){
         $('#'+ param).addClass('show');
@@ -318,6 +357,74 @@ let commonJS = {
 }
 
 let allCheck = {
+    toggleAllChk: function(){
+        let allChk = document.querySelector('.agree_form .all_chk input');
+        let radioChk = document.querySelectorAll('.agree_form .radio_chk input');
+        let inputs = document.querySelectorAll('.agree_form input')
+
+        allChk.addEventListener('change', function(){
+            let ahllChkInput = this;
+            let allChkInputName = this.getAttribute('name').split('_')[0];
+            let siblingInputs = this.parentNode.nextElementSibling.querySelectorAll("input[name=" + allChkInputName + "]");
+
+            if(this.checked){
+                forEachChecked(siblingInputs, true);
+                radioChk.forEach(function(value){
+                    let radioY = value.parentNode.parentNode.nextElementSibling.querySelectorAll('.chkY');
+                    forEachChecked(radioY, true);
+                });
+            } else{
+                forEachChecked(siblingInputs, false);
+                radioChk.forEach(function(value){
+                    let radioY = value.parentNode.parentNode.nextElementSibling.querySelectorAll('.chkY');
+                    forEachChecked(radioY, false);
+                });
+            }
+        });
+
+        radioChk.forEach(function(value){
+            value.addEventListener('change', function(){
+                let radioChecked = this.checked;
+                let radioY = this.parentNode.parentNode.nextElementSibling.querySelectorAll('.chkY');
+
+                if(radioChecked){
+                    forEachChecked(radioY, true);
+                } else{
+                    forEachChecked(radioY, false);
+                }
+            });
+        });
+
+        inputs.forEach(function(value){
+            value.addEventListener('change', function(){
+                let chk;
+
+            //     siblingInputs.forEach(function(value){
+            //         chk = value.checked;
+            //         console.log(chk);
+            //         return chk;
+            //     });
+            //
+            //     if(!chk){
+            //         ahllChkInput.checked = false;
+            //     } else{
+            //         ahllChkInput.checked = true;
+            //     }
+            });
+        });
+
+
+        function forEachChecked(obj, boolean){
+            obj.forEach(function(value){
+                value.checked = boolean;
+            });
+        }
+
+
+    },
+    isAllChk: function(){
+
+    },
     toggleAll: function(_name){
         var $ts = $(event.target)
             , $chk = $('[name="'+_name+'"]');
@@ -507,7 +614,7 @@ let allCheck = {
 
 
     init:function(){
-
+        allCheck.toggleAllChk();
     }
 }
 
