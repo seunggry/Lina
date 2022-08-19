@@ -83,7 +83,7 @@
                 </div>
             </div>
             <div class="detail" tabindex="0">
-                <div class="side_line all_chk">
+                <div class="side_line all_chk required">
                     <input type="checkbox" id="check_all" name="chkAgreeGroup1_all">
                     <label for="check_all">전체 동의</label>
                     <div class="form_agrchk_box">귀하는 개인(신용)정보의 수집·이용 및 조회, 제공 에 관한 동의를 거부하실 수 있으며, 개인의 신용도 등을 평가하기 위한 목적 이외의 개인(신용)정보 제공 동의는 철회할 수 있습니다. 다만, 본 동의는 ' 보험계약 인수심사·체결·이행·유지·관리'를 위해 필 수적인 사항이므로 동의를 거부하시는 경우 관련 업무수행이 불가능합니다. 개인식별정보, 보험계약, 보험금지급, 금융거래, 건강정보에 대하여 거래종 료후 5년까지 계약 체결 및 유지 합니다.</div>
@@ -326,9 +326,9 @@
                     </li>
                 </ul>
             </div>
-            <div class="btn_wrap bottom form_agrchk_btnBox">
-                <a href="./tm_04.html" class="btnBox_back">이전으로</a>
-                <a class="btn btnBox_next ckk" href="tm_09.html">다음</a>
+            <div class="btn_group">
+                <a href="./tm_04.html" class="txt_link">이전으로</a>
+                <a class="btn_type disable btn_page" href="tm_09.html">다음</a>
             </div>
         </div>
     </div>
@@ -400,20 +400,20 @@
             document.querySelector('.form_infoBox').toggle('on');
         });
 
-        $("body").click(function(e) {
-            var formchk = $("input:checkbox[name=form_infoBox_allt]:checked").length;
-            //console.log(formchk);
-            if($(".form_infoBox").hasClass('on')) {
-                if(!$('.form_infoBox').has(e.target).length) {
-                    if(formchk === 0){
-                        alert('정보전달방법을 1개 이상 선택해주세요.');
-                    }else{
-                        $(".form_infoBox").removeClass('on');
-                        $('.btnBox_next').addClass('on');
-                    }
-                } 
-            }
-        });
+        // $("body").click(function(e) {
+        //     var formchk = $("input:checkbox[name=form_infoBox_allt]:checked").length;
+        //     //console.log(formchk);
+        //     if($(".form_infoBox").hasClass('on')) {
+        //         if(!$('.form_infoBox').has(e.target).length) {
+        //             if(formchk === 0){
+        //                 alert('정보전달방법을 1개 이상 선택해주세요.');
+        //             }else{
+        //                 $(".form_infoBox").removeClass('on');
+        //                 $('.btnBox_next').addClass('on');
+        //             }
+        //         }
+        //     }
+        // });
 
 
     </script>

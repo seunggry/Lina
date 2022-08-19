@@ -362,25 +362,49 @@ let allCheck = {
         let radioChk = document.querySelectorAll('.agree_form .radio_chk input');
         let inputs = document.querySelectorAll('.agree_form input')
 
-        allChk.addEventListener('change', function(){
-            let ahllChkInput = this;
-            let allChkInputName = this.getAttribute('name').split('_')[0];
-            let siblingInputs = this.parentNode.nextElementSibling.querySelectorAll("input[name=" + allChkInputName + "]");
+        agreeChkAll();
+        agreeChkItem();
 
-            if(this.checked){
-                forEachChecked(siblingInputs, true);
-                radioChk.forEach(function(value){
-                    let radioY = value.parentNode.parentNode.nextElementSibling.querySelectorAll('.chkY');
-                    forEachChecked(radioY, true);
+        function agreeChkAll(){
+            allChk.addEventListener('change', function(){
+                let ahllChkInput = this;
+                let allChkInputName = this.getAttribute('name').split('_')[0];
+                let siblingInputs = this.parentNode.nextElementSibling.querySelectorAll("input[name=" + allChkInputName + "]");
+
+                if(this.checked){
+                    forEachChecked(siblingInputs, true);
+                    radioChk.forEach(function(value){
+                        let radioY = value.parentNode.parentNode.nextElementSibling.querySelectorAll('.chkY');
+                        forEachChecked(radioY, true);
+                    });
+                } else{
+                    forEachChecked(siblingInputs, false);
+                    radioChk.forEach(function(value){
+                        let radioY = value.parentNode.parentNode.nextElementSibling.querySelectorAll('.chkY');
+                        forEachChecked(radioY, false);
+                    });
+                }
+            });
+        }
+
+        function agreeChkItem(){
+            radioChk.forEach(function(value){
+                let radioChecked = true;
+
+                value.addEventListener('change', function(){
+                    // radioChecked = true;
+                    // radioChecked = ture;
+                    // radioChecked = this.checked;
+
+                    if(!this.checked){
+                        return radioChecked = false;
+                    }
+                    console.log(this.checked);
                 });
-            } else{
-                forEachChecked(siblingInputs, false);
-                radioChk.forEach(function(value){
-                    let radioY = value.parentNode.parentNode.nextElementSibling.querySelectorAll('.chkY');
-                    forEachChecked(radioY, false);
-                });
-            }
-        });
+                console.log(radioChecked);
+                return radioChecked;
+            });
+        }
 
         radioChk.forEach(function(value){
             value.addEventListener('change', function(){
@@ -398,6 +422,12 @@ let allCheck = {
         inputs.forEach(function(value){
             value.addEventListener('change', function(){
                 let chk;
+
+                if(agreeChkItem()){
+                    $(this).parents('.all_chk').prop('checked', true);
+                } else{
+                    $(this).parents('.all_chk').prop('checked', false);
+                }
 
             //     siblingInputs.forEach(function(value){
             //         chk = value.checked;
@@ -623,6 +653,7 @@ function maxLengthCheck(object){
         object.value = object.value.slice(0, object.maxLength);
     }
 }
+
 
 //cookie 저장
 var setCookie = function(name, value, day) {
