@@ -360,9 +360,17 @@ let allCheck = {
     toggleAllChk: function(){
         let allChk = document.querySelector('.agree_form .all_chk input');
         let radioChkInput = document.querySelectorAll('.agree_form .radio_chk input');
+        let allInput = document.querySelectorAll('.agree_form input');
 
-        totalAllChk();
-        radioAllChk();
+        if(allInput !== null || allInput !== 'undefined'){;
+            allInput.forEach((value) => {
+                value.addEventListener('change', () => {
+                    totalAllChk();
+                    radioAllChk();
+                });
+            });
+        }
+
 
         function totalAllChk(){
             allChk.addEventListener('change', function(){
@@ -405,11 +413,7 @@ let allCheck = {
     },
     isAllChk: function(){
         let radioChkInput = document.querySelectorAll('.agree_form .radio_chk input');
-        let radioChk = $('.agree_form .radio_chk');
-        let radioChkSiblings = radioChk.parent().siblings('.detail').find('.chkY');
         let radioChkListInput = document.querySelectorAll('.radio_chk_list input');
-        let radioChkListChkY = document.querySelectorAll('.radio_chk_list .chkY');
-        // console.log(radioChkList);
 
         radioChkInput.forEach(function(value){
             value.addEventListener('change', function(){
@@ -426,11 +430,14 @@ let allCheck = {
         radioChkListInput.forEach(function(value){
            value.addEventListener('change', function(){
                let radioYesChk = $(this).parents('.detail').siblings().find('.radio_chk input');
+               let allChk = $(this).parents('.agree_form').find('.all_chk input');
 
                if(radioChkItem(radioChkListInput)){
                    radioYesChk.prop('checked', true);
+                   // allChk.prop('checked', true);
                } else{
                    radioYesChk.prop('checked', false);
+                   // allChk.prop('checked', false);
                }
            });
         });
@@ -452,20 +459,15 @@ let allCheck = {
 
             obj.forEach(function(value){
                 let chkY = value.classList.contains('chkY');
-                // console.log(chkY);
-                // chkY ? console.log(123) : console.log('false');
 
-                // if(!chkY){
-                //     if(value.checked){
-                //         return radioChecked = false;
-                //     }
-                // }
                 if(chkY){
                     if(!value.checked){
                         return radioChecked = false;
                     }
                 }
             });
+
+            return radioChecked;
         }
 
     },
